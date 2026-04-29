@@ -4,6 +4,8 @@ I build practical product systems: mobile apps, workflow tools, tested code path
 
 ## Strongest skills
 
+- Product UX and evaluation surfaces: building demos, mobile-style flows, proof pages, sample artifacts, and reviewer-friendly paths through the work.
+
 - **Mobile product development:** React Native, Expo, TypeScript, mobile UI flows, game loops, progression systems, and Firebase-backed architecture.
 - **Full-stack workflow design:** turning scattered inputs into structured states, review queues, backend rules, and usable outputs.
 - **Evidence-backed systems:** source registries, validation gates, support-depth rules, readable proof artifacts, and careful claim handling.
