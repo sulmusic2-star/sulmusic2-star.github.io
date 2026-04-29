@@ -12,3 +12,12 @@ Sources reviewed on 2026-04-29:
 - SaaS homepage/demo pattern articles emphasized interactive demos, persona routing, product-first storytelling, and structural clarity.
 - UX/design portfolio examples emphasized distinct art direction without disrupting the viewer experience, simple project-focused layouts, and direct purpose-driven communication.
 - Engineering/system-design references emphasized showing architecture, scale/constraint thinking, and decision tradeoffs rather than only screenshots.
+
+## Architecture proof layer
+
+Additional research emphasized that advanced engineering presentation should make constraints and tradeoffs visible. Architecture Decision Records and tradeoff analysis are useful because they capture context, alternatives, consequences, and risk. The portfolio now includes a Systems Atlas to make those decisions inspectable without exposing private production code.
+
+Sources reviewed on 2026-04-29:
+- CMU/SEI Architecture Tradeoff Analysis Method materials.
+- Recent ADR/tradeoff writing about documenting context, alternatives, and consequences.
+- Software architecture portfolio examples that foreground deep-dive case studies, architecture diagrams, and decision rationale.

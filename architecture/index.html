@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Systems Atlas — Tim Sullivan</title>
+  <meta name="description" content="Systems atlas for Tim Sullivan's public work: architecture decisions, tradeoffs, constraints, data flow, validation gates, and delivery proof." />
+  <link rel="stylesheet" href="../site.css" />
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topnav"><a href="../">Portfolio</a><a href="../review/">Evaluator console</a><a href="../proof/">Selected work</a><a href="../lab/">Systems lab</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a></nav>
+
+    <section class="hero compact hero-showcase">
+      <div>
+        <p class="eyebrow">Systems atlas</p>
+        <h1>Architecture is where the product promise becomes enforceable.</h1>
+        <p class="lead">A public map of how the showcase systems handle constraints, tradeoffs, validation, review states, and proof artifacts.</p>
+        <div class="actions"><a class="btn primary" href="#tradeoffs">Explore tradeoffs</a><a class="btn" href="#diagrams">View system maps</a></div>
+      </div>
+      <aside class="atlas-orbit" aria-label="Architecture atlas orbit">
+        <div class="orbit-core">Decision<br/>system</div>
+        <div class="orbit-node node-a">constraints</div>
+        <div class="orbit-node node-b">tradeoffs</div>
+        <div class="orbit-node node-c">validation</div>
+        <div class="orbit-node node-d">artifacts</div>
+      </aside>
+    </section>
+
+    <section class="section architecture-lenses" id="diagrams">
+      <div class="section-head"><p class="eyebrow">Architecture lenses</p><h2>Same projects, different engineering questions.</h2></div>
+      <div class="lens-tabs" role="tablist"><button class="lens-tab active" data-lens="surface">Surface</button><button class="lens-tab" data-lens="logic">Logic</button><button class="lens-tab" data-lens="validation">Validation</button><button class="lens-tab" data-lens="delivery">Delivery</button></div>
+      <div class="lens-output card" id="lensOutput"></div>
+    </section>
+
+    <section class="section" id="tradeoffs">
+      <div class="section-head"><p class="eyebrow">Decision records</p><h2>Tradeoffs made visible instead of hidden inside the build.</h2></div>
+      <div class="adr-grid">
+        <article class="adr-card"><span>ADR-01</span><h3>Keep competitive scoring recomputable</h3><p class="muted">SquadBrain does not treat client-reported score as the source of truth for competitive movement.</p><dl><dt>Tradeoff</dt><dd>More validation logic, less trust in the UI layer.</dd><dt>Benefit</dt><dd>Rank movement can be defended and suspicious results can be held for review.</dd></dl><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">Inspect example</a></article>
+        <article class="adr-card"><span>ADR-02</span><h3>Practice priority beats random recall</h3><p class="muted">The practice queue uses due state, misses, stability, exposure, and prompt mix.</p><dl><dt>Tradeoff</dt><dd>More state modeling, less simple randomization.</dd><dt>Benefit</dt><dd>The product can explain why a card appears next.</dd></dl><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts">Inspect example</a></article>
+        <article class="adr-card"><span>ADR-03</span><h3>Evidence before packet language</h3><p class="muted">Lasting Ground output language is downstream of source-lane validation and evidence scoring.</p><dl><dt>Tradeoff</dt><dd>More cautious output, fewer unsupported conclusions.</dd><dt>Benefit</dt><dd>The artifact stays reviewable and source-bounded.</dd></dl><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py">Inspect example</a></article>
+        <article class="adr-card"><span>ADR-04</span><h3>Uncertainty is a product state</h3><p class="muted">Missing or weak source lanes are shown as caution/missing states, not hidden.</p><dl><dt>Tradeoff</dt><dd>The output is less magically complete.</dd><dt>Benefit</dt><dd>Reviewers can see source coverage honestly.</dd></dl><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/packet_composer.py">Inspect example</a></article>
+      </div>
+    </section>
+
+    <section class="section card">
+      <p class="eyebrow">Risk / guardrail map</p>
+      <h2>Advanced work is often about knowing what not to automate blindly.</h2>
+      <div class="risk-table">
+        <div><b>Risk</b><b>Guardrail</b><b>Public proof</b></div>
+        <div><span>Untrusted competitive submissions</span><span>Server-style recomputation and risk flags</span><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">result-validation.ts</a></div>
+        <div><span>Practice loop becomes random trivia</span><span>Priority scoring and explainable reasons</span><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts">adaptive-practice.ts</a></div>
+        <div><span>Source context becomes overconfident language</span><span>Evidence score and support-depth gate</span><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py">evidence_scoring.py</a></div>
+        <div><span>Incomplete lane looks complete</span><span>Visible caution and missing states</span><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/packet_composer.py">packet_composer.py</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">Systems atlas · Architecture decisions · Tradeoffs · Validation gates · Proof artifacts</footer>
+  <script>
+    const lenses={
+      surface:{title:'Surface lens',summary:'How the system becomes usable and understandable.',left:['Mobile practice rounds','Quick-match result surfaces','Sample packet preview','Evaluator routing'],right:['SquadBrain demo','Lasting Ground demo','Case studies','Systems lab']},
+      logic:{title:'Logic lens',summary:'Where product behavior becomes rules and state.',left:['Practice priority score','Matchmaking constraints','Evidence lane scoring','Support-depth decisions'],right:['adaptive-practice.ts','matchmaking.ts','evidence_scoring.py','source_lane_validation.py']},
+      validation:{title:'Validation lens',summary:'Where the system prevents weak or untrusted output.',left:['Recompute competitive score','Flag impossible sessions','Disclose weak source lanes','Cautious packet language'],right:['result-validation.ts','packet_language.py','packet_composer.py','validation tests']},
+      delivery:{title:'Delivery lens',summary:'How the work becomes reviewable outside the private production system.',left:['Live pages','Public examples','Coverage summaries','Evaluator guides'],right:['GitHub Pages','CI workflows','Sample PDF','Documentation']}
+    };
+    function renderLens(key){const data=lenses[key];lensOutput.innerHTML=`<p class="eyebrow">${data.title}</p><h2>${data.summary}</h2><div class="atlas-map"><div><h3>System concerns</h3>${data.left.map(x=>`<p>${x}</p>`).join('')}</div><div><h3>Inspectable artifacts</h3>${data.right.map(x=>`<p>${x}</p>`).join('')}</div></div>`;}
+    document.querySelectorAll('.lens-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.lens-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderLens(btn.dataset.lens);}));renderLens('surface');
+  </script>
+</body>
+</html>
