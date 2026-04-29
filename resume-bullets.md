@@ -12,7 +12,10 @@ I build practical product systems: mobile apps, workflow tools, tested code path
 
 ## Project proof
 
+- Proof packet: https://sulmusic2-star.github.io/proof/
 - Interactive systems lab: https://sulmusic2-star.github.io/lab/
+- SquadBrain case study: https://sulmusic2-star.github.io/case-studies/squadbrain/
+- Lasting Ground case study: https://sulmusic2-star.github.io/case-studies/lasting-ground/
 
 - Built **SquadBrain**, a mobile sports roster memorization game with practice loops, quick-match competition, achievements, leaderboards, and Firebase-backed product architecture.
 - Built **Lasting Ground**, a source-backed property review system that turns fragmented public/official context into structured packets with validation gates and clear uncertainty handling.
