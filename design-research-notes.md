@@ -21,3 +21,14 @@ Sources reviewed on 2026-04-29:
 - CMU/SEI Architecture Tradeoff Analysis Method materials.
 - Recent ADR/tradeoff writing about documenting context, alternatives, and consequences.
 - Software architecture portfolio examples that foreground deep-dive case studies, architecture diagrams, and decision rationale.
+
+## Non-generic proof direction
+
+To avoid sounding like a generic portfolio, the public work should keep replacing broad claims with concrete decision records:
+
+- What constraint shaped the system?
+- What decision was made?
+- What tradeoff did that create?
+- What public proof shows the decision in code or output?
+
+This pass added repo-native ADR folders to SquadBrain and Lasting Ground so the Systems Atlas links to durable implementation-adjacent decision records.
