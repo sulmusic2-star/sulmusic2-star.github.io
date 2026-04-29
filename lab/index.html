@@ -12,7 +12,7 @@
     <header class="hero">
       <p class="eyebrow">Interactive systems lab</p>
       <h1>Small demos that show the product logic working.</h1>
-      <p class="lead">This page mirrors the public code examples in SquadBrain and Lasting Ground: normalize messy inputs, rank useful options, validate evidence lanes, and turn the result into something readable.</p>
+      <p class="lead">This page mirrors the public code examples in SquadBrain and Lasting Ground: normalize messy inputs, prioritize practice, validate competitive results, score evidence lanes, and turn the result into something readable.</p>
       <div class="actions">
         <a class="btn primary" href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples">SquadBrain code</a>
         <a class="btn" href="https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples">Lasting Ground code</a>
@@ -25,11 +25,11 @@
         <div class="panel-head">
           <div>
             <p class="eyebrow">SquadBrain</p>
-            <h2>Roster cleanup + quick-match ranking</h2>
+            <h2>Roster cleanup + adaptive play logic</h2>
           </div>
           <button id="runSquad" class="pill">Run logic</button>
         </div>
-        <p class="muted">The sample data starts messy on purpose: duplicate names, uneven casing, invalid jersey values, and multiple match candidates. The demo normalizes the roster, builds prompt candidates, then ranks fair same-team opponents.</p>
+        <p class="muted">The sample data starts messy on purpose: duplicate names, uneven casing, invalid jersey values, multiple match candidates, and a questionable quick-match result. The demo normalizes the roster, builds prompt candidates, prioritizes practice, ranks fair opponents, and flags result risk before rankings move.</p>
         <div class="columns">
           <div>
             <h3>Input</h3>
@@ -46,11 +46,11 @@
         <div class="panel-head">
           <div>
             <p class="eyebrow">Lasting Ground</p>
-            <h2>Source-lane validation + packet summary</h2>
+            <h2>Source-lane scoring + packet summary</h2>
           </div>
           <button id="runGround" class="pill">Validate lanes</button>
         </div>
-        <p class="muted">The sample packet uses fictional address data. The point is the system behavior: strong language only appears when sources support it; missing or stale lanes stay visible.</p>
+        <p class="muted">The sample packet uses sample address data. The point is the system behavior: source authority, freshness, missing lanes, and warnings shape what the packet is allowed to say.</p>
         <div class="columns">
           <div>
             <h3>Input</h3>

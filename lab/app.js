@@ -12,6 +12,23 @@ const matchPool = [
   { handle: 'lateclock', team: 'BOS', rating: 1198, waitingSeconds: 64 }
 ];
 
+const practiceCards = [
+  { playerId: 'mika', team: 'BOS', displayName: 'Mika Hart', misses: 3, correctStreak: 0, ease: 1, lastSeenHoursAgo: 2 },
+  { playerId: 'daniel', team: 'BOS', displayName: 'Daniel Ross', misses: 0, correctStreak: 5, ease: 2.2, lastSeenHoursAgo: 1 },
+  { playerId: 'jules', team: 'BOS', displayName: 'Jules Carter', misses: 1, correctStreak: 1, ease: 1.1, lastSeenHoursAgo: 8 }
+];
+
+const quickMatchSubmission = {
+  startedAtMs: 1000,
+  finishedAtMs: 2200,
+  expectedPromptCount: 3,
+  results: [
+    { promptId: 'p1', expected: 'mika', selected: 'mika', isCorrect: true, answeredAtMs: 1300 },
+    { promptId: 'p2', expected: 'daniel', selected: 'daniel', isCorrect: true, answeredAtMs: 1700 },
+    { promptId: 'p3', expected: 'jules', selected: 'jules', isCorrect: true, answeredAtMs: 2100 }
+  ]
+};
+
 const propertyPacket = {
   address: '42 Harbor View Lane, Sampletown MA',
   sourceLanes: [
@@ -57,6 +74,48 @@ function rankMatchCandidates(currentPlayer, pool) {
     .sort((a, b) => b.score - a.score);
 }
 
+function buildAdaptivePracticeQueue(cards) {
+  return cards
+    .filter(card => card.team === 'BOS')
+    .map(card => {
+      const dueScore = Math.min(60, card.lastSeenHoursAgo * 8);
+      const missScore = Math.min(36, card.misses * 12);
+      const stabilityPenalty = card.correctStreak >= 4 ? -18 : 10;
+      const priority = Math.max(0, Math.min(100, Math.round(dueScore + missScore + stabilityPenalty)));
+      const reasons = [];
+      if (card.misses) reasons.push('miss-history');
+      if (card.correctStreak === 0) reasons.push('not-yet-stable');
+      if (card.correctStreak >= 4) reasons.push('stable-card');
+      return { playerId: card.playerId, displayName: card.displayName, priority, reasons };
+    })
+    .sort((a, b) => b.priority - a.priority);
+}
+
+function validateQuickMatch(submission) {
+  const issues = [];
+  if (submission.results.length !== submission.expectedPromptCount) issues.push('prompt-count-mismatch');
+  let previous = submission.startedAtMs;
+  for (const result of submission.results) {
+    if (result.answeredAtMs < previous) issues.push('non-monotonic-answer-time');
+    if ((result.selected === result.expected) !== result.isCorrect) issues.push('correctness-mismatch');
+    previous = result.answeredAtMs;
+  }
+  const duration = submission.finishedAtMs - submission.startedAtMs;
+  const averageAnswerMs = Math.round(duration / Math.max(1, submission.results.length));
+  const accuracy = submission.results.filter(r => r.selected === r.expected).length / Math.max(1, submission.results.length);
+  if (averageAnswerMs < 650 && accuracy >= 0.9) issues.push('answer-speed-review');
+  return { accepted: !issues.includes('answer-speed-review') && issues.length === 0, riskLevel: issues.length ? 'high' : 'low', averageAnswerMs, accuracy, issues };
+}
+
+function scoreLane(lane) {
+  const sourcePoints = { flood_map: 35, assessor: 32, conservation: 28, building_permit: 28 }[lane.lane] ?? 10;
+  const statusPoints = { validated: 34, stale: 12, missing: 0 }[lane.status] ?? 0;
+  const supportPoints = Math.min(15, lane.supports.length * 5);
+  const freshnessPoints = lane.reviewed ? 18 : 0;
+  const score = lane.status === 'missing' ? 0 : Math.min(100, sourcePoints + statusPoints + supportPoints + freshnessPoints);
+  return { lane: lane.lane, score, confidence: score >= 78 ? 'strong' : score >= 45 ? 'usable_with_caution' : 'weak_or_missing' };
+}
+
 function validatePacket(packet) {
   const warnings = [];
   const validated = packet.sourceLanes.filter(lane => lane.status === 'validated');
@@ -69,7 +128,9 @@ function validatePacket(packet) {
   const summary = supportDepth === 'strong_local_support'
     ? 'The packet can describe local context with stronger source support.'
     : 'The packet should stay cautious: some lanes support context, but missing or stale lanes remain visible.';
-  return { address: packet.address, validatedLanes: validated.map(l => l.lane), warningCount: warnings.length, warnings, supportDepth, packetLanguage: summary };
+  const evidenceScores = packet.sourceLanes.map(scoreLane);
+  const averageScore = Math.round(evidenceScores.reduce((sum, lane) => sum + lane.score, 0) / evidenceScores.length);
+  return { address: packet.address, validatedLanes: validated.map(l => l.lane), warningCount: warnings.length, warnings, supportDepth, evidenceScores, averageScore, packetLanguage: summary };
 }
 
 function renderJson(id, value) {
@@ -80,8 +141,8 @@ function runSquadBrain() {
   const normalizedRoster = normalizeRoster(rosterRows);
   const promptCandidates = findPromptCandidates(normalizedRoster, 'guard');
   const rankedMatches = rankMatchCandidates({ team: 'BOS', rating: 1230 }, matchPool);
-  renderJson('squadInput', { rosterRows, currentPlayer: { team: 'BOS', rating: 1230 }, matchPool });
-  renderJson('squadOutput', { normalizedRoster, promptCandidates, bestMatch: rankedMatches[0], rankedMatches });
+  renderJson('squadInput', { rosterRows, currentPlayer: { team: 'BOS', rating: 1230 }, matchPool, practiceCards, quickMatchSubmission });
+  renderJson('squadOutput', { normalizedRoster, promptCandidates, adaptivePracticeQueue: buildAdaptivePracticeQueue(practiceCards), resultValidation: validateQuickMatch(quickMatchSubmission), bestMatch: rankedMatches[0], rankedMatches });
 }
 
 function runLastingGround() {
