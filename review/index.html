@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evaluator Console — Tim Sullivan</title>
+  <meta name="description" content="A fast review console for Tim Sullivan's public work: product systems, code proof, demos, case studies, CI, and sample artifacts." />
+  <link rel="stylesheet" href="../site.css" />
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topnav"><a href="../">Portfolio</a><a href="../proof/">Selected work</a><a href="../lab/">Systems lab</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a><a href="https://github.com/sulmusic2-star">GitHub</a></nav>
+
+    <section class="hero compact hero-showcase">
+      <div>
+        <p class="eyebrow">Evaluator console</p>
+        <h1>Choose the review path that matches what you need to verify.</h1>
+        <p class="lead">A faster way to evaluate the work: product surface, implementation depth, workflow architecture, or proof artifacts.</p>
+      </div>
+      <aside class="card metric-card">
+        <div><strong>4</strong><span>review paths</span></div>
+        <div><strong>43</strong><span>public tests</span></div>
+        <div><strong>2</strong><span>focused showcase systems</span></div>
+      </aside>
+    </section>
+
+    <section class="section console-shell" aria-label="Interactive evaluator console">
+      <div class="console-tabs" role="tablist" aria-label="Review paths">
+        <button class="console-tab active" data-path="engineer">Engineer</button>
+        <button class="console-tab" data-path="product">Product / UX</button>
+        <button class="console-tab" data-path="operations">Operations</button>
+        <button class="console-tab" data-path="founder">Founder / hiring</button>
+      </div>
+      <div class="console-output card" id="consoleOutput"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><p class="eyebrow">Capability matrix</p><h2>What the public work is designed to prove.</h2></div>
+      <div class="matrix-grid">
+        <div class="matrix-card"><span>Product surface</span><b>Can shape usable interfaces</b><p>Mobile loops, review flows, sample artifacts, and demo pages that make the system understandable.</p></div>
+        <div class="matrix-card"><span>Operating logic</span><b>Can model rules and states</b><p>Ranking, scoring, source lanes, validation gates, support-depth rules, and risk flags.</p></div>
+        <div class="matrix-card"><span>Implementation proof</span><b>Can make work inspectable</b><p>Public examples, tests, coverage summaries, CI runs, evaluator guides, and sample outputs.</p></div>
+        <div class="matrix-card"><span>Communication</span><b>Can package complex work clearly</b><p>Case studies, visual systems, proof paths, and artifacts designed for fast review.</p></div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <p class="eyebrow">Outcome → mechanism → proof</p>
+      <h2>The important part is not the page. It is the operating logic behind it.</h2>
+      <div class="proof">
+        <p class="muted"><b style="color:var(--ink)">Outcome</b><br/>A reviewer can understand what was built without needing private source code or a long explanation.</p>
+        <p class="muted"><b style="color:var(--ink)">Mechanism</b><br/>Each project exposes a product surface, a system model, implementation examples, and a validation path.</p>
+        <p class="muted"><b style="color:var(--ink)">Proof</b><br/>The public path includes demos, tests, coverage, CI, sample artifacts, and case-study documentation.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">Evaluator console · Product systems · Workflow architecture · Proof artifacts</footer>
+  <script>
+    const paths={
+      engineer:{title:'Engineer review path',summary:'Start with implementation examples, tests, and CI. Then use the case studies to understand product context.',links:[['SquadBrain examples','https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples'],['Lasting Ground examples','https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples'],['Systems lab','../lab/'],['SquadBrain CI','https://github.com/sulmusic2-star/squadbrain-showcase/actions/workflows/ci.yml'],['Lasting Ground CI','https://github.com/sulmusic2-star/lasting-ground-showcase/actions/workflows/ci.yml']],signals:['Typed product logic','Python validation examples','Coverage summaries','CI-backed examples']},
+      product:{title:'Product / UX review path',summary:'Start with the live demos and project surfaces. Look for how the work explains itself, handles states, and makes outputs readable.',links:[['SquadBrain demo','https://sulmusic2-star.github.io/squadbrain-showcase/'],['Lasting Ground demo','https://sulmusic2-star.github.io/lasting-ground-showcase/'],['SquadBrain case study','../case-studies/squadbrain/'],['Lasting Ground case study','../case-studies/lasting-ground/']],signals:['Mobile-first loop design','Interactive sample flow','Readable artifact output','Evaluation-friendly navigation']},
+      operations:{title:'Operations review path',summary:'Focus on the workflow architecture: inputs, queues, review states, validation gates, risk flags, and generated artifacts.',links:[['Systems lab','../lab/'],['Lasting Ground evidence model','https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/evidence-model.md'],['Support-depth model','https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/support-depth-model.md'],['SquadBrain engineering decisions','https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/docs/engineering-decisions.md']],signals:['Structured inputs','Review states','Validation gates','Cautious output rules']},
+      founder:{title:'Founder / hiring review path',summary:'Use the selected-work page first, then inspect one product demo and one code example. This gives the fastest signal on range and execution.',links:[['Selected work','../proof/'],['Main GitHub','https://github.com/sulmusic2-star'],['SquadBrain demo','https://sulmusic2-star.github.io/squadbrain-showcase/'],['Lasting Ground sample PDF','https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf'],['Skills snapshot','../resume-bullets.md']],signals:['Product judgment','System thinking','Delivery artifacts','Clear communication']}
+    };
+    function render(path){const data=paths[path];consoleOutput.innerHTML=`<p class="eyebrow">${data.title}</p><h2>${data.summary}</h2><div class="console-layout"><div><h3>Open these first</h3><ol class="steps compact-list">${data.links.map(([label,url])=>`<li><a href="${url}">${label}</a></li>`).join('')}</ol></div><div><h3>Signals to look for</h3><div class="mini-proof">${data.signals.map(s=>`<span>${s}</span>`).join('')}</div></div></div>`;}
+    document.querySelectorAll('.console-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.console-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(btn.dataset.path);}));
+    render('engineer');
+  </script>
+</body>
+</html>
