@@ -10,9 +10,9 @@ I build practical product systems: mobile apps, workflow tools, tested code path
 - **AI-assisted operations:** using AI as part of a controlled workflow with review steps, structured outputs, and human approval where it matters.
 - **Product packaging:** demos, screenshots, sample PDFs, unit tests, coverage summaries, CI checks, engineering decision notes, and GitHub case studies that make projects easy to evaluate.
 
-## Project proof
+## Selected work
 
-- Proof packet: https://sulmusic2-star.github.io/proof/
+- Selected work: https://sulmusic2-star.github.io/proof/
 - Interactive systems lab: https://sulmusic2-star.github.io/lab/
 - SquadBrain case study: https://sulmusic2-star.github.io/case-studies/squadbrain/
 - Lasting Ground case study: https://sulmusic2-star.github.io/case-studies/lasting-ground/

@@ -9,7 +9,7 @@
 </head>
 <body>
   <main class="wrap">
-    <nav class="topnav"><a href="../../">Portfolio</a><a href="../../proof/">Proof packet</a><a href="../../lab/">Systems lab</a></nav>
+    <nav class="topnav"><a href="../../">Portfolio</a><a href="../../proof/">Selected work</a><a href="../../lab/">Systems lab</a></nav>
     <section class="hero compact">
       <div><p class="eyebrow">Case study</p><h1>SquadBrain: making roster memorization feel like a competitive game.</h1><p class="lead">A mobile product build that combines practice loops, quick-match competition, achievements, ELO-style movement, and validation-sensitive game logic.</p><div class="actions"><a class="btn primary" href="https://sulmusic2-star.github.io/squadbrain-showcase/">Live demo</a><a class="btn" href="https://github.com/sulmusic2-star/squadbrain-showcase">GitHub repo</a></div></div>
       <img class="hero-img" src="https://sulmusic2-star.github.io/squadbrain-showcase/assets/squadbrain-demo.gif" alt="SquadBrain demo" />
@@ -17,7 +17,7 @@
     <section class="section card"><h2>The problem</h2><p class="muted">Roster knowledge is usually treated like static trivia. The product opportunity was to make memorization repeatable: short rounds, visible progress, competition, rank movement, and reasons to return.</p></section>
     <section class="section"><h2>System decisions</h2><div class="proof wide"><div class="card"><h3>Local-first gameplay</h3><p class="muted">Fast mobile interactions stay local so the practice loop never feels blocked by network latency.</p></div><div class="card"><h3>Trusted competition boundary</h3><p class="muted">Competitive submissions are recomputed and risk-flagged before ranking updates.</p></div><div class="card"><h3>Adaptive practice</h3><p class="muted">Practice priority uses due state, misses, stability, recent exposure, and prompt mix rather than random questions.</p></div></div></section>
     <section class="section card"><h2>Code worth inspecting</h2><ul class="link-list"><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts">adaptive-practice.ts</a> — prioritizes practice cards and explains the reasons.</li><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">result-validation.ts</a> — validates session submissions and risk-flags suspicious results.</li><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/matchmaking.ts">matchmaking.ts</a> — ranks same-team candidates by rating gap and wait time.</li><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/actions/workflows/ci.yml">CI workflow</a> — type-checks and runs the example test suite.</li></ul></section>
-    <section class="section card"><h2>What this proves</h2><p class="muted">Mobile product sense, TypeScript organization, game-state modeling, ranking logic, validation boundaries, testing discipline, and the ability to package a consumer app for evaluation.</p></section>
+    <section class="section card"><h2>Capabilities demonstrated</h2><p class="muted">Mobile product sense, TypeScript organization, game-state modeling, ranking logic, validation boundaries, testing discipline, and the ability to package a consumer app for evaluation.</p></section>
   </main>
   <footer class="wrap">SquadBrain case study · Product loop · Adaptive practice · Result validation</footer>
 </body>
