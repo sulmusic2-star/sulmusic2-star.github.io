@@ -80,3 +80,19 @@ Additional research-supported rules applied:
 
 4. Headline wrapping should be designed, not left to browser luck.
    The main portfolio, Systems Atlas, and Lasting Ground hero headlines now use deliberate line breaks so the first impression is clean on mobile and desktop.
+
+## 2026-04-30 portfolio advancement pass
+
+Current design direction applied:
+
+1. Treat the portfolio as an evaluator product, not a poster.
+   The strongest modern portfolio pattern is a fast proof route: what it is, what works, what can be inspected, and where the claims are bounded. Added an inspection board that routes directly to demos, architecture, lab, code examples, ADRs, and sample artifacts.
+
+2. Use bento layout only when it clarifies priority.
+   Bento cards can become generic fast. The new board uses one dominant dark control card and four smaller proof tiles so the hierarchy is obvious: first understand the work, then inspect evidence.
+
+3. Motion should be quiet and nonessential.
+   Added a subtle reduced-motion-safe pulse to the inspection board, not animated clutter. It improves polish without becoming the product.
+
+4. Links are part of the UX.
+   Each tile points to a real public artifact. The page is stronger when the visual design and evidence routes are the same object.
