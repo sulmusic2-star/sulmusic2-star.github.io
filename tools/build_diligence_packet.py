@@ -15,15 +15,15 @@ M = 0.42 * inch
 INK = colors.HexColor('#07111c')
 MUTED = colors.HexColor('#526170')
 LINE = colors.HexColor('#b6c9d3')
+PAPER = colors.HexColor('#eef6f7')
+PANEL = colors.HexColor('#fbfdf8')
+DARK = colors.HexColor('#07111c')
+DARK2 = colors.HexColor('#0b263c')
 TEAL = colors.HexColor('#14b8a6')
 CYAN = colors.HexColor('#6fffe8')
 BLUE = colors.HexColor('#1f6feb')
 GOLD = colors.HexColor('#c36b1e')
-PAPER = colors.HexColor('#eef6f7')
-PANEL = colors.HexColor('#f8fcfd')
-DARK = colors.HexColor('#07111c')
-DARK2 = colors.HexColor('#0b263c')
-DARK3 = colors.HexColor('#0f4b4a')
+GREEN = colors.HexColor('#0f766e')
 WHITE = colors.white
 
 links = {
@@ -32,9 +32,12 @@ links = {
     'outcomes': 'https://sulmusic2-star.github.io/outcomes/',
     'operating': 'https://sulmusic2-star.github.io/operating-model/',
     'review': 'https://sulmusic2-star.github.io/review/',
+    'architecture': 'https://sulmusic2-star.github.io/architecture/',
     'lab': 'https://sulmusic2-star.github.io/lab/',
     'squad_demo': 'https://sulmusic2-star.github.io/squadbrain-showcase/',
     'lasting_demo': 'https://sulmusic2-star.github.io/lasting-ground-showcase/',
+    'squad_case': 'https://sulmusic2-star.github.io/case-studies/squadbrain/',
+    'lasting_case': 'https://sulmusic2-star.github.io/case-studies/lasting-ground/',
     'squad': 'https://github.com/sulmusic2-star/squadbrain-showcase',
     'lasting': 'https://github.com/sulmusic2-star/lasting-ground-showcase',
     'squad_examples': 'https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples',
@@ -45,14 +48,14 @@ links = {
 }
 
 
-def wrapped(c, x, y, value, size=10, color=INK, font='Helvetica', leading=12, max_width=300):
+def text(c, x, y, value, size=10, color=INK, font='Helvetica', leading=12, width=300):
     c.setFillColor(color)
     c.setFont(font, size)
     words = value.split()
     line = ''
     for word in words:
         test = (line + ' ' + word).strip()
-        if stringWidth(test, font, size) <= max_width:
+        if stringWidth(test, font, size) <= width:
             line = test
         else:
             if line:
@@ -65,119 +68,66 @@ def wrapped(c, x, y, value, size=10, color=INK, font='Helvetica', leading=12, ma
     return y
 
 
-def page_shell(c, label):
+def shell(c, label, page):
     c.setFillColor(PAPER)
     c.rect(0, 0, W, H, fill=1, stroke=0)
     c.setFillColor(colors.HexColor('#dff3f6'))
-    c.rect(0, H - 1.5 * inch, W, 1.5 * inch, fill=1, stroke=0)
-    c.setFillColor(colors.HexColor('#f8fcfd'))
-    c.rect(0, H - 1.5 * inch, 2.9 * inch, 1.5 * inch, fill=1, stroke=0)
-    c.setFillColor(colors.Color(0.04, 0.07, 0.11, .05))
-    c.rect(0, H - 1.52 * inch, W, 0.02 * inch, fill=1, stroke=0)
+    c.rect(0, H - 1.16 * inch, W, 1.16 * inch, fill=1, stroke=0)
     c.setStrokeColor(colors.HexColor('#d6e5ea'))
-    for i in range(12):
-        x = i * 0.75 * inch
+    for i in range(13):
+        x = i * 0.72 * inch
         c.line(x, 0, x, H)
-    for i in range(7):
-        y = i * 0.75 * inch
+    for i in range(8):
+        y = i * 0.72 * inch
         c.line(0, y, W, y)
     c.setFillColor(GOLD)
-    c.setFont('Helvetica-Bold', 8)
-    c.drawString(M, H - M - 2, label)
-
-
-def footer(c, page):
-    c.setFillColor(MUTED)
-    c.setFont('Helvetica', 7.5)
-    c.drawString(M, 0.20 * inch, 'Public proof packet - every claim routes to a demo, example, coverage artifact, decision record, or sample output.')
-    c.setFillColor(TEAL)
     c.setFont('Helvetica-Bold', 7.5)
-    c.drawRightString(W - M, 0.20 * inch, f'sulmusic2-star.github.io / {page}')
-    c.linkURL(links['portfolio'], (W - M - 130, 0.12 * inch, W - M, 0.32 * inch), relative=0)
-
-
-def pill(c, x, y, label, url, dark=False):
-    w = stringWidth(label, 'Helvetica-Bold', 8) + 18
-    c.setStrokeColor(colors.Color(1, 1, 1, .26) if dark else LINE)
-    c.setFillColor(colors.Color(1, 1, 1, .10) if dark else WHITE)
-    c.roundRect(x, y - 14, w, 22, 11, fill=1, stroke=1)
-    c.setFillColor(CYAN if dark else INK)
-    c.setFont('Helvetica-Bold', 8)
-    c.drawString(x + 9, y - 7, label)
-    c.linkURL(url, (x, y - 14, x + w, y + 8), relative=0)
-    return x + w + 8
-
-
-def metric(c, x, y, w, big, small, accent=TEAL):
-    c.setFillColor(PANEL)
-    c.setStrokeColor(LINE)
-    c.roundRect(x, y - 54, w, 54, 14, fill=1, stroke=1)
-    c.setFillColor(accent)
-    c.rect(x + 11, y - 47, 3, 40, fill=1, stroke=0)
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 20)
-    c.drawString(x + 22, y - 23, big)
+    c.drawString(M, H - M + 2, label)
     c.setFillColor(MUTED)
-    c.setFont('Helvetica-Bold', 8)
-    c.drawString(x + 22, y - 40, small)
-
-
-def flow_ribbon(c, x, y, w, labels):
-    c.setFillColor(DARK)
-    c.roundRect(x, y - 44, w, 44, 18, fill=1, stroke=0)
-    step_w = w / len(labels)
-    for i, lab in enumerate(labels):
-        sx = x + i * step_w
-        c.setFillColor(CYAN if i % 2 == 0 else colors.HexColor('#a7f3d0'))
-        c.setFont('Helvetica-Bold', 7)
-        c.drawString(sx + 16, y - 26, lab.upper())
-        if i < len(labels) - 1:
-            c.setStrokeColor(colors.Color(1, 1, 1, .22))
-            c.line(sx + step_w - 8, y - 35, sx + step_w - 8, y - 9)
-            c.setFillColor(colors.Color(1, 1, 1, .55))
-            c.setFont('Helvetica-Bold', 12)
-            c.drawString(sx + step_w - 3, y - 28, '->')
-
-
-def project_card(c, x, y, w, h, kicker, title, body, proof, url, accent):
-    c.setFillColor(WHITE)
-    c.setStrokeColor(LINE)
-    c.roundRect(x, y - h, w, h, 20, fill=1, stroke=1)
-    c.setFillColor(colors.HexColor('#eef8fa'))
-    c.roundRect(x + 9, y - h + 9, w - 18, h - 18, 14, fill=1, stroke=0)
-    c.setFillColor(colors.HexColor('#f9fdfe'))
-    c.roundRect(x + 14, y - h + 55, w - 28, h - 72, 12, fill=1, stroke=0)
-    c.setFillColor(accent)
-    c.roundRect(x + 14, y - 34, 34, 18, 9, fill=1, stroke=0)
-    c.setFillColor(WHITE)
-    c.setFont('Helvetica-Bold', 7)
-    c.drawCentredString(x + 31, y - 27, kicker[:4].upper())
+    c.setFont('Helvetica', 7.2)
+    c.drawString(M, 0.20 * inch, 'Public packet - portfolio, proof routes, demos, code examples, coverage, and generated artifacts.')
     c.setFillColor(TEAL)
     c.setFont('Helvetica-Bold', 7.2)
-    c.drawRightString(x + w - 18, y - 22, proof)
-    yy = wrapped(c, x + 18, y - 55, title, 14.8, INK, 'Helvetica-Bold', 16.5, w - 36)
-    yy -= 2
-    wrapped(c, x + 18, yy, body, 7.7, MUTED, 'Helvetica', 9.2, w - 36)
-    c.setStrokeColor(accent)
-    c.setLineWidth(1.2)
-    c.line(x + 18, y - h + 24, x + w - 18, y - h + 24)
+    c.drawRightString(W - M, 0.20 * inch, f'sulmusic2-star.github.io / page {page}')
+
+
+def round_rect(c, x, y, w, h, fill, stroke=LINE, r=16, sw=1):
+    c.setFillColor(fill)
+    c.setStrokeColor(stroke)
+    c.setLineWidth(sw)
+    c.roundRect(x, y, w, h, r, fill=1, stroke=1)
+
+
+def dark_panel(c, x, y, w, h, r=22):
+    c.setFillColor(DARK)
+    c.roundRect(x, y, w, h, r, fill=1, stroke=0)
+    c.setFillColor(colors.Color(0.08, 0.72, 0.64, 0.16))
+    c.circle(x + w - 40, y + h - 28, 90, fill=1, stroke=0)
+
+
+def pill(c, x, y, label, url, fill=WHITE, color=INK):
+    w = stringWidth(label, 'Helvetica-Bold', 7.4) + 18
+    round_rect(c, x, y, w, 22, fill, LINE, 11)
+    c.setFillColor(color)
+    c.setFont('Helvetica-Bold', 7.4)
+    c.drawString(x + 9, y + 7, label)
+    c.linkURL(url, (x, y, x + w, y + 22), relative=0)
+    return x + w + 7
+
+
+def metric(c, x, y, w, label, value, caption, accent):
+    round_rect(c, x, y, w, 70, PANEL, LINE, 16)
     c.setFillColor(accent)
-    c.setFont('Helvetica-Bold', 6.5)
-    c.drawString(x + 18, y - h + 12, 'INPUT -> RULES -> PROOF')
-    c.linkURL(url, (x, y - h, x + w, y), relative=0)
-
-
-def cap(c, x, y, w, title, body):
-    h = 62
-    c.setFillColor(WHITE)
-    c.setStrokeColor(LINE)
-    c.roundRect(x, y - h, w, h, 12, fill=1, stroke=1)
-    c.setFillColor(TEAL)
-    c.roundRect(x + 10, y - 19, 18, 8, 4, fill=1, stroke=0)
+    c.roundRect(x + 12, y + 12, 4, 46, 2, fill=1, stroke=0)
     c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 10)
-    c.drawString(x + 10, y - 31, title)
-    wrapped(c, x + 10, y - 46, body, 6.8, MUTED, 'Helvetica', 8.0, w - 20)
+    c.setFont('Helvetica-Bold', 21)
+    c.drawString(x + 24, y + 39, value)
+    c.setFillColor(GOLD)
+    c.setFont('Helvetica-Bold', 6.7)
+    c.drawString(x + 24, y + 25, label.upper())
+    c.setFillColor(MUTED)
+    c.setFont('Helvetica', 7.2)
+    c.drawString(x + 24, y + 13, caption)
 
 
 def draw_qr(c, url, x, y, size):
@@ -189,157 +139,214 @@ def draw_qr(c, url, x, y, size):
     c.linkURL(url, (x, y, x + size, y + size), relative=0)
 
 
-def draw_page_one(c):
-    page_shell(c, 'PUBLIC DILIGENCE PACKET')
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 30)
-    c.drawString(M, H - M - 35, 'Tim Sullivan')
-    c.setFont('Helvetica-Bold', 13)
-    c.drawString(M, H - M - 57, 'Product systems, workflow automation, and evidence-backed artifacts')
-    wrapped(c, M, H - M - 78, 'A two-page route for evaluating public work: what changed, what was built, and where implementation proof lives.', 9.2, MUTED, 'Helvetica', 11, 430)
-
-    bx, by, bw, bh = W - M - 2.85 * inch, H - M - 5, 2.85 * inch, 1.12 * inch
-    c.setFillColor(DARK)
-    c.roundRect(bx, by - bh, bw, bh, 18, fill=1, stroke=0)
-    c.setFillColor(CYAN)
-    c.setFont('Helvetica-Bold', 7)
-    c.drawString(bx + 14, by - 20, 'FAST REVIEW ROUTE')
-    c.setFillColor(WHITE)
-    c.setFont('Helvetica-Bold', 13)
-    c.drawString(bx + 14, by - 44, 'outcomes -> model -> lab')
-    c.setFillColor(colors.HexColor('#b7c7d0'))
-    c.setFont('Helvetica', 8)
-    c.drawString(bx + 14, by - 63, 'Clickable links embedded')
-    c.linkURL(links['diligence'], (bx, by - bh, bx + bw, by), relative=0)
-
-    y = H - 2.02 * inch
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 14)
-    c.drawString(M, y, 'What to inspect first')
-    x = M
-    for label, url in [('Portfolio', links['portfolio']), ('Outcome board', links['outcomes']), ('Operating model', links['operating']), ('Systems lab', links['lab']), ('GitHub', links['github'])]:
-        x = pill(c, x, y - 25, label, url)
-
-    y -= 65
-    mw = (W - 2 * M - 36) / 4
-    for i, (big, small, accent) in enumerate([('43', 'passing public tests', TEAL), ('25', 'SquadBrain tests', BLUE), ('18', 'Lasting Ground tests', GOLD), ('CI', 'repeatable checks', DARK3)]):
-        metric(c, M + i * (mw + 12), y, mw, big, small, accent)
-
-    y -= 70
-    flow_ribbon(c, M, y, W - 2 * M, ['outcome evidence', 'operating model', 'systems lab', 'public code'])
-    y -= 72
-    pw = (W - 2 * M - 18) / 2
-    ph = 1.64 * inch
-    project_card(c, M, y, pw, ph, 'Mobile', 'SquadBrain: competitive practice system', 'Replayable practice with adaptive priority, matchmaking, achievements, and validated results.', '98.3% line coverage - TypeScript - ADRs', links['squad'], BLUE)
-    project_card(c, M + pw + 18, y, pw, ph, 'Evidence', 'Lasting Ground: source-bounded packet system', 'Source lanes, support-depth states, validation gates, cautious language, and a sample packet.', '93.29% line coverage - Python - PDF', links['lasting'], GOLD)
-
-    y -= ph + 24
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 14)
-    c.drawString(M, y, 'Capability signals')
-    y -= 20
-    cw = (W - 2 * M - 36) / 4
-    caps = [
-        ('Product judgment', 'Turns workflows into clear surfaces, demos, states, and readable outputs.'),
-        ('Systems thinking', 'Models rules, scoring, validation, review boundaries, and source states.'),
-        ('Evidence discipline', 'Shows uncertainty, support depth, and proof links instead of vague claims.'),
-        ('Delivery maturity', 'Ships tests, coverage, CI, docs, ADRs, and sample artifacts.'),
-    ]
-    for i, (t, b) in enumerate(caps):
-        cap(c, M + i * (cw + 12), y, cw, t, b)
-    footer(c, 'page 1')
+def small_flow(c, x, y, w, labels, accent):
+    c.setStrokeColor(accent)
+    c.setLineWidth(1.3)
+    c.line(x, y + 18, x + w, y + 18)
+    gap = w / (len(labels) - 1)
+    for i, label in enumerate(labels):
+        cx = x + i * gap
+        c.setFillColor(DARK if i == 1 else WHITE)
+        c.setStrokeColor(accent)
+        c.roundRect(cx - 31, y + 5, 62, 26, 13, fill=1, stroke=1)
+        c.setFillColor(CYAN if i == 1 else accent)
+        c.setFont('Helvetica-Bold', 6.2)
+        c.drawCentredString(cx, y + 15, label.upper())
 
 
-def review_tile(c, x, y, w, h, title, body, url, dark=False):
-    c.setFillColor(DARK if dark else WHITE)
-    c.setStrokeColor(colors.Color(1, 1, 1, .18) if dark else LINE)
-    c.roundRect(x, y - h, w, h, 14, fill=1, stroke=1)
-    c.setFillColor(CYAN if dark else INK)
-    c.setFont('Helvetica-Bold', 10)
-    c.drawString(x + 12, y - 20, title)
-    wrapped(c, x + 12, y - 38, body, 7.8, colors.HexColor('#c7d4db') if dark else MUTED, 'Helvetica', 9.5, w - 24)
-    c.linkURL(url, (x, y - h, x + w, y), relative=0)
-
-
-def evidence_cell(c, x, y, w, h, label, value, url, accent):
-    c.setFillColor(WHITE)
-    c.setStrokeColor(LINE)
-    c.roundRect(x, y - h, w, h, 12, fill=1, stroke=1)
-    c.setFillColor(accent)
-    c.rect(x + 10, y - h + 9, 3, h - 18, fill=1, stroke=0)
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 9.4)
-    c.drawString(x + 20, y - 19, label)
-    c.setFillColor(MUTED)
-    c.setFont('Helvetica', 8)
-    c.drawString(x + 20, y - 35, value)
-    c.linkURL(url, (x, y - h, x + w, y), relative=0)
-
-
-def draw_page_two(c):
-    page_shell(c, 'INSPECTION LEDGER')
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 25)
-    c.drawString(M, H - M - 36, 'Proof routes, review timing, and public artifacts')
-    wrapped(c, M, H - M - 60, 'Use this page to choose the right depth of review. Every route points to public artifacts that can be opened directly.', 9.2, MUTED, 'Helvetica', 11, 540)
-
-    qr_size = 0.74 * inch
-    qx = W - M - qr_size
-    qy = H - M - 0.92 * inch
-    c.setFillColor(WHITE)
-    c.roundRect(qx - 8, qy - 8, qr_size + 16, qr_size + 16, 10, fill=1, stroke=0)
-    draw_qr(c, links['diligence'], qx, qy, qr_size)
-    c.setFillColor(MUTED)
-    c.setFont('Helvetica-Bold', 7)
-    c.drawRightString(W - M, H - M - 1.03 * inch, 'scan for live packet')
-
-    y = H - 1.92 * inch
-    tile_w = (W - 2 * M - 36) / 4
-    tiles = [
-        ('1 minute', 'Open the outcome board and check the two project evidence trails.', links['outcomes'], False),
-        ('5 minutes', 'Run the systems lab, then open one code example from each project.', links['lab'], False),
-        ('15 minutes', 'Read the operating model, decision records, and coverage summaries.', links['operating'], False),
-        ('Full review', 'Start at the evaluator console and follow the role-specific path.', links['review'], True),
-    ]
-    for i, (t, b, u, dark) in enumerate(tiles):
-        review_tile(c, M + i * (tile_w + 12), y, tile_w, 0.78 * inch, t, b, u, dark)
-
-    y -= 0.78 * inch + 30
-    c.setFillColor(INK)
-    c.setFont('Helvetica-Bold', 14)
-    c.drawString(M, y, 'Public evidence map')
-    y -= 18
-    col_w = (W - 2 * M - 18) / 2
-    c.setFillColor(DARK)
-    c.roundRect(M, y - 30, col_w, 30, 12, fill=1, stroke=0)
-    c.roundRect(M + col_w + 18, y - 30, col_w, 30, 12, fill=1, stroke=0)
+def page_one(c):
+    shell(c, 'PUBLIC DILIGENCE PACKET', 1)
+    dark_panel(c, M, H - 4.55 * inch, 3.58 * inch, 3.74 * inch, 26)
     c.setFillColor(CYAN)
     c.setFont('Helvetica-Bold', 8)
-    c.drawString(M + 14, y - 19, 'SQUADBRAIN')
-    c.drawString(M + col_w + 32, y - 19, 'LASTING GROUND')
-    y -= 42
-    rows = [
-        ('Live surface', 'SquadBrain demo', links['squad_demo'], 'Lasting Ground demo', links['lasting_demo']),
-        ('Executable logic', 'TypeScript examples', links['squad_examples'], 'Python examples', links['lasting_examples']),
-        ('Quality proof', '25 tests / 98.3% line coverage', links['squad_coverage'], '18 tests / 93.29% line coverage', links['lasting_coverage']),
-        ('System boundary', 'Result validation / adaptive practice', links['squad'], 'Evidence scoring / support depth', links['lasting']),
-    ]
-    row_h = 0.50 * inch
-    for idx, (label, s_text, s_url, l_text, l_url) in enumerate(rows):
-        evidence_cell(c, M, y, col_w, row_h, label, s_text, s_url, BLUE)
-        evidence_cell(c, M + col_w + 18, y, col_w, row_h, label, l_text, l_url, GOLD)
-        y -= row_h + 8
-
-    gy = 1.12 * inch
-    c.setFillColor(DARK)
-    c.roundRect(M, gy, W - 2 * M, 0.62 * inch, 16, fill=1, stroke=0)
-    c.setFillColor(CYAN)
-    c.setFont('Helvetica-Bold', 7)
-    c.drawString(M + 14, gy + 28, 'EVALUATION RULE')
+    c.drawString(M + 22, H - 1.12 * inch, 'TIM SULLIVAN')
     c.setFillColor(WHITE)
+    c.setFont('Helvetica-Bold', 31)
+    text(c, M + 22, H - 1.55 * inch, 'Product systems proof packet.', 30, WHITE, 'Helvetica-Bold', 32, 230)
+    c.setFillColor(colors.HexColor('#c7d4db'))
+    text(c, M + 22, H - 2.72 * inch, 'A compact review packet for public work across mobile product systems, evidence-backed workflows, validation logic, and generated artifacts.', 8.8, colors.HexColor('#c7d4db'), 'Helvetica', 11, 230)
+    c.setFillColor(CYAN)
+    c.setFont('Helvetica-Bold', 8)
+    c.drawString(M + 22, H - 4.12 * inch, 'SCAN LIVE PACKET')
+    c.setFillColor(WHITE)
+    c.roundRect(M + 142, H - 4.33 * inch, 62, 62, 10, fill=1, stroke=0)
+    draw_qr(c, links['diligence'], M + 151, H - 4.24 * inch, 44)
+
+    x0 = M + 3.90 * inch
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 29)
+    c.drawString(x0, H - 1.18 * inch, 'Review route')
+    c.setFont('Helvetica-Bold', 29)
+    c.drawString(x0, H - 1.56 * inch, 'for public proof.')
+    text(c, x0, H - 1.86 * inch, 'The packet is built for a fast evaluator: first understand the system, then open working evidence.', 9.8, MUTED, 'Helvetica', 12, 430)
+    py = H - 2.32 * inch
+    for label, url in [('Portfolio', links['portfolio']), ('Outcome board', links['outcomes']), ('Systems lab', links['lab']), ('GitHub', links['github'])]:
+        x0 = pill(c, x0, py, label, url)
+
+    y = H - 3.30 * inch
+    mw = (W - M - (M + 3.90 * inch) - 30) / 4
+    start = M + 3.90 * inch
+    for i, data in enumerate([
+        ('Public tests', '43', 'Across showcase repos', TEAL),
+        ('SquadBrain', '25', 'TypeScript tests', BLUE),
+        ('Lasting Ground', '18', 'Python tests', GOLD),
+        ('Delivery', 'CI', 'Repeatable checks', GREEN),
+    ]):
+        metric(c, start + i * (mw + 10), y, mw, *data)
+
+    y -= 1.10 * inch
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 14)
+    c.drawString(start, y + 66, 'Evidence stack')
+    stages = [('01', 'Outcome', 'What changed and why it matters.'), ('02', 'Model', 'Rules, states, validation, and boundaries.'), ('03', 'Lab', 'Runnable browser proof and examples.'), ('04', 'Code', 'Coverage, ADRs, and public repos.')]
+    sw = (W - M - start - 30) / 4
+    for i, (n, title, body) in enumerate(stages):
+        sx = start + i * (sw + 10)
+        round_rect(c, sx, y - 4, sw, 70, PANEL, LINE, 16)
+        c.setFillColor(TEAL if i % 2 == 0 else BLUE)
+        c.roundRect(sx + 10, y + 42, 24, 16, 8, fill=1, stroke=0)
+        c.setFillColor(WHITE)
+        c.setFont('Helvetica-Bold', 7)
+        c.drawCentredString(sx + 22, y + 47, n)
+        c.setFillColor(INK)
+        c.setFont('Helvetica-Bold', 10)
+        c.drawString(sx + 10, y + 29, title)
+        text(c, sx + 10, y + 15, body, 6.6, MUTED, 'Helvetica', 8.0, sw - 20)
+    c.linkURL(links['outcomes'], (start, y - 4, start + sw, y + 66), relative=0)
+    c.linkURL(links['operating'], (start + sw + 10, y - 4, start + 2 * sw + 10, y + 66), relative=0)
+    c.linkURL(links['lab'], (start + 2 * (sw + 10), y - 4, start + 3 * sw + 20, y + 66), relative=0)
+    c.linkURL(links['github'], (start + 3 * (sw + 10), y - 4, start + 4 * sw + 30, y + 66), relative=0)
+
+    lane_y = 1.25 * inch
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 13)
+    c.drawString(start, lane_y + 84, 'Public artifact lanes')
+    lane_w = (W - M - start - 30) / 4
+    lanes = [
+        ('Demo', 'Working surfaces that can be opened immediately.', links['portfolio'], TEAL),
+        ('Examples', 'Executable logic in public repos.', links['squad_examples'], BLUE),
+        ('Coverage', 'Test and coverage summaries.', links['squad_coverage'], GOLD),
+        ('Packet', 'Generated outputs and proof routes.', links['diligence'], GREEN),
+    ]
+    for i, (title, body, url, accent) in enumerate(lanes):
+        lx = start + i * (lane_w + 10)
+        round_rect(c, lx, lane_y, lane_w, 74, PANEL, LINE, 16)
+        c.setFillColor(accent)
+        c.roundRect(lx + 10, lane_y + 52, 24, 8, 4, fill=1, stroke=0)
+        c.setFillColor(INK)
+        c.setFont('Helvetica-Bold', 9.6)
+        c.drawString(lx + 10, lane_y + 36, title)
+        text(c, lx + 10, lane_y + 22, body, 6.7, MUTED, 'Helvetica', 8, lane_w - 20)
+        c.linkURL(url, (lx, lane_y, lx + lane_w, lane_y + 74), relative=0)
+
+
+def project_block(c, x, y, w, h, name, label, claim, proof, flow, accent, urls):
+    round_rect(c, x, y, w, h, PANEL, LINE, 22)
+    c.setFillColor(accent)
+    c.roundRect(x + 16, y + h - 34, 48, 20, 10, fill=1, stroke=0)
+    c.setFillColor(WHITE)
+    c.setFont('Helvetica-Bold', 7)
+    c.drawCentredString(x + 40, y + h - 27, label.upper())
+    c.setFillColor(TEAL)
+    c.setFont('Helvetica-Bold', 7.4)
+    c.drawRightString(x + w - 16, y + h - 25, proof)
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 17)
+    text(c, x + 16, y + h - 58, name, 17, INK, 'Helvetica-Bold', 19, w - 32)
+    text(c, x + 16, y + h - 104, claim, 7.8, MUTED, 'Helvetica', 9.4, w - 32)
+    small_flow(c, x + 48, y + 34, w - 96, flow, accent)
+    btn_y = y + 12
+    bx = x + 16
+    for lab, url in urls:
+        bx = pill(c, bx, btn_y, lab, url)
+
+
+def page_two(c):
+    shell(c, 'PROJECT EVIDENCE LEDGER', 2)
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 28)
+    c.drawString(M, H - 1.08 * inch, 'Two builds. One proof standard.')
+    text(c, M, H - 1.38 * inch, 'Each project is presented as a system: the visible product, the underlying rules, the validation boundary, and the artifact trail a reviewer can inspect.', 9.4, MUTED, 'Helvetica', 11.5, 660)
+    col_w = (W - 2 * M - 18) / 2
+    top_y = H - 4.36 * inch
+    project_block(c, M, top_y, col_w, 2.45 * inch, 'SquadBrain competitive practice system', 'Mobile', 'Adaptive practice, matchmaking, validated results.', '25 tests - 98.3% coverage - ADRs', ['surface', 'rules', 'proof'], BLUE, [('Demo', links['squad_demo']), ('Code', links['squad_examples']), ('Coverage', links['squad_coverage'])])
+    project_block(c, M + col_w + 18, top_y, col_w, 2.62 * inch, 'Lasting Ground source-bounded packet system', 'Evidence', 'Source lanes, evidence scoring, cautious language, packet output.', '18 tests - 93.29% coverage - PDF', ['sources', 'review', 'packet'], GOLD, [('Demo', links['lasting_demo']), ('Code', links['lasting_examples']), ('Coverage', links['lasting_coverage'])])
+
+    y = 1.08 * inch
+    dark_panel(c, M, y, W - 2 * M, 1.12 * inch, 22)
+    c.setFillColor(CYAN)
+    c.setFont('Helvetica-Bold', 8)
+    c.drawString(M + 18, y + 58, 'QUALITY RULE')
+    c.setFillColor(WHITE)
+    c.setFont('Helvetica-Bold', 12)
+    text(c, M + 18, y + 38, 'A claim is strong only when it routes to working product evidence, executable examples, tests, coverage, decision records, or generated outputs.', 12, WHITE, 'Helvetica-Bold', 14, W - 2 * M - 36)
+    text(c, M + 18, y + 15, 'This packet uses only public artifacts and avoids inflated outcomes that cannot be verified from the public trail.', 7.8, colors.HexColor('#c7d4db'), 'Helvetica', 9, W - 2 * M - 36)
+
+
+def matrix_cell(c, x, y, w, h, title, body, accent):
+    round_rect(c, x, y, w, h, PANEL, LINE, 15)
+    c.setFillColor(accent)
+    c.roundRect(x + 12, y + h - 22, 26, 8, 4, fill=1, stroke=0)
+    c.setFillColor(INK)
     c.setFont('Helvetica-Bold', 10)
-    c.drawString(M + 14, gy + 13, 'Treat a claim as strong only when it links to a working demo, public example, test/coverage artifact, decision record, or sample output.')
-    footer(c, 'page 2')
+    c.drawString(x + 12, y + h - 43, title)
+    text(c, x + 12, y + h - 58, body, 7.1, MUTED, 'Helvetica', 8.5, w - 24)
+
+
+def page_three(c):
+    shell(c, 'REVIEW PATHS AND CAPABILITY MAP', 3)
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 28)
+    c.drawString(M, H - 1.08 * inch, 'Choose depth. Open receipts. Decide fast.')
+    text(c, M, H - 1.38 * inch, 'The strongest public portfolio surface makes the reviewer path obvious: skim, run, inspect, then verify the implementation trail.', 9.4, MUTED, 'Helvetica', 11.5, 560)
+
+    route_y = H - 2.78 * inch
+    route_w = (W - 2 * M - 36) / 4
+    routes = [
+        ('1 minute', 'Outcome board', 'Check the two evidence trails.', links['outcomes'], TEAL),
+        ('5 minutes', 'Systems lab', 'Run the browser proof surface.', links['lab'], BLUE),
+        ('15 minutes', 'Model + ADRs', 'Inspect operating model and decisions.', links['operating'], GOLD),
+        ('Full review', 'Evaluator console', 'Follow the role-specific route.', links['review'], GREEN),
+    ]
+    for i, (time, title, body, url, accent) in enumerate(routes):
+        x = M + i * (route_w + 12)
+        round_rect(c, x, route_y - 2, route_w, 92, DARK if i == 3 else PANEL, colors.Color(1, 1, 1, .20) if i == 3 else LINE, 18)
+        c.setFillColor(CYAN if i == 3 else accent)
+        c.setFont('Helvetica-Bold', 7)
+        c.drawString(x + 13, route_y + 62, time.upper())
+        c.setFillColor(WHITE if i == 3 else INK)
+        c.setFont('Helvetica-Bold', 12)
+        c.drawString(x + 13, route_y + 39, title)
+        text(c, x + 13, route_y + 22, body, 7.2, colors.HexColor('#c7d4db') if i == 3 else MUTED, 'Helvetica', 8.6, route_w - 26)
+        c.linkURL(url, (x, route_y - 2, x + route_w, route_y + 90), relative=0)
+
+    y = H - 4.80 * inch
+    c.setFillColor(INK)
+    c.setFont('Helvetica-Bold', 14)
+    c.drawString(M, y + 60, 'Capability map')
+    cw = (W - 2 * M - 36 - 1.68 * inch) / 4
+    x = M
+    for title, body, accent in [
+        ('Product UX', 'Mobile surfaces, demos, task states, and readable outputs.', BLUE),
+        ('Systems logic', 'Rules, scoring, validation gates, and state transitions.', TEAL),
+        ('Evidence work', 'Source lanes, cautious language, support depth, and proof routes.', GOLD),
+        ('Delivery', 'Tests, coverage, CI, docs, ADRs, sample artifacts.', GREEN),
+    ]:
+        matrix_cell(c, x, y - 44, cw, 100, title, body, accent)
+        x += cw + 12
+    c.setFillColor(WHITE)
+    c.roundRect(x, y - 30, 1.18 * inch, 1.18 * inch, 13, fill=1, stroke=0)
+    draw_qr(c, links['diligence'], x + 14, y - 16, 56)
+    c.setFillColor(MUTED)
+    c.setFont('Helvetica-Bold', 6.5)
+    c.drawCentredString(x + 0.59 * inch, y - 37, 'LIVE PACKET')
+
+    dark_panel(c, M, 0.92 * inch, W - 2 * M, 0.96 * inch, 20)
+    c.setFillColor(CYAN)
+    c.setFont('Helvetica-Bold', 8)
+    c.drawString(M + 18, 1.55 * inch, 'BOTTOM LINE')
+    c.setFillColor(WHITE)
+    text(c, M + 18, 1.32 * inch, 'The public surface is built to show product judgment, operating logic, evidence discipline, and delivery maturity without making a reviewer guess.', 11.5, WHITE, 'Helvetica-Bold', 13.5, W - 2 * M - 36)
 
 
 def draw():
@@ -347,9 +354,11 @@ def draw():
     c.setTitle('Tim Sullivan - Public Diligence Packet')
     c.setAuthor('Tim Sullivan')
     c.setSubject('Product systems portfolio proof packet')
-    draw_page_one(c)
+    page_one(c)
     c.showPage()
-    draw_page_two(c)
+    page_two(c)
+    c.showPage()
+    page_three(c)
     c.showPage()
     c.save()
 
