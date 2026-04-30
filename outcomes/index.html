@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outcome Board — Tim Sullivan</title>
+  <meta name="description" content="Outcome board for Tim Sullivan's public product systems work: starting conditions, systems built, evidence created, and proof links." />
+  <link rel="stylesheet" href="../site.css" />
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topnav"><a href="../">Portfolio</a><a href="../proof/">Selected work</a><a href="../review/">Evaluator console</a><a href="../architecture/">Systems atlas</a><a href="../operating-model/">Operating model</a><a href="../lab/">Systems lab</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a></nav>
+
+    <section class="hero compact hero-showcase outcome-hero">
+      <div>
+        <p class="eyebrow">Outcome board</p>
+        <h1><span>What changed,</span><span>what was built,</span><span>what can be verified.</span></h1>
+        <p class="lead">This page turns the work into evaluation evidence: the starting problem, the system response, the public artifacts, and the proof links that make the claim inspectable.</p>
+        <div class="actions"><a class="btn primary" href="#ledger">Open evidence ledger</a><a class="btn" href="../operating-model/">View operating model</a><a class="btn" href="../lab/">Run systems lab</a></div>
+      </div>
+      <aside class="outcome-console" aria-label="Outcome verification console">
+        <div class="outcome-console-top"><span>verification route</span><b>claim → mechanism → evidence</b></div>
+        <div class="outcome-meter"><strong>43</strong><span>passing tests</span></div>
+        <div class="outcome-meter"><strong>2</strong><span>focused systems</span></div>
+        <div class="outcome-meter"><strong>CI</strong><span>repeatable checks</span></div>
+        <div class="outcome-rail"><span>Product surface</span><span>Executable logic</span><span>Readable output</span><span>Decision records</span></div>
+      </aside>
+    </section>
+
+    <section class="section outcome-ledger" id="ledger">
+      <div class="section-head"><p class="eyebrow">Evidence ledger</p><h2><span>Outcome claims are only useful</span><span>when the proof path is one click away.</span></h2></div>
+      <article class="outcome-case squadbrain-outcome">
+        <div class="outcome-case-head">
+          <p class="eyebrow">SquadBrain</p>
+          <h3>From roster trivia to a tested competitive practice system.</h3>
+          <p>Challenge: make memorization feel like a replayable mobile product instead of a static quiz.</p>
+        </div>
+        <div class="outcome-flow">
+          <div><span>Starting condition</span><b>Static recall has weak replay value.</b><small>Roster knowledge needs repetition, feedback, progress, and competition to stay engaging.</small></div>
+          <div><span>System built</span><b>Practice loop + match logic + validation boundary.</b><small>Adaptive practice prioritizes cards; matchmaking balances competition; result validation protects rank movement.</small></div>
+          <div><span>Evidence visible</span><b>25 tests, 98.3% line coverage, live demo, ADRs.</b><small>Public examples show ranking, achievements, session state, roster normalization, matchmaking, adaptive practice, and result validation.</small></div>
+        </div>
+        <div class="outcome-links"><a href="https://sulmusic2-star.github.io/squadbrain-showcase/">Live demo</a><a href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples">Examples</a><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/docs/coverage-summary.md">Coverage</a><a href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/docs/adr">Decision records</a></div>
+      </article>
+
+      <article class="outcome-case lasting-outcome">
+        <div class="outcome-case-head">
+          <p class="eyebrow">Lasting Ground</p>
+          <h3>From scattered public context to a source-bounded packet system.</h3>
+          <p>Challenge: organize fragmented public information into a readable packet without overstating what the sources support.</p>
+        </div>
+        <div class="outcome-flow">
+          <div><span>Starting condition</span><b>Useful context lives in too many places.</b><small>Public layers, town pages, source registers, maps, and records can be hard to evaluate together.</small></div>
+          <div><span>System built</span><b>Source lanes + evidence scoring + packet composition.</b><small>Authority, freshness, support, missing lanes, and blockers shape what the packet can safely say.</small></div>
+          <div><span>Evidence visible</span><b>18 tests, 93.29% line coverage, sample PDF, ADRs.</b><small>Public examples show validation, support-depth decisions, evidence scoring, cautious language, and output assembly.</small></div>
+        </div>
+        <div class="outcome-links"><a href="https://sulmusic2-star.github.io/lasting-ground-showcase/">Live demo</a><a href="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf">Sample PDF</a><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples">Examples</a><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/coverage-summary.md">Coverage</a></div>
+      </article>
+    </section>
+
+    <section class="section verification-grid">
+      <div class="verification-card dark"><p class="eyebrow">Evaluation pattern</p><h2><span>Good proof answers</span><span>three questions fast.</span></h2></div>
+      <div class="verification-card"><span>01</span><b>What problem was being shaped?</b><p>The case study states the workflow problem, not just the technology used.</p></div>
+      <div class="verification-card"><span>02</span><b>What system handles it?</b><p>The operating model exposes states, rules, validation, review points, and delivery artifacts.</p></div>
+      <div class="verification-card"><span>03</span><b>Where can someone verify it?</b><p>The proof route links to demos, examples, tests, coverage, decision records, and sample outputs.</p></div>
+    </section>
+
+    <section class="section card">
+      <p class="eyebrow">Why this matters</p>
+      <h2>It shows range without asking anyone to trust vague claims.</h2>
+      <div class="proof">
+        <p class="muted"><b style="color:var(--ink)">Product sense</b><br/>The work starts with a real user or operator problem, then turns it into a usable surface.</p>
+        <p class="muted"><b style="color:var(--ink)">Systems thinking</b><br/>The examples show how behavior is shaped with rules, states, scoring, validation, and review boundaries.</p>
+        <p class="muted"><b style="color:var(--ink)">Delivery maturity</b><br/>The artifacts make the work inspectable: live demos, public examples, tests, coverage, docs, ADRs, and sample outputs.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">Outcome board · Evidence ledger · Verifiable product systems</footer>
+</body>
+</html>

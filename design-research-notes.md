@@ -113,3 +113,20 @@ Design bar for future passes:
 - Keep every advanced capability paired with a public proof path.
 - Use custom system graphics only when they clarify workflow, logic, validation, or delivery.
 - Continue mobile-first visual QA; most portfolio mistakes show up as cramped navigation, clipped headings, or unreadable proof panels.
+
+## 2026-04-30 — Outcome evidence board
+
+Research direction: portfolio reviewers skim. Strong case-study surfaces lead with the end state, the problem being solved, and the evidence that proves the work. Reddit UX critique threads repeatedly point to the same issue: portfolios over-explain process but under-show outcomes, impact, and what changed. Portfolio guides also emphasize result sections, proof artifacts, and scannable evidence.
+
+Applied changes:
+- Added `/outcomes/` as an evidence-led outcome board.
+- Structured each project around starting condition → system built → evidence visible.
+- Used honest measurable public proof only: test counts, coverage summaries, demos, sample packet, examples, and ADRs.
+- Added a homepage outcome preview so the first screen path now points to evaluation evidence, not just project descriptions.
+- Linked the outcome board from selected work, evaluator console, systems atlas, operating model, systems lab, and case studies.
+
+Design bar for future passes:
+- Lead with what changed, but avoid invented business metrics.
+- If a number is shown, it must map to a real artifact that can be opened.
+- Keep case-study evidence scannable: problem, system response, proof links.
+- Prefer fewer stronger proof routes over adding more generic pages.
