@@ -1,34 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
-  <title id="title">Product systems constellation</title>
-  <desc id="desc">Premium visual map showing product surface, decision logic, review gates, and proof artifacts connected through a control plane.</desc>
+  <title id="title">Product systems control map</title>
+  <desc id="desc">A high-contrast product systems map showing inputs, product surface, operating logic, review gates, and proof artifacts.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08121d"/><stop offset="0.55" stop-color="#0d2230"/><stop offset="1" stop-color="#163c42"/></linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="55%"><stop stop-color="#51f3d6" stop-opacity=".28"/><stop offset=".45" stop-color="#2a7fff" stop-opacity=".12"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".96"/><stop offset="1" stop-color="#dcebf5" stop-opacity=".88"/></linearGradient>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5fffe2" stop-opacity="0"/><stop offset=".5" stop-color="#5fffe2"/><stop offset="1" stop-color="#ffb84f" stop-opacity="0"/></linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="30" stdDeviation="26" flood-color="#000" flood-opacity=".35"/></filter>
-    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
-    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0H0v54" fill="none" stroke="#ffffff" stroke-opacity=".06"/></pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111c"/><stop offset=".52" stop-color="#0b263c"/><stop offset="1" stop-color="#0f4b4a"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fcfd"/><stop offset="1" stop-color="#e3f2f5"/></linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#6fffe8"/><stop offset=".5" stop-color="#2f6bff"/><stop offset="1" stop-color="#c36b1e"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#000" flood-opacity=".34"/></filter>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0v56" fill="none" stroke="#fff" stroke-opacity=".055"/></pattern>
   </defs>
   <rect width="1400" height="820" rx="48" fill="url(#bg)"/>
-  <rect x="28" y="28" width="1344" height="764" rx="36" fill="url(#grid)" opacity=".9"/>
-  <circle cx="700" cy="410" r="310" fill="url(#glow)"/>
-  <path d="M172 600C350 496 468 266 686 405C879 527 954 259 1230 214" fill="none" stroke="url(#line)" stroke-width="4" opacity=".95"/>
-  <path d="M196 215C392 334 490 549 700 414C914 276 1012 503 1208 612" fill="none" stroke="url(#line)" stroke-width="3" opacity=".55"/>
-  <g opacity=".22" stroke="#8ee7ff"><circle cx="700" cy="410" r="186" fill="none"/><circle cx="700" cy="410" r="286" fill="none" stroke-dasharray="9 13"/></g>
-  <g filter="url(#shadow)">
-    <rect x="525" y="265" width="350" height="250" rx="34" fill="#0b1724" stroke="#79ffe5" stroke-opacity=".45"/>
-    <rect x="551" y="291" width="298" height="26" rx="13" fill="#12283a"/>
-    <circle cx="574" cy="304" r="5" fill="#5fffe2"/><circle cx="594" cy="304" r="5" fill="#ffb84f"/><circle cx="614" cy="304" r="5" fill="#7aa7ff"/>
-    <text x="700" y="368" text-anchor="middle" font-family="Inter, Arial" font-size="15" font-weight="900" letter-spacing="4" fill="#5fffe2">CONTROL PLANE</text>
-    <text x="700" y="420" text-anchor="middle" font-family="Inter, Arial" font-size="44" font-weight="900" fill="#f7fbff">rules → review</text>
-    <text x="700" y="464" text-anchor="middle" font-family="Inter, Arial" font-size="44" font-weight="900" fill="#f7fbff">→ proof</text>
-  </g>
+  <rect x="30" y="30" width="1340" height="760" rx="38" fill="url(#grid)"/>
+  <circle cx="1160" cy="130" r="150" fill="#6fffe8" opacity=".10"/>
+  <circle cx="216" cy="650" r="190" fill="#2f6bff" opacity=".12"/>
+  <text x="80" y="96" fill="#6fffe8" font-family="Inter, Arial" font-size="16" font-weight="950" letter-spacing="5">PRODUCT SYSTEM MAP</text>
+  <text x="80" y="150" fill="#f8fbff" font-family="Inter, Arial" font-size="52" font-weight="900">Interfaces, rules, review, proof.</text>
+  <rect x="84" y="232" width="1232" height="84" rx="42" fill="#07111c" stroke="#6fffe8" stroke-opacity=".22"/>
+  <rect x="124" y="271" width="1112" height="6" rx="3" fill="url(#rail)"/>
   <g font-family="Inter, Arial" filter="url(#shadow)">
-    <g transform="translate(110 104)"><rect width="356" height="164" rx="30" fill="url(#card)"/><rect x="24" y="24" width="54" height="54" rx="18" fill="#dffcf7"/><text x="51" y="59" text-anchor="middle" font-size="20" font-weight="950" fill="#0f766e">01</text><text x="102" y="52" font-size="14" font-weight="950" fill="#b16d1c" letter-spacing="4">SURFACE</text><text x="102" y="94" font-size="33" font-weight="900" fill="#0b1320">Product UX</text><text x="102" y="130" font-size="20" fill="#526274">mobile flows · demos · packets</text></g>
-    <g transform="translate(936 126)"><rect width="356" height="164" rx="30" fill="url(#card)"/><rect x="24" y="24" width="54" height="54" rx="18" fill="#e5ecff"/><text x="51" y="59" text-anchor="middle" font-size="20" font-weight="950" fill="#3253c8">02</text><text x="102" y="52" font-size="14" font-weight="950" fill="#b16d1c" letter-spacing="4">LOGIC</text><text x="102" y="94" font-size="33" font-weight="900" fill="#0b1320">Decision engine</text><text x="102" y="130" font-size="20" fill="#526274">ranking · scoring · validation</text></g>
-    <g transform="translate(140 550)"><rect width="384" height="164" rx="30" fill="url(#card)"/><rect x="24" y="24" width="54" height="54" rx="18" fill="#fff0d3"/><text x="51" y="59" text-anchor="middle" font-size="20" font-weight="950" fill="#b16d1c">03</text><text x="102" y="52" font-size="14" font-weight="950" fill="#b16d1c" letter-spacing="4">REVIEW</text><text x="102" y="94" font-size="33" font-weight="900" fill="#0b1320">Guardrail layer</text><text x="102" y="130" font-size="20" fill="#526274">queues · flags · source limits</text></g>
-    <g transform="translate(884 536)"><rect width="410" height="164" rx="30" fill="url(#card)"/><rect x="24" y="24" width="54" height="54" rx="18" fill="#dffcf7"/><text x="51" y="59" text-anchor="middle" font-size="20" font-weight="950" fill="#0f766e">04</text><text x="102" y="52" font-size="14" font-weight="950" fill="#b16d1c" letter-spacing="4">PROOF</text><text x="102" y="94" font-size="33" font-weight="900" fill="#0b1320">Inspectable output</text><text x="102" y="130" font-size="20" fill="#526274">tests · PDFs · guides · CI</text></g>
+    <g transform="translate(100 378)">
+      <rect width="276" height="230" rx="32" fill="url(#panel)"/>
+      <rect x="26" y="26" width="56" height="56" rx="18" fill="#dcfdf7"/><text x="54" y="62" text-anchor="middle" font-size="20" font-weight="950" fill="#0f766e">01</text>
+      <text x="28" y="112" fill="#c36b1e" font-size="13" font-weight="950" letter-spacing="4">SURFACE</text>
+      <text x="28" y="158" fill="#07111c" font-size="34" font-weight="900">Product UX</text>
+      <text x="28" y="194" fill="#526170" font-size="20">mobile flows · demos</text>
+    </g>
+    <g transform="translate(418 378)">
+      <rect width="276" height="230" rx="32" fill="url(#panel)"/>
+      <rect x="26" y="26" width="56" height="56" rx="18" fill="#e4edff"/><text x="54" y="62" text-anchor="middle" font-size="20" font-weight="950" fill="#2f6bff">02</text>
+      <text x="28" y="112" fill="#c36b1e" font-size="13" font-weight="950" letter-spacing="4">RULES</text>
+      <text x="28" y="158" fill="#07111c" font-size="34" font-weight="900">Decision logic</text>
+      <text x="28" y="194" fill="#526170" font-size="20">ranking · scoring</text>
+    </g>
+    <g transform="translate(736 378)">
+      <rect width="276" height="230" rx="32" fill="url(#panel)"/>
+      <rect x="26" y="26" width="56" height="56" rx="18" fill="#fff1d9"/><text x="54" y="62" text-anchor="middle" font-size="20" font-weight="950" fill="#c36b1e">03</text>
+      <text x="28" y="112" fill="#c36b1e" font-size="13" font-weight="950" letter-spacing="4">REVIEW</text>
+      <text x="28" y="158" fill="#07111c" font-size="34" font-weight="900">Guardrails</text>
+      <text x="28" y="194" fill="#526170" font-size="20">queues · source states</text>
+    </g>
+    <g transform="translate(1054 378)">
+      <rect width="246" height="230" rx="32" fill="url(#panel)"/>
+      <rect x="26" y="26" width="56" height="56" rx="18" fill="#dcfdf7"/><text x="54" y="62" text-anchor="middle" font-size="20" font-weight="950" fill="#0f766e">04</text>
+      <text x="28" y="112" fill="#c36b1e" font-size="13" font-weight="950" letter-spacing="4">PROOF</text>
+      <text x="28" y="158" fill="#07111c" font-size="34" font-weight="900">Artifacts</text>
+      <text x="28" y="194" fill="#526170" font-size="20">tests · packets · CI</text>
+    </g>
   </g>
-  <g fill="#5fffe2" filter="url(#soft)" opacity=".8"><circle cx="466" cy="190" r="8"/><circle cx="936" cy="206" r="8"/><circle cx="524" cy="610" r="8"/><circle cx="884" cy="596" r="8"/></g>
+  <g font-family="Inter, Arial" fill="#f8fbff">
+    <text x="124" y="260" font-size="18" font-weight="900">messy inputs</text>
+    <text x="422" y="260" font-size="18" font-weight="900">structured states</text>
+    <text x="742" y="260" font-size="18" font-weight="900">validation gates</text>
+    <text x="1058" y="260" font-size="18" font-weight="900">readable output</text>
+  </g>
+  <text x="80" y="720" fill="#b7c7d0" font-family="Inter, Arial" font-size="22">The visible work is the interface. The durable work is the operating logic behind it.</text>
 </svg>

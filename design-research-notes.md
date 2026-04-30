@@ -163,3 +163,26 @@ Design bar for future passes:
 - Keep the PDF compact but not shallow: two pages is currently the right balance.
 - Every PDF element should either route, verify, or clarify.
 - The diligence page should feel like a command surface, not a download landing page.
+
+## 2026-04-30 — v16 premium color and artifact-framing pass
+
+Research direction: Reddit portfolio critiques and GitHub README patterns point to the same practical bar: visual ambition helps only when it does not hide the work. Project images need strong framing, mobile links must remain easy to tap, effects should not distract from proof, and review artifacts should be scannable in seconds. GitHub README research also reinforces that popular projects tend to use organized sections, images, and external links rather than walls of text.
+
+Applied changes:
+- Rebuilt the diligence PDF color system into a cooler product-systems palette: navy, teal, cyan, blue, and amber with stronger card separation.
+- Re-rendered the PDF and cover after visual inspection; fixed clipped/overlapping card content on page one.
+- Replaced the homepage SVG proof graphics with cleaner, more legible product-system visuals.
+- Added a global v16 CSS layer across the main portfolio and profile mirror: stronger artifact frames, safer responsive system cards, better contrast, and less beige blending.
+- Removed weaker phrasing from the proof-wall graphic and kept the language public-facing and inspectable.
+
+Design bar for future passes:
+- Keep one strong accent family and use color for hierarchy, not decoration.
+- Make every screenshot, PDF preview, and proof graphic look like a deliberate artifact inside a frame.
+- Prefer artifact clarity over animation.
+- Keep mobile screenshots in QA because overlap and cramped proof cards are the easiest way to look amateur.
+
+Sources checked:
+- Reddit r/webdev portfolio critique thread: https://www.reddit.com/r/webdev/comments/1qs35d7/portfolio_feedback/
+- Awesome README examples: https://github.com/matiassingers/awesome-readme
+- README popularity study: https://arxiv.org/abs/2206.10772
+- Professional README guide: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide/
