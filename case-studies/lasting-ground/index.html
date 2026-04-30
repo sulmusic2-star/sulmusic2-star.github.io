@@ -15,6 +15,20 @@
       <img class="hero-img" src="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet-cover.png" alt="Lasting Ground packet preview" />
     </section>
     <section class="section artifact-rail"><div><span>Surface</span><b>Readable packet</b></div><div><span>Logic</span><b>Evidence scoring</b></div><div><span>Guardrail</span><b>Support-depth rules</b></div><div><span>Proof</span><b>18 tests + sample PDF</b></div></section>
+    <section class="section case-workbench" aria-label="Lasting Ground evidence console">
+      <div class="case-console">
+        <div class="case-console-top"><i></i><b>Evidence pipeline</b></div>
+        <h2>A packet system with source checks before language.</h2>
+        <p>Lasting Ground is presented as a review system: source lanes, support-depth scoring, cautious claim language, and a generated sample packet.</p>
+        <div class="case-flow"><div><span>01</span><b>Source lanes: official, local, regional, and missing signals.</b></div><div><span>02</span><b>Evidence scoring: authority, freshness, support, blockers.</b></div><div><span>03</span><b>Packet output: readable sections with visible boundaries.</b></div></div>
+      </div>
+      <div class="case-proof-panel">
+        <a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/source_lane_validation.py"><span>Code path</span><b>Source-lane validation</b><small>Lane status becomes a visible product state.</small></a>
+        <a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py"><span>Logic</span><b>Evidence scoring</b><small>Support is scored before packet language is composed.</small></a>
+        <a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/coverage-summary.md"><span>Proof</span><b>93.29% coverage</b><small>Coverage summary for the public validation examples.</small></a>
+        <a href="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf"><span>Output</span><b>Sample packet</b><small>Printable artifact with review gate and source-bounded language.</small></a>
+      </div>
+    </section>
     <section class="section card"><h2>The problem</h2><p class="muted">Property context can be scattered across public layers, local boards, source registers, town pages, maps, and records. The product challenge is to make that context readable without overstating what the sources support.</p></section>
     <section class="section"><h2>System decisions</h2><div class="proof wide"><div class="card"><h3>Evidence before language</h3><p class="muted">The packet language is downstream of source-lane validation and evidence scoring.</p></div><div class="card"><h3>Uncertainty as a product state</h3><p class="muted">Missing or stale lanes become visible warnings and review actions instead of hidden gaps.</p></div><div class="card"><h3>Artifacts people can inspect</h3><p class="muted">The system outputs a sample PDF, source register, validation gate, and coverage-backed examples.</p></div></div></section>
     <section class="section card"><h2>Code worth inspecting</h2><ul class="link-list"><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py">evidence_scoring.py</a> — scores source lanes by authority, freshness, support, and blockers.</li><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/packet_composer.py">packet_composer.py</a> — composes packet sections from validation output.</li><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/source_lane_validation.py">source_lane_validation.py</a> — validates lane status and support depth.</li><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/actions/workflows/ci.yml">CI workflow</a> — runs tests and coverage.</li></ul></section>

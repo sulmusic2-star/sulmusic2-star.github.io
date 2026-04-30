@@ -187,13 +187,13 @@ Sources checked:
 - README popularity study: https://arxiv.org/abs/2206.10772
 - Professional README guide: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide/
 
-## 2026-04-30 — v17 elite packet and profile command deck
+## 2026-04-30 — v17 elite packet and profile command surface
 
-Research direction: the strongest public technical profiles reduce reviewer effort. Reddit hiring and portfolio threads emphasize clear READMEs, deployed links, screenshots, tests, and obvious proof routes. GitHub README research reinforces that popular projects are organized, use images, and link outward to useful context. For this portfolio, the design move is not more decoration; it is a stronger command-deck surface that makes the evidence path impossible to miss.
+Research direction: the strongest public technical profiles reduce reviewer effort. Reddit hiring and portfolio threads emphasize clear READMEs, deployed links, screenshots, tests, and obvious proof routes. GitHub README research reinforces that popular projects are organized, use images, and link outward to useful context. For this portfolio, the design move is not more decoration; it is a stronger command-surface layer that makes the evidence path impossible to miss.
 
 Applied changes:
 - Rebuilt the public diligence packet into a three-page proof packet: review route, project evidence ledger, and review-depth/capability map.
-- Added a dedicated profile command-deck SVG for the GitHub profile and profile mirror page.
+- Added a dedicated profile command-surface SVG for the GitHub profile and profile mirror page.
 - Added a fast review route to the GitHub profile README so visitors know exactly where to click first.
 - Upgraded profile page copy and packet references from two-page to three-page.
 - Kept the public language evidence-led: demos, examples, tests, coverage, decision records, and generated outputs.
@@ -202,3 +202,20 @@ Design bar for future passes:
 - Every visual should answer an evaluator question: what is this, what proves it, where do I inspect it?
 - Profile README should behave like a high-signal routing page, not a biography.
 - PDF pages should use big hierarchy, fewer claims, and clear proof routes rather than dense text.
+
+
+## 2026-04-30 — v18 active-proof proof workbench
+
+Research direction: stronger developer and UX portfolios reduce passive passive sections and replace them with reviewable artifacts, interaction, clear outcomes, and evidence paths. The useful pattern here is a product-like proof surface: switchable states, visible signals, direct artifact links, and case-study panels that show working logic rather than only cards.
+
+Applied changes:
+- Added an interactive proof console to the homepage and profile mirror so the first proof layer behaves like a small product surface.
+- Added JavaScript state switching for SquadBrain, Lasting Ground, and the reviewer route with artifact links, metrics, coverage, and command-style logs.
+- Reframed the public profile graphic as a proof router so the page feels like an inspection surface as an inspection surface.
+- Upgraded both case-study pages with console-style system panels and direct proof tiles for code paths, guardrails, coverage, ADRs, and packet output.
+- Kept every advanced claim tied to a public proof route rather than decorative polish.
+
+Design bar for future passes:
+- More surfaces should behave like small evaluators, debuggers, or system maps.
+- Avoid adding another static strip unless it has a proof action, state transition, or artifact route.
+- Mobile QA must confirm all console panels stack cleanly and proof text stays readable.

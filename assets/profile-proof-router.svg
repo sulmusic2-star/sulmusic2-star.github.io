@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" role="img" aria-labelledby="title desc">
-  <title id="title">Tim Sullivan public review command deck</title>
+  <title id="title">Tim Sullivan public review proof router</title>
   <desc id="desc">A premium profile banner showing product systems, proof routes, tests, demos, coverage, packets, and public artifacts.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111c"/><stop offset=".52" stop-color="#0b263c"/><stop offset="1" stop-color="#0f4b4a"/></linearGradient>
@@ -11,7 +11,7 @@
   <rect x="28" y="28" width="1344" height="504" rx="34" fill="url(#grid)"/>
   <circle cx="1180" cy="90" r="190" fill="#6fffe8" opacity=".12"/>
   <circle cx="230" cy="470" r="180" fill="#2f6bff" opacity=".10"/>
-  <text x="76" y="92" fill="#6fffe8" font-family="Inter, Arial" font-size="15" font-weight="950" letter-spacing="5">PUBLIC REVIEW DECK</text>
+  <text x="76" y="92" fill="#6fffe8" font-family="Inter, Arial" font-size="15" font-weight="950" letter-spacing="5">PUBLIC REVIEW SURFACE</text>
   <text x="76" y="158" fill="#f8fbff" font-family="Inter, Arial" font-size="56" font-weight="900">Product systems that can be inspected.</text>
   <text x="76" y="205" fill="#c7d4db" font-family="Inter, Arial" font-size="24">Mobile product logic · evidence workflows · validation gates · generated artifacts</text>
   <g font-family="Inter, Arial" filter="url(#shadow)">

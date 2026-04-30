@@ -15,6 +15,20 @@
       <img class="hero-img" src="https://sulmusic2-star.github.io/squadbrain-showcase/assets/squadbrain-demo.gif" alt="SquadBrain demo" />
     </section>
     <section class="section artifact-rail"><div><span>Surface</span><b>Mobile practice loop</b></div><div><span>Logic</span><b>Adaptive card priority</b></div><div><span>Guardrail</span><b>Competitive result validation</b></div><div><span>Proof</span><b>25 tests + CI</b></div></section>
+    <section class="section case-workbench" aria-label="SquadBrain system console">
+      <div class="case-console">
+        <div class="case-console-top"><i></i><b>Product loop debugger</b></div>
+        <h2>Not just a demo screen — a loop with rules behind it.</h2>
+        <p>SquadBrain is presented as a product system: fast mobile interaction, adaptive practice priority, match selection, and validated competition outcomes.</p>
+        <div class="case-flow"><div><span>01</span><b>Practice signals: due state, misses, stability, prompt mix.</b></div><div><span>02</span><b>Match signals: rating gap, wait time, team overlap.</b></div><div><span>03</span><b>Trust boundary: recompute score before rank movement.</b></div></div>
+      </div>
+      <div class="case-proof-panel">
+        <a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts"><span>Code path</span><b>Adaptive practice</b><small>Priority is explained by state, not random cards.</small></a>
+        <a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts"><span>Guardrail</span><b>Result validation</b><small>Competitive submissions are recomputed and risk-flagged.</small></a>
+        <a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/docs/coverage-summary.md"><span>Proof</span><b>98.3% coverage</b><small>Coverage summary for the public example suite.</small></a>
+        <a href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/docs/adr"><span>Decision trail</span><b>ADRs</b><small>Tradeoffs around local play, competition, and recomputation.</small></a>
+      </div>
+    </section>
     <section class="section card"><h2>The problem</h2><p class="muted">Roster knowledge is usually treated like static trivia. The product opportunity was to make memorization repeatable: short rounds, visible progress, competition, rank movement, and reasons to return.</p></section>
     <section class="section"><h2>System decisions</h2><div class="proof wide"><div class="card"><h3>Local-first gameplay</h3><p class="muted">Fast mobile interactions stay local so the practice loop never feels blocked by network latency.</p></div><div class="card"><h3>Trusted competition boundary</h3><p class="muted">Competitive submissions are recomputed and risk-flagged before ranking updates.</p></div><div class="card"><h3>Adaptive practice</h3><p class="muted">Practice priority uses due state, misses, stability, recent exposure, and prompt mix rather than random questions.</p></div></div></section>
     <section class="section card"><h2>Code worth inspecting</h2><ul class="link-list"><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts">adaptive-practice.ts</a> — prioritizes practice cards and explains the reasons.</li><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">result-validation.ts</a> — validates session submissions and risk-flags suspicious results.</li><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/matchmaking.ts">matchmaking.ts</a> — ranks same-team candidates by rating gap and wait time.</li><li><a href="https://github.com/sulmusic2-star/squadbrain-showcase/actions/workflows/ci.yml">CI workflow</a> — type-checks and runs the example test suite.</li></ul></section>
