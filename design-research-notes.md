@@ -130,3 +130,20 @@ Design bar for future passes:
 - If a number is shown, it must map to a real artifact that can be opened.
 - Keep case-study evidence scannable: problem, system response, proof links.
 - Prefer fewer stronger proof routes over adding more generic pages.
+
+## 2026-04-30 — Diligence packet / portable proof layer
+
+Research direction: hiring and collaboration review often happens outside the portfolio page itself. Strong evidence systems give a reviewer a fast online path and a clean portable artifact. Current portfolio guidance repeatedly emphasizes concise case-study summaries, proof of impact, readable outcomes, and downloadable/shareable portfolio material when appropriate.
+
+Applied changes:
+- Created a one-page public diligence packet PDF with embedded links.
+- Added `/diligence/` as a polished packet page with PDF preview and review rationale.
+- Added a homepage shareable-packet section and synced the profile mirror.
+- Linked the packet from the outcome board and evaluator console.
+- Rendered the PDF to PNG and visually checked spacing, card hierarchy, and legibility before shipping.
+
+Design bar for future passes:
+- Treat PDFs as proof artifacts, not decoration.
+- Keep the packet one page unless there is real new evidence to add.
+- Make every metric traceable to a public coverage/test artifact.
+- Preserve a clean reviewer journey: homepage -> outcome board -> diligence packet -> lab/code.
