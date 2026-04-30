@@ -147,3 +147,19 @@ Design bar for future passes:
 - Keep the packet one page unless there is real new evidence to add.
 - Make every metric traceable to a public coverage/test artifact.
 - Preserve a clean reviewer journey: homepage -> outcome board -> diligence packet -> lab/code.
+
+## 2026-04-30 — Advanced diligence packet pass
+
+Research direction: the best portfolio artifacts reduce reviewer effort. A PDF should not merely duplicate the homepage; it should create a portable review system with embedded links, clear timing paths, and a proof ledger. The useful pattern is website-first for exploration, PDF-second as a sharable route, and code/artifacts as the final evidence layer.
+
+Applied changes:
+- Upgraded the diligence packet from a simple one-page leave-behind to a two-page public review packet.
+- Added a QR route to the live diligence page and embedded links throughout the PDF.
+- Added page two as an inspection ledger with 1-minute, 5-minute, 15-minute, and full-review paths.
+- Added a public evidence map separating live surface, executable logic, quality proof, and system boundary for both projects.
+- Upgraded `/diligence/` with a review command center so the web page now matches the advanced packet structure.
+
+Design bar for future passes:
+- Keep the PDF compact but not shallow: two pages is currently the right balance.
+- Every PDF element should either route, verify, or clarify.
+- The diligence page should feel like a command surface, not a download landing page.
