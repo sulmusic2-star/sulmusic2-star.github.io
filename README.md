@@ -11,6 +11,7 @@ Featured projects:
 
 Public review/contact route:
 
+- Signal room: https://sulmusic2-star.github.io/signal/
 - Contact route: https://sulmusic2-star.github.io/contact/
 - Diligence packet: https://sulmusic2-star.github.io/diligence/
 - Systems lab: https://sulmusic2-star.github.io/lab/
