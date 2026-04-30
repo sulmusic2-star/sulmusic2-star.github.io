@@ -32,3 +32,35 @@ To avoid sounding like a generic portfolio, the public work should keep replacin
 - What public proof shows the decision in code or output?
 
 This pass added repo-native ADR folders to SquadBrain and Lasting Ground so the Systems Atlas links to durable implementation-adjacent decision records.
+# Design research notes
+
+## 2026-04-29 visual correction research pass
+
+Sources reviewed:
+- Reddit portfolio critiques in r/webdev and r/UI_Design.
+- GitHub curated portfolio repositories and portfolio inspiration lists.
+- GitHub README research on how popular projects use images, lists, and links.
+
+Lessons applied in this pass:
+
+1. Project images need separation from the page.
+   Reddit critique repeatedly flags cards/images that lack contrast from the background. If the page uses a pale gradient, images need a darker stage, visible border, or browser/device frame instead of floating softly into the page.
+
+2. Do not use decorative graphics if they do not clarify the product.
+   GitHub portfolio lists show lots of visual variety, but the useful pattern for this portfolio is not maximal animation. It is a clean proof surface with richer screenshots, strong hierarchy, and obvious routes into demos/source.
+
+3. Keep the front page curated.
+   Reddit feedback consistently punishes portfolios that show too much text or too many weak projects. This portfolio should keep SquadBrain and Lasting Ground prominent, and make the visual proof for those two builds stronger rather than adding filler projects.
+
+4. Make images feel like product artifacts.
+   GitHub/portfolio examples often use thumbnails, live previews, and device/browser frames. For this portfolio, system graphics should sit inside premium artifact frames with labels, not blend into the page as flat illustrations.
+
+5. README/project proof should stay visual and linked.
+   README research indicates popular projects tend to be organized with lists, images, and external links. The public repos already have tests/docs; the next visual layer should make those artifacts easier to scan and click.
+
+Changes this research supports:
+- Darken and frame the main portfolio visual proof section.
+- Give SVG graphics stronger contrast against their cards.
+- Add browser/device-style chrome and artifact labels.
+- Strengthen project image treatments so GIF/PDF previews read as product screenshots.
+- Keep copy concise and route quickly to live demos, case studies, and GitHub proof.
