@@ -64,3 +64,19 @@ Changes this research supports:
 - Add browser/device-style chrome and artifact labels.
 - Strengthen project image treatments so GIF/PDF previews read as product screenshots.
 - Keep copy concise and route quickly to live demos, case studies, and GitHub proof.
+
+## 2026-04-29 advanced responsive QA pass
+
+Additional research-supported rules applied:
+
+1. Mobile should not be a shrunken desktop composition.
+   Portfolio critique patterns on Reddit punish horizontal clipping, oversized headings, and decorative sections that only work on desktop. The mobile version now uses explicit headline rhythm, one-column navigation, and narrower artifact cards.
+
+2. Proof visuals need a safe reading measure.
+   GitHub project pages and strong portfolio examples rely on screenshots that remain readable in constrained widths. The revised mobile layout uses an inset 330px proof column instead of forcing wide desktop cards into a phone viewport.
+
+3. Navigation must be readable before it is clever.
+   Mobile nav pills now stack into full-width rows rather than clipping labels in a compressed two-column layout.
+
+4. Headline wrapping should be designed, not left to browser luck.
+   The main portfolio, Systems Atlas, and Lasting Ground hero headlines now use deliberate line breaks so the first impression is clean on mobile and desktop.

@@ -14,7 +14,7 @@
     <section class="hero compact hero-showcase">
       <div>
         <p class="eyebrow">Systems atlas</p>
-        <h1>Architecture is where the product promise becomes enforceable.</h1>
+        <h1><span>Architecture is where</span><span>the product promise</span><span>becomes enforceable.</span></h1>
         <p class="lead">A public map of how the showcase systems handle constraints, tradeoffs, validation, review states, and proof artifacts.</p>
         <div class="actions"><a class="btn primary" href="#tradeoffs">Explore tradeoffs</a><a class="btn" href="#diagrams">View system maps</a></div>
       </div>
@@ -31,7 +31,7 @@
     </section>
 
     <section class="section architecture-lenses" id="diagrams">
-      <div class="section-head"><p class="eyebrow">Architecture lenses</p><h2>Same projects, different engineering questions.</h2></div>
+      <div class="section-head"><p class="eyebrow">Architecture lenses</p><h2><span>Same projects,</span><span>different engineering questions.</span></h2></div>
       <div class="lens-tabs" role="tablist"><button class="lens-tab active" data-lens="surface">Surface</button><button class="lens-tab" data-lens="logic">Logic</button><button class="lens-tab" data-lens="validation">Validation</button><button class="lens-tab" data-lens="delivery">Delivery</button></div>
       <div class="lens-output card" id="lensOutput"></div>
     </section>
@@ -77,7 +77,7 @@
       validation:{title:'Validation lens',summary:'Where the system prevents weak or untrusted output.',left:['Recompute competitive score','Flag impossible sessions','Disclose weak source lanes','Cautious packet language'],right:['result-validation.ts','packet_language.py','packet_composer.py','validation tests']},
       delivery:{title:'Delivery lens',summary:'How the work becomes reviewable outside the private production system.',left:['Live pages','Public examples','Coverage summaries','Evaluator guides'],right:['GitHub Pages','CI workflows','Sample PDF','Documentation']}
     };
-    function renderLens(key){const data=lenses[key];lensOutput.innerHTML=`<p class="eyebrow">${data.title}</p><h2>${data.summary}</h2><div class="atlas-map"><div><h3>System concerns</h3>${data.left.map(x=>`<p>${x}</p>`).join('')}</div><div><h3>Inspectable artifacts</h3>${data.right.map(x=>`<p>${x}</p>`).join('')}</div></div>`;}
+    function renderLens(key){const data=lenses[key];lensOutput.innerHTML=`<p class="eyebrow">${data.title}</p><h2><span>${data.summary}</span></h2><div class="atlas-map"><div><h3>System concerns</h3>${data.left.map(x=>`<p>${x}</p>`).join('')}</div><div><h3>Inspectable artifacts</h3>${data.right.map(x=>`<p>${x}</p>`).join('')}</div></div>`;}
     document.querySelectorAll('.lens-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.lens-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderLens(btn.dataset.lens);}));renderLens('surface');
   </script>
 </body>
