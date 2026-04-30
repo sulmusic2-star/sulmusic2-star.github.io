@@ -136,7 +136,7 @@ Design bar for future passes:
 Research direction: hiring and collaboration review often happens outside the portfolio page itself. Strong evidence systems give a reviewer a fast online path and a clean portable artifact. Current portfolio guidance repeatedly emphasizes concise case-study summaries, proof of impact, readable outcomes, and downloadable/shareable portfolio material when appropriate.
 
 Applied changes:
-- Created a one-page public diligence packet PDF with embedded links.
+- Created an earlier public diligence packet PDF with embedded links.
 - Added `/diligence/` as a polished packet page with PDF preview and review rationale.
 - Added a homepage shareable-packet section and synced the profile mirror.
 - Linked the packet from the outcome board and evaluator console.
@@ -153,7 +153,7 @@ Design bar for future passes:
 Research direction: the best portfolio artifacts reduce reviewer effort. A PDF should not merely duplicate the homepage; it should create a portable review system with embedded links, clear timing paths, and a proof ledger. The useful pattern is website-first for exploration, PDF-second as a sharable route, and code/artifacts as the final evidence layer.
 
 Applied changes:
-- Upgraded the diligence packet from a simple one-page leave-behind to a two-page public review packet.
+- Upgraded the diligence packet from a simple leave-behind to a multi-page public review packet.
 - Added a QR route to the live diligence page and embedded links throughout the PDF.
 - Added page two as an inspection ledger with 1-minute, 5-minute, 15-minute, and full-review paths.
 - Added a public evidence map separating live surface, executable logic, quality proof, and system boundary for both projects.
@@ -195,7 +195,7 @@ Applied changes:
 - Rebuilt the public diligence packet into a three-page proof packet: review route, project evidence ledger, and review-depth/capability map.
 - Added a dedicated profile command-surface SVG for the GitHub profile and profile mirror page.
 - Added a fast review route to the GitHub profile README so visitors know exactly where to click first.
-- Upgraded profile page copy and packet references from two-page to three-page.
+- Upgraded profile page copy and packet references to the current three-page packet.
 - Kept the public language evidence-led: demos, examples, tests, coverage, decision records, and generated outputs.
 
 Design bar for future passes:
@@ -219,3 +219,34 @@ Design bar for future passes:
 - More surfaces should behave like small evaluators, debuggers, or system maps.
 - Avoid adding another static strip unless it has a proof action, state transition, or artifact route.
 - Mobile QA must confirm all console panels stack cleanly and proof text stays readable.
+
+
+## 2026-04-30 — v19 premium PDF density pass
+
+Research direction: the packet should work as a compact proof artifact, not a sparse poster. The strongest leave-behind format gives a reviewer a route, a ledger, and a decision map without forcing them to reconstruct the evidence trail.
+
+Applied changes:
+- Rebuilt the packet generator with a denser three-page layout: fast proof route, implementation receipts, and review-depth/capability map.
+- Added console-style proof visuals, artifact tiles, a public implementation ledger, and tighter route cards.
+- Regenerated the PDF and cover PNG from the same source so the website preview matches the current packet.
+- Updated stale packet-length copy on packet-related pages.
+
+Design bar for future passes:
+- The PDF should remain a review artifact, not a brochure.
+- Any future metric must be publicly verifiable or removed.
+- Keep PDF text large enough to skim while using tables and route cards to reduce empty space.
+
+## 2026-04-30 — v20 packet inspector pass
+
+Research direction: portfolio artifacts should reveal the review path before a reviewer commits to opening files. Current GitHub/portfolio advice keeps pointing to the same pattern: make proof scannable in seconds, keep links runnable, and show tests/CI/artifacts instead of static screenshots alone.
+
+Applied changes:
+- Added a live packet inspector to `/diligence/` with page-by-page previews for route, ledger, and review-depth map.
+- Exported page 2 and page 3 PNG previews from the generated PDF so the page exposes the whole artifact, not only the cover.
+- Tightened review command cards so they feel more like a usable review surface and less like empty presentation slides.
+- Rechecked desktop and mobile layouts after the interactive section landed.
+
+Design bar for future passes:
+- Keep converting static page sections into small tools: inspectors, proof consoles, state switchers, and role routes.
+- Do not add motion or decoration unless it makes the proof easier to evaluate.
+- The next credibility jump should be more live interaction and cleaner end-to-end route cohesion, not more claims.
