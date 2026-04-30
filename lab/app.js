@@ -137,17 +137,32 @@ function renderJson(id, value) {
   document.getElementById(id).textContent = JSON.stringify(value, null, 2);
 }
 
-function runSquadBrain() {
+function computeSquadBrain() {
   const normalizedRoster = normalizeRoster(rosterRows);
   const promptCandidates = findPromptCandidates(normalizedRoster, 'guard');
   const rankedMatches = rankMatchCandidates({ team: 'BOS', rating: 1230 }, matchPool);
-  renderJson('squadInput', { rosterRows, currentPlayer: { team: 'BOS', rating: 1230 }, matchPool, practiceCards, quickMatchSubmission });
-  renderJson('squadOutput', { normalizedRoster, promptCandidates, adaptivePracticeQueue: buildAdaptivePracticeQueue(practiceCards), resultValidation: validateQuickMatch(quickMatchSubmission), bestMatch: rankedMatches[0], rankedMatches });
+  return {
+    input: { rosterRows, currentPlayer: { team: 'BOS', rating: 1230 }, matchPool, practiceCards, quickMatchSubmission },
+    output: { normalizedRoster, promptCandidates, adaptivePracticeQueue: buildAdaptivePracticeQueue(practiceCards), resultValidation: validateQuickMatch(quickMatchSubmission), bestMatch: rankedMatches[0], rankedMatches }
+  };
+}
+
+function computeLastingGround() {
+  return { input: propertyPacket, output: validatePacket(propertyPacket) };
+}
+
+function runSquadBrain() {
+  const result = computeSquadBrain();
+  renderJson('squadInput', result.input);
+  renderJson('squadOutput', result.output);
+  return result.output;
 }
 
 function runLastingGround() {
-  renderJson('groundInput', propertyPacket);
-  renderJson('groundOutput', validatePacket(propertyPacket));
+  const result = computeLastingGround();
+  renderJson('groundInput', result.input);
+  renderJson('groundOutput', result.output);
+  return result.output;
 }
 
 document.getElementById('runSquad').addEventListener('click', runSquadBrain);
@@ -199,6 +214,58 @@ function setText(selector, value) {
   if (element) element.textContent = value;
 }
 
+function summaryCard(label, value, detail, tone = '') {
+  return `<article class="summary-card ${tone}"><span>${label}</span><b>${value}</b><small>${detail}</small></article>`;
+}
+
+function renderLiveSummary(key) {
+  const squad = computeSquadBrain().output;
+  const ground = computeLastingGround().output;
+  const cards = document.querySelector('[data-summary-cards]');
+  const pipeline = document.querySelector('[data-summary-pipeline]');
+  const mode = document.querySelector('[data-summary-mode]');
+  if (!cards || !pipeline) return;
+
+  const topPractice = squad.adaptivePracticeQueue[0];
+  const validation = squad.resultValidation;
+  const bestMatch = squad.bestMatch;
+  const strongestLane = [...ground.evidenceScores].sort((a, b) => b.score - a.score)[0];
+  const weakestLane = [...ground.evidenceScores].sort((a, b) => a.score - b.score)[0];
+
+  if (key === 'ground') {
+    if (mode) mode.textContent = 'Lasting Ground evidence';
+    cards.innerHTML = [
+      summaryCard('Average evidence score', `${ground.averageScore}/100`, `${ground.supportDepth.replaceAll('_', ' ')} returned by the packet validator.`, 'strong'),
+      summaryCard('Strongest source lane', strongestLane.lane.replaceAll('_', ' '), `${strongestLane.score}/100 - ${strongestLane.confidence.replaceAll('_', ' ')}`),
+      summaryCard('Visible source gaps', `${ground.warningCount} warnings`, ground.warnings.join(' · '), ground.warningCount ? 'warn' : 'strong'),
+      summaryCard('Packet language', 'cautious', ground.packetLanguage, 'wide')
+    ].join('');
+    pipeline.innerHTML = ['Source lanes', 'Evidence score', 'Support depth', 'Packet language'].map((step, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><b>${step}</b></div>`).join('');
+    return;
+  }
+
+  if (key === 'compare') {
+    if (mode) mode.textContent = 'Combined review path';
+    cards.innerHTML = [
+      summaryCard('Public checks', '43 tests', '25 TypeScript checks plus 18 Python checks across the showcase repos.', 'strong'),
+      summaryCard('Validation boundaries', '2 systems', 'Competitive result validation and source-support validation both stay visible.'),
+      summaryCard('Proof artifacts', 'packet + lab', 'The PDF packet routes to the live lab, examples, coverage, ADRs, and demos.'),
+      summaryCard('Review standard', 'route -> run -> inspect', 'A reviewer can move from claim to mechanism to evidence without a private walkthrough.', 'wide')
+    ].join('');
+    pipeline.innerHTML = ['Outcome claim', 'Run lab', 'Open code', 'Verify artifact'].map((step, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><b>${step}</b></div>`).join('');
+    return;
+  }
+
+  if (mode) mode.textContent = 'SquadBrain validation';
+  cards.innerHTML = [
+    summaryCard('Roster normalized', `${squad.normalizedRoster.length} players`, 'Duplicate names collapse, casing normalizes, invalid jersey stays reviewable.'),
+    summaryCard('Top practice priority', `${topPractice.priority}/100`, `${topPractice.displayName} appears first because: ${topPractice.reasons.join(', ')}.`, 'strong'),
+    summaryCard('Best match score', bestMatch.score, `${bestMatch.handle} selected with ${bestMatch.ratingGap} rating gap.`),
+    summaryCard('Result validation', validation.riskLevel, `${validation.averageAnswerMs}ms average answer; ${validation.issues.join(', ') || 'no issues'}.`, validation.riskLevel === 'high' ? 'warn' : 'strong')
+  ].join('');
+  pipeline.innerHTML = ['Roster input', 'Practice queue', 'Match rank', 'Risk flag'].map((step, index) => `<div><span>${String(index + 1).padStart(2, '0')}</span><b>${step}</b></div>`).join('');
+}
+
 function renderLabScenario(key) {
   const state = labScenarios[key] || labScenarios.squad;
   document.querySelectorAll('[data-lab-scenario]').forEach(button => {
@@ -221,6 +288,7 @@ function renderLabScenario(key) {
   if (primary) { primary.textContent = state.primary[0]; primary.href = state.primary[1]; }
   if (secondary) { secondary.textContent = state.secondary[0]; secondary.href = state.secondary[1]; }
   state.action();
+  renderLiveSummary(key);
 }
 
 document.querySelectorAll('[data-lab-scenario]').forEach(button => {

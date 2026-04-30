@@ -279,3 +279,17 @@ Applied changes:
 Design bar for future passes:
 - The lab should stay runnable and inspectable; do not bury the raw JSON proof.
 - Future improvements should add small visual summaries derived from the JSON output, not just prettier containers.
+
+## 2026-04-30 — v23 live lab scorecard pass
+
+Research direction: premium proof surfaces should summarize computed output before exposing raw logs. The best pattern is not to hide the details, but to add a readable decision layer above them so the evaluator sees what changed and can still inspect the underlying data.
+
+Applied changes:
+- Added live scorecards generated from the actual SquadBrain and Lasting Ground browser-run outputs.
+- Added scenario-aware summary modes for SquadBrain validation, Lasting Ground evidence, and combined review path.
+- Added a generated pipeline rail so each scenario shows the path from input to rules to guardrail to output.
+- Ran interaction QA to verify scenario switches update both the decision console and generated summary cards.
+
+Design bar for future passes:
+- Keep the raw JSON visible, but lead with computed summaries and proof links.
+- If adding charts later, derive them from the same run output rather than hard-coding decorative numbers.
