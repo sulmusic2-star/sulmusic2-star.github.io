@@ -250,3 +250,18 @@ Design bar for future passes:
 - Keep converting static page sections into small tools: inspectors, proof consoles, state switchers, and role routes.
 - Do not add motion or decoration unless it makes the proof easier to evaluate.
 - The next credibility jump should be more live interaction and cleaner end-to-end route cohesion, not more claims.
+
+## 2026-04-30 — v21 evaluator surface expansion
+
+Research direction: the next jump is not more decorative page sections. Strong portfolio surfaces reduce evaluator effort by turning claims into selectable proof paths, showing the mechanism behind each claim, and making runnable/code/artifact links visible at the moment the claim appears.
+
+Applied changes:
+- Added an interactive outcome inspector to `/outcomes/` with capability tabs for Product UX, Systems logic, Evidence discipline, and Delivery proof.
+- Added an architecture trace explorer to `/architecture/` with selectable traces for SquadBrain, Lasting Ground, and the public review route.
+- Synced the new interaction handlers and styling to the profile mirror so shared pages keep the same design system.
+- Captured desktop and mobile QA screenshots for Outcomes and Systems Atlas.
+
+Design bar for future passes:
+- Keep replacing broad capability statements with claim -> mechanism -> evidence modules.
+- Make each page answer, "what can I click to verify this?" within the first two sections.
+- The next strongest move is to make the Systems Lab feel more like a polished product demo instead of a utility page.

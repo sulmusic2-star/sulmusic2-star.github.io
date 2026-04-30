@@ -30,6 +30,34 @@
       </aside>
     </section>
 
+
+
+    <section class="section atlas-trace" data-atlas-trace aria-label="Architecture trace explorer">
+      <div class="atlas-trace-copy">
+        <p class="eyebrow">Trace explorer</p>
+        <h2><span>Architecture shown as</span><span>an inspectable path.</span></h2>
+        <p>Choose a system and follow how input becomes a decision, how weak input is guarded, and where the public proof lives.</p>
+        <div class="atlas-trace-tabs" role="tablist" aria-label="Architecture traces">
+          <button class="active" type="button" data-trace-key="squad">SquadBrain trace</button>
+          <button type="button" data-trace-key="lasting">Lasting Ground trace</button>
+          <button type="button" data-trace-key="review">Review system trace</button>
+        </div>
+      </div>
+      <div class="atlas-trace-console">
+        <div class="atlas-trace-top"><i></i><i></i><i></i><span data-trace-label>SquadBrain trace</span></div>
+        <h3 data-trace-title>Competitive practice flow with validation boundary.</h3>
+        <p data-trace-summary>Roster input becomes normalized practice state, adaptive priority, match result, recomputed score, and reviewable rank movement.</p>
+        <div class="trace-flow" data-trace-flow>
+          <div><span>01</span><b>Input</b><small>Roster + session state</small></div>
+          <div><span>02</span><b>Rules</b><small>Priority + match constraints</small></div>
+          <div><span>03</span><b>Guardrail</b><small>Recompute results</small></div>
+          <div><span>04</span><b>Output</b><small>Progress + proof</small></div>
+        </div>
+        <div class="trace-receipt"><b data-trace-risk>Risk handled: untrusted competitive submissions.</b><span data-trace-proof>Proof: result-validation.ts + ADR-01</span></div>
+        <div class="trace-actions"><a data-trace-primary href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">Open proof file</a><a data-trace-secondary href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/docs/adr">Open decision records</a></div>
+      </div>
+    </section>
+
     <section class="section architecture-lenses" id="diagrams">
       <div class="section-head"><p class="eyebrow">Architecture lenses</p><h2><span>Same projects,</span><span>different engineering questions.</span></h2></div>
       <div class="lens-tabs" role="tablist"><button class="lens-tab active" data-lens="surface">Surface</button><button class="lens-tab" data-lens="logic">Logic</button><button class="lens-tab" data-lens="validation">Validation</button><button class="lens-tab" data-lens="delivery">Delivery</button></div>
