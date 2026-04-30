@@ -10,18 +10,59 @@
 <body>
   <main class="wrap">
     <nav class="topnav"><a href="../">Portfolio</a><a href="../proof/">Selected work</a><a href="../outcomes/">Outcome board</a><a href="../review/">Evaluator console</a><a href="../architecture/">Systems atlas</a><a href="../operating-model/">Operating model</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a></nav>
-    <header class="hero">
-      <p class="eyebrow">Interactive systems lab</p>
-      <h1>Small demos that show the product logic working.</h1>
-      <p class="lead">This page mirrors the public code examples in SquadBrain and Lasting Ground: normalize inconsistent inputs, prioritize practice, validate competitive results, score evidence lanes, and turn the result into something readable.</p><div class="lab-proof"><span>Runs in browser</span><span>Matches public examples</span><span>Shows decision output</span></div>
-      <div class="actions">
-        <a class="btn primary" href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples">SquadBrain code</a>
-        <a class="btn" href="https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples">Lasting Ground code</a>
-        <a class="btn" href="/">Portfolio</a>
+    <header class="hero lab-hero">
+      <div>
+        <p class="eyebrow">Interactive systems lab</p>
+        <h1><span>Run the logic.</span><span>Inspect the decision.</span></h1>
+        <p class="lead">A browser-based proof surface for the public examples: roster cleanup, adaptive practice, competitive validation, source-lane scoring, support-depth decisions, and readable outputs.</p>
+        <div class="lab-proof"><span>Runs locally in browser</span><span>Mirrors public examples</span><span>Shows decision trail</span></div>
+        <div class="actions">
+          <a class="btn primary" href="#runner">Open runner</a>
+          <a class="btn" href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples">SquadBrain code</a>
+          <a class="btn" href="https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples">Lasting Ground code</a>
+        </div>
       </div>
+      <aside class="lab-hero-console" aria-label="Systems lab proof console">
+        <div class="console-top"><i></i><i></i><i></i><span>proof runner</span></div>
+        <div class="console-metric"><strong>43</strong><span>public tests across showcase repos</span></div>
+        <div class="console-metric"><strong>2</strong><span>systems with runnable proof paths</span></div>
+        <div class="console-route"><span>Input</span><span>Rules</span><span>Guardrail</span><span>Output</span></div>
+      </aside>
     </header>
 
-    <section class="grid">
+    <section class="lab-runner" id="runner" data-lab-runner aria-label="Interactive lab runner">
+      <div class="runner-copy">
+        <p class="eyebrow">Scenario runner</p>
+        <h2><span>Choose the proof.</span><span>Watch the state change.</span></h2>
+        <p>This is the part a reviewer can actually use: each scenario updates the evidence card, the decision trail, and the exact proof links.</p>
+        <div class="runner-tabs" role="tablist" aria-label="Systems lab scenarios">
+          <button class="active" type="button" data-lab-scenario="squad">SquadBrain validation</button>
+          <button type="button" data-lab-scenario="ground">Lasting Ground evidence</button>
+          <button type="button" data-lab-scenario="compare">Combined review path</button>
+        </div>
+      </div>
+      <div class="runner-console">
+        <div class="console-top"><i></i><i></i><i></i><span data-lab-label>SquadBrain validation</span></div>
+        <div class="runner-main">
+          <span data-lab-kicker>Validation boundary</span>
+          <h3 data-lab-title>Competitive results are recomputed before rank movement.</h3>
+          <p data-lab-summary>Questionable quick-match submissions are checked against timing, prompt count, answer order, and correctness before they can affect competitive state.</p>
+        </div>
+        <div class="runner-stats">
+          <div><b data-lab-stat-a>high</b><small>risk level</small></div>
+          <div><b data-lab-stat-b>answer-speed-review</b><small>flag surfaced</small></div>
+          <div><b data-lab-stat-c>25 tests</b><small>public TS checks</small></div>
+        </div>
+        <ol class="runner-steps" data-lab-steps>
+          <li><span>01</span>Normalize the roster input.</li>
+          <li><span>02</span>Prioritize practice and rank match candidates.</li>
+          <li><span>03</span>Validate the match result before accepting rank movement.</li>
+        </ol>
+        <div class="runner-actions"><a data-lab-primary href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">Open proof file</a><a data-lab-secondary href="https://sulmusic2-star.github.io/squadbrain-showcase/">Open demo</a></div>
+      </div>
+    </section>
+
+    <section class="grid logic-grid">
       <article class="panel">
         <div class="panel-head">
           <div>
@@ -65,7 +106,7 @@
       </article>
     </section>
 
-    <section class="panel proof">
+    <section class="panel proof lab-proof-panel">
       <p class="eyebrow">What this demonstrates</p>
       <div class="proof-grid">
         <div><b>Typed product thinking</b><span>Core behavior is split into small rules a reviewer can run and test.</span></div>

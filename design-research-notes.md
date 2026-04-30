@@ -265,3 +265,17 @@ Design bar for future passes:
 - Keep replacing broad capability statements with claim -> mechanism -> evidence modules.
 - Make each page answer, "what can I click to verify this?" within the first two sections.
 - The next strongest move is to make the Systems Lab feel more like a polished product demo instead of a utility page.
+
+## 2026-04-30 — v22 systems lab product-demo pass
+
+Research direction: after adding proof routes and inspectors, the lab should feel like the place a reviewer can actually operate the proof, not a plain utility page. The stronger pattern is a product-demo shell: scenario selector, decision console, visible stats, proof links, then raw input/output for deeper inspection.
+
+Applied changes:
+- Rebuilt `/lab/` with a premium hero, proof-runner console, scenario runner, and stronger dark artifact treatment.
+- Added scenario tabs for SquadBrain validation, Lasting Ground evidence, and combined review path.
+- Wired the runner to update proof title, metrics, steps, and links while continuing to execute the underlying browser logic.
+- Reworked mobile typography after visual QA so hero and runner headlines remain readable.
+
+Design bar for future passes:
+- The lab should stay runnable and inspectable; do not bury the raw JSON proof.
+- Future improvements should add small visual summaries derived from the JSON output, not just prettier containers.

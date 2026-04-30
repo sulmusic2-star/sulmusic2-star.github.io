@@ -154,3 +154,76 @@ document.getElementById('runSquad').addEventListener('click', runSquadBrain);
 document.getElementById('runGround').addEventListener('click', runLastingGround);
 runSquadBrain();
 runLastingGround();
+
+const labScenarios = {
+  squad: {
+    label: 'SquadBrain validation',
+    kicker: 'Validation boundary',
+    title: 'Competitive results are recomputed before rank movement.',
+    summary: 'Questionable quick-match submissions are checked against timing, prompt count, answer order, and correctness before they can affect competitive state.',
+    stats: ['high', 'answer-speed-review', '25 tests'],
+    statLabels: ['risk level', 'flag surfaced', 'public TS checks'],
+    steps: ['Normalize the roster input.', 'Prioritize practice and rank match candidates.', 'Validate the match result before accepting rank movement.'],
+    primary: ['Open proof file', 'https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts'],
+    secondary: ['Open demo', 'https://sulmusic2-star.github.io/squadbrain-showcase/'],
+    action: runSquadBrain
+  },
+  ground: {
+    label: 'Lasting Ground evidence',
+    kicker: 'Evidence boundary',
+    title: 'Packet language follows source support.',
+    summary: 'Validated, stale, and missing lanes change support depth, warning count, and the language the packet is allowed to use.',
+    stats: ['partial', '2 warnings', '18 tests'],
+    statLabels: ['support depth', 'visible gaps', 'public Python checks'],
+    steps: ['Score each source lane for authority and freshness.', 'Keep missing or stale lanes visible.', 'Compose cautious packet language from support depth.'],
+    primary: ['Open evidence scoring', 'https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py'],
+    secondary: ['Open sample packet', 'https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf'],
+    action: runLastingGround
+  },
+  compare: {
+    label: 'Combined review path',
+    kicker: 'Review route',
+    title: 'Different domains, same proof standard.',
+    summary: 'Both systems expose the same maturity pattern: usable surface, explicit rules, validation boundary, test coverage, decision records, and generated artifacts.',
+    stats: ['43 tests', '2 systems', '1 packet'],
+    statLabels: ['public checks', 'focused proof paths', 'portable review artifact'],
+    steps: ['Open the outcome board to see the claims.', 'Run this lab to inspect behavior.', 'Use GitHub examples, coverage, and ADRs to verify the implementation path.'],
+    primary: ['Open outcome board', 'https://sulmusic2-star.github.io/outcomes/'],
+    secondary: ['Open diligence packet', 'https://sulmusic2-star.github.io/diligence/'],
+    action: () => { runSquadBrain(); runLastingGround(); }
+  }
+};
+
+function setText(selector, value) {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = value;
+}
+
+function renderLabScenario(key) {
+  const state = labScenarios[key] || labScenarios.squad;
+  document.querySelectorAll('[data-lab-scenario]').forEach(button => {
+    button.classList.toggle('active', button.dataset.labScenario === key);
+  });
+  setText('[data-lab-label]', state.label);
+  setText('[data-lab-kicker]', state.kicker);
+  setText('[data-lab-title]', state.title);
+  setText('[data-lab-summary]', state.summary);
+  setText('[data-lab-stat-a]', state.stats[0]);
+  setText('[data-lab-stat-b]', state.stats[1]);
+  setText('[data-lab-stat-c]', state.stats[2]);
+  document.querySelectorAll('.runner-stats small').forEach((small, index) => {
+    small.textContent = state.statLabels[index] || '';
+  });
+  const steps = document.querySelector('[data-lab-steps]');
+  if (steps) steps.innerHTML = state.steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span>${step}</li>`).join('');
+  const primary = document.querySelector('[data-lab-primary]');
+  const secondary = document.querySelector('[data-lab-secondary]');
+  if (primary) { primary.textContent = state.primary[0]; primary.href = state.primary[1]; }
+  if (secondary) { secondary.textContent = state.secondary[0]; secondary.href = state.secondary[1]; }
+  state.action();
+}
+
+document.querySelectorAll('[data-lab-scenario]').forEach(button => {
+  button.addEventListener('click', () => renderLabScenario(button.dataset.labScenario));
+});
+renderLabScenario('squad');
