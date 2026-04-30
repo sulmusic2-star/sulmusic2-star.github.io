@@ -55,7 +55,7 @@ Lessons applied in this pass:
 4. Make images feel like product artifacts.
    GitHub/portfolio examples often use thumbnails, live previews, and device/browser frames. For this portfolio, system graphics should sit inside premium artifact frames with labels, not blend into the page as flat illustrations.
 
-5. README/project proof should stay visual and linked.
+5. README and implementation evidence should stay visual and linked.
    README research indicates popular projects tend to be organized with lists, images, and external links. The public repos already have tests/docs; the next visual layer should make those artifacts easier to scan and click.
 
 Changes this research supports:
@@ -96,3 +96,20 @@ Current design direction applied:
 
 4. Links are part of the UX.
    Each tile points to a real public artifact. The page is stronger when the visual design and evidence routes are the same object.
+
+## 2026-04-30 — Operating model / implementation-evidence layer
+
+Research direction: stronger product-engineering portfolios do not just show pretty pages. They show the evaluator how the work was shaped, what decisions were made, what tradeoffs exist, and where proof lives. The useful pattern for this portfolio is a visible operating model: workflow translation → state/rule design → validation/review gates → inspectable artifacts → QA/delivery.
+
+Applied changes:
+- Added `/operating-model/` as a public build-system surface between case studies and architecture.
+- Added a blueprint-style hero graphic so the page feels like a system artifact, not a resume paragraph.
+- Connected each workflow stage to a real proof route: SquadBrain case study, public examples, Lasting Ground examples, sample packet, and Systems Lab.
+- Kept wording professional and evidence-led: no self-conscious framing, no claims that cannot be inspected, no hidden-method language.
+- Synced the profile mirror navigation so the GitHub profile routes reviewers into the new proof path.
+
+Design bar for future passes:
+- Prefer pages that behave like tools or review surfaces over pages that only describe skills.
+- Keep every advanced capability paired with a public proof path.
+- Use custom system graphics only when they clarify workflow, logic, validation, or delivery.
+- Continue mobile-first visual QA; most portfolio mistakes show up as cramped navigation, clipped headings, or unreadable proof panels.

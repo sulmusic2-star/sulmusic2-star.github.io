@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operating Model — Tim Sullivan</title>
+  <meta name="description" content="A public operating model for Tim Sullivan's product systems work: workflow translation, state/rule design, validation gates, proof artifacts, and delivery QA." />
+  <link rel="stylesheet" href="../site.css" />
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topnav"><a href="../">Portfolio</a><a href="../proof/">Selected work</a><a href="../review/">Evaluator console</a><a href="../architecture/">Systems atlas</a><a href="../lab/">Systems lab</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a></nav>
+
+    <section class="hero compact hero-showcase model-hero">
+      <div>
+        <p class="eyebrow">Operating model</p>
+        <h1><span>How messy work</span><span>becomes a system</span><span>someone can trust.</span></h1>
+        <p class="lead">The strongest part of these builds is not only the interface. It is the translation layer: real-world inputs become states, rules, review points, validation gates, and artifacts that can be inspected.</p>
+        <div class="actions"><a class="btn primary" href="#blueprint">View blueprint</a><a class="btn" href="#proof-loop">Inspect proof loop</a><a class="btn" href="../review/">Open evaluator console</a></div>
+      </div>
+      <aside class="model-blueprint" aria-label="Operating model blueprint">
+        <div class="blueprint-ruler"><span>workflow</span><span>system</span><span>artifact</span></div>
+        <div class="blueprint-center">
+          <span>translation layer</span>
+          <strong>Inputs → Rules → Review → Output</strong>
+          <small>Product work becomes repeatable when the invisible operating logic is designed as carefully as the UI.</small>
+        </div>
+        <div class="blueprint-orbit one">states</div>
+        <div class="blueprint-orbit two">validation</div>
+        <div class="blueprint-orbit three">proof</div>
+        <div class="blueprint-orbit four">delivery</div>
+      </aside>
+    </section>
+
+    <section class="section model-spine-section" id="blueprint">
+      <div class="section-head"><p class="eyebrow">Build system blueprint</p><h2><span>From ambiguous workflow</span><span>to inspectable product system.</span></h2></div>
+      <div class="model-spine">
+        <article class="model-stage"><span>01</span><h3>Map the workflow</h3><p>Identify the actual inputs, operators, handoffs, failure points, and expected outputs before choosing the interface.</p><b>Proof route</b><a href="../case-studies/squadbrain/">SquadBrain case study</a></article>
+        <article class="model-stage"><span>02</span><h3>Define states and rules</h3><p>Turn vague behavior into priority scores, support-depth states, ranking rules, and clear state transitions.</p><b>Proof route</b><a href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples">SquadBrain examples</a></article>
+        <article class="model-stage"><span>03</span><h3>Add review gates</h3><p>Put human review and validation where blind automation would create fragile or overconfident output.</p><b>Proof route</b><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples">Lasting Ground examples</a></article>
+        <article class="model-stage"><span>04</span><h3>Generate artifacts</h3><p>Package the result into demos, sample packets, coverage summaries, decision records, and reviewer-ready links.</p><b>Proof route</b><a href="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf">Sample packet</a></article>
+        <article class="model-stage"><span>05</span><h3>QA the delivery</h3><p>Check mobile layout, copy clarity, test runs, CI, live routes, and whether the artifact explains itself fast.</p><b>Proof route</b><a href="../lab/">Systems lab</a></article>
+      </div>
+    </section>
+
+    <section class="section model-proof-grid" id="proof-loop">
+      <div class="model-proof-lead">
+        <p class="eyebrow">Proof loop</p>
+        <h2><span>Every capability</span><span>needs a public proof path.</span></h2>
+        <p>The portfolio should not rely on claims. It should let someone inspect how the work behaves: examples, tests, decision records, artifacts, and live demos connected in one route.</p>
+      </div>
+      <article class="model-proof-card"><span>Capability</span><h3>Product judgment</h3><p>Clear flows, mobile surfaces, review states, and outputs that match the user’s task.</p><a href="../proof/">Selected work</a></article>
+      <article class="model-proof-card"><span>Mechanism</span><h3>Executable logic</h3><p>Adaptive practice, match constraints, result validation, evidence scoring, and packet composition.</p><a href="../lab/">Run the systems lab</a></article>
+      <article class="model-proof-card"><span>Guardrail</span><h3>Validation gates</h3><p>Weak source coverage, suspicious results, and overconfident language become visible states.</p><a href="../architecture/">View Systems Atlas</a></article>
+      <article class="model-proof-card"><span>Artifact</span><h3>Reviewer-ready output</h3><p>Sample packet, coverage summaries, ADRs, screenshots, case studies, and working links.</p><a href="../review/">Open evaluator console</a></article>
+    </section>
+
+    <section class="section quality-loop">
+      <div class="quality-panel">
+        <p class="eyebrow">Decision quality loop</p>
+        <h2><span>Better systems come from</span><span>forcing decisions into the open.</span></h2>
+      </div>
+      <div class="quality-steps">
+        <div><span>Observe</span><b>What is actually happening?</b><small>Inputs, edge cases, failure modes, user burden.</small></div>
+        <div><span>Encode</span><b>What rule should handle it?</b><small>Scoring, states, thresholds, reasons, source lanes.</small></div>
+        <div><span>Review</span><b>Where should judgment remain?</b><small>Human checks, caution states, QA paths, validation errors.</small></div>
+        <div><span>Ship</span><b>What proof travels with it?</b><small>Tests, docs, demos, sample artifacts, clear links.</small></div>
+      </div>
+    </section>
+
+    <section class="section card model-next">
+      <p class="eyebrow">What this demonstrates</p>
+      <h2>Not just pages. A repeatable way to turn complicated work into useful software.</h2>
+      <div class="proof">
+        <p class="muted"><b style="color:var(--ink)">Product systems thinking</b><br/>The work starts with real workflow shape: incentives, handoffs, edge cases, and review needs.</p>
+        <p class="muted"><b style="color:var(--ink)">Engineering judgment</b><br/>Public examples show stateful logic, validation boundaries, tested behavior, and documented tradeoffs.</p>
+        <p class="muted"><b style="color:var(--ink)">Delivery discipline</b><br/>The output is packaged as something another person can inspect quickly: live pages, working demos, CI, coverage, and sample artifacts.</p>
+      </div>
+      <p><a href="../review/">Open evaluator console</a> · <a href="../architecture/">View Systems Atlas</a> · <a href="../proof/">Selected work</a></p>
+    </section>
+  </main>
+  <footer class="wrap">Operating model · Workflow translation · Validation gates · Reviewable delivery</footer>
+</body>
+</html>
