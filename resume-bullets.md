@@ -1,39 +1,30 @@
 # Skills Snapshot
 
-I build practical product systems: mobile apps, workflow tools, tested code paths, evidence-backed packets, review queues, and demos that make the work easy to evaluate.
+I design, build, and operate production software by orchestrating AI coding agents (Claude Code, OpenAI Codex) — with the architecture, verification, and review-gate discipline that makes agent output trustworthy. I currently run a **live, paid property-data product** end to end as the sole engineer.
 
 ## Strongest skills
 
-- Product UX and evaluation surfaces: building demos, mobile-style flows, proof pages, sample artifacts, and reviewer-friendly paths through the work.
-
-- **Mobile product development:** React Native, Expo, TypeScript, mobile UI flows, game loops, progression systems, and Firebase-backed architecture.
-- **Full-stack workflow design:** turning scattered inputs into structured states, review queues, backend rules, and usable outputs.
-- **Evidence-backed systems:** source registries, validation gates, support-depth rules, readable proof artifacts, and careful claim handling.
-- **AI-assisted operations:** using AI as part of a controlled workflow with review steps, structured outputs, and human approval where it matters.
-- **Product packaging:** demos, screenshots, sample PDFs, unit tests, coverage summaries, CI checks, engineering decision notes, and GitHub case studies that make projects easy to evaluate.
+- **AI-agent orchestration** — directing Claude Code + Codex as a small engineering team: multi-agent workflows, review/promotion gates, verification against real sources, prompt and tool design. Senior-team throughput as one person.
+- **Backend & data engineering** — Python / FastAPI, REST API design, data ingestion/ETL at scale, GIS / geospatial queries (ArcGIS REST, point-in-polygon, projections), source-provenance and validation systems.
+- **Full-stack web product** — Cloudflare Pages/Functions (serverless edge), Stripe payments, security headers/CSP, edge caching, vanilla HTML/CSS/JS.
+- **Mobile product** — React Native, Expo, TypeScript, Firebase (Auth/Firestore/Cloud Functions), game loops, progression systems.
+- **Evidence-first / compliance-grade systems** — source registries, validation gates, support-depth rules, careful claim handling for trust-sensitive domains.
+- **Ship-readiness** — tests (pytest + Vitest), GitHub Actions CI, coverage, ADRs, sample artifacts, demos that make the work easy to evaluate.
 
 ## Selected work
 
-- Selected work: https://sulmusic2-star.github.io/proof/
-- Interactive systems lab: https://sulmusic2-star.github.io/lab/
-- SquadBrain case study: https://sulmusic2-star.github.io/case-studies/squadbrain/
-- Lasting Ground case study: https://sulmusic2-star.github.io/case-studies/lasting-ground/
-
-- Built **SquadBrain**, a mobile sports roster memorization game with practice loops, quick-match competition, achievements, leaderboards, and Firebase-backed product architecture.
-- Built **Lasting Ground**, a source-backed property review system that turns fragmented public/official context into structured packets with validation gates and clear uncertainty handling.
-- Created demos, sample packets, documentation, project pages, tested code examples, coverage summaries, CI checks, and an interactive systems lab so the work can be reviewed without needing a long explanation.
-- Designed workflows around queues, decision states, generated artifacts, QA checks, and approval points.
+- **Lasting Ground** — a live, paid, source-backed property-review engine for Massachusetts. One address → source-cited answers (FEMA flood/insurance, wetlands, zoning, contamination), each line stamped with its official source and date. Built and operated solo: serverless front end + Stripe over a ~200-service Python engine. → [lastingground.com](https://lastingground.com)
+- **SquadBrain** — a React Native / Expo / TypeScript / Firebase mobile game, **live on the iOS App Store**; product logic extracted into 7 typed modules with 25 tests at 98.3% line coverage in CI. → [App Store](https://apps.apple.com/us/app/squadbrain/id6756122317) · [showcase](https://sulmusic2-star.github.io/case-studies/squadbrain/)
+- Public proof of work — tested code examples, coverage summaries, CI, decision records, and sample artifacts so the work can be reviewed directly. → [Selected work](https://sulmusic2-star.github.io/proof/) · [Systems lab](https://sulmusic2-star.github.io/lab/)
 
 ## Roles this fits
 
-- Solutions Engineer
-- Implementation Specialist
-- Technical Customer Success
-- AI Workflow / Automation Specialist
-- Product Operations
-- Technical Product Analyst
-- Founder Associate / Technical Operator
+- Forward-Deployed Engineer
+- Applied AI / Solutions Engineer
+- Founding Engineer
+- AI Implementation / Automation Engineer
+- Technical Solutions — proptech / insurtech / climate-risk
 
 ## Short summary
 
-I work best where product, systems, and operations meet: translating complex processes into usable tools, validation logic, and clear artifacts.
+I take ambiguous, data-heavy problems and ship working, customer-facing systems fast — with the judgment to keep the architecture sound, the claims honest, and the moat proprietary.
