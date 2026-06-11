@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lasting Ground — Case Study · Tim Sullivan</title>
-  <meta name="description" content="Lasting Ground: a live, paid, source-backed property-review product for Massachusetts. One address becomes source-cited answers from a deterministic Python engine — built and operated solo." />
+  <meta name="description" content="Lasting Ground: a live, paid answer engine for any U.S. property address. One address becomes source-cited public-records answers from a deterministic Python engine — built and operated solo." />
   <link rel="canonical" href="https://sulmusic2-star.github.io/case-studies/lasting-ground/" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Lasting Ground — Case Study · Tim Sullivan" />
-  <meta property="og:description" content="A live, paid, source-backed property-review product for Massachusetts. One address becomes source-cited answers from a deterministic engine." />
+  <meta property="og:description" content="A live, paid answer engine for any U.S. property address. One address becomes source-cited public-records answers from a deterministic engine." />
   <meta property="og:url" content="https://sulmusic2-star.github.io/case-studies/lasting-ground/" />
   <meta property="og:image" content="https://sulmusic2-star.github.io/assets/live-answers.png" />
 
@@ -42,7 +42,7 @@
       <a class="cs-back" href="../../"><span aria-hidden="true">←</span> Back to home</a>
       <p class="eyebrow">Case study · Live, paid product</p>
       <h1 class="cs-hero__title">Lasting Ground</h1>
-      <p class="cs-hero__tag">A live answer engine for public records. One Massachusetts address in, source-cited flood, zoning, and insurance answers out in seconds, each stamped with its official source and the date it was checked.</p>
+      <p class="cs-hero__tag">A live answer engine for any U.S. property address. Enter an address in, source-cited public-records answers out in seconds, each stamped with its official source and the date it was checked.</p>
 
       <div class="cs-meta">
         <div class="cs-meta__item">
@@ -70,7 +70,7 @@
       <figure class="cs-figure">
         <img src="../../assets/live-answers.png"
              loading="lazy" width="2880" height="1800"
-             alt="The Lasting Ground live answer engine for a Massachusetts address: 11 source-cited answers found, grouped by source category, each stamped with its official source and the date it was checked." />
+             alt="The Lasting Ground live answer engine for a U.S. property address (a Massachusetts example shown): 11 source-cited answers found, grouped by source category, each stamped with its official source and the date it was checked." />
         <figcaption>The live engine returning source-cited answers for an address. Informational only; not legal, engineering, inspection, or permitting advice.</figcaption>
       </figure>
     </section>
@@ -85,8 +85,8 @@
     <!-- THE PROBLEM -->
     <section class="prose shell section">
       <h2>The problem</h2>
-      <p>Before someone buys, renovates, or lends against a Massachusetts property, the same questions come up every time. Is it in a FEMA flood zone, and what will insurance cost? Has it been officially mapped out of the floodplain? What's the base flood elevation versus the ground? Are there wetlands, a conservation restriction, contamination nearby, or zoning limits on what you can build?</p>
-      <p>Today the answers are scattered across dozens of disconnected government systems: federal flood maps, state GIS layers, and a different permit portal for nearly every one of Massachusetts' 351 cities and towns. Getting a real answer means hours of manual lookups, and most people either skip it or pay for a slow, generic report.</p>
+      <p>Before someone buys, renovates, or lends against a U.S. property, the same questions come up every time. Is it in a FEMA flood zone, and what will insurance cost? Has it been officially mapped out of the floodplain? What's the base flood elevation versus the ground? Are there wetlands, a conservation restriction, contamination nearby, or zoning limits on what you can build?</p>
+      <p>Today the answers are scattered across dozens of disconnected government systems: federal flood maps, state GIS layers, and a separate records system for almost every local jurisdiction. Massachusetts alone has a different permit portal for nearly every one of its 351 cities and towns. Getting a real answer means hours of manual lookups, and most people either skip it or pay for a slow, generic report.</p>
       <p><strong>Lasting Ground turns one address into a source-cited answer set in seconds</strong>, and tells you, for every line, exactly which official source it came from and when.</p>
     </section>
 
@@ -108,7 +108,7 @@
       <ul>
         <li><strong>~200 backend services</strong> in a Python and FastAPI engine (thousands of modules), with source registries, schedulers, and nightly refresh runners.</li>
         <li>Each address triggers <strong>a dozen-plus live queries</strong> against official federal, state, and regional sources; every returned answer is stamped with its source and the date it was checked.</li>
-        <li><strong>Source families</strong> span FEMA flood data (zones, FIRM panels, map amendments), the NFIP program data, state and regional GIS layers, state environmental and historic inventories, and municipal public records where a town publishes them. <em>Which municipal systems, and how they're accessed and normalized, is the proprietary part.</em></li>
+        <li><strong>Source families.</strong> Any U.S. address resolves with FEMA flood data (zones, FIRM panels, map amendments), the NFIP program data, and national layers. On top of that baseline, deep state-specific source packs are live across 20+ states and Washington, DC, each adding that state's own official public layers (cadastral, roads, wildlife buffers, soils, wetlands, and the like). Massachusetts is the deepest, adding town building-permit records and parcel-level zoning. <em>Which municipal systems, and how they're accessed and normalized, is the proprietary part.</em></li>
         <li><strong>Per-town and per-region support-depth tiers.</strong> A coastal town, an island town, and an inland city expose different things, so local context is modeled as a product feature with explicit freshness dates, not hardcoded.</li>
       </ul>
     </section>
@@ -145,8 +145,8 @@
       <h2>Results</h2>
       <div class="cs-stats">
         <div class="cs-stat">
-          <p class="cs-stat__n">23<span class="unit"> towns</span></p>
-          <p class="cs-stat__l">Parcel-level zoning, including the entire Cape</p>
+          <p class="cs-stat__n">20+<span class="unit"> states + DC</span></p>
+          <p class="cs-stat__l">Deep public-source packs, on a nationwide FEMA-flood baseline</p>
         </div>
         <div class="cs-stat">
           <p class="cs-stat__n">~200</p>
@@ -159,7 +159,7 @@
       </div>
       <ul>
         <li><strong>Live and paid.</strong> Real product, real checkout, in production at lastingground.com.</li>
-        <li><strong>Live coverage.</strong> Parcel-zoning runs for 23 Massachusetts towns including the entire Cape; the flood-insurance answers run statewide.</li>
+        <li><strong>Live coverage.</strong> Any U.S. address resolves, with FEMA flood nationwide and deep public-source packs live across 20+ states and Washington, DC. Massachusetts is the deepest, adding town building-permit records and parcel-level zoning (23 towns, including the entire Cape).</li>
         <li><strong>Verifiable engineering.</strong> The public showcase repo ships runnable example logic with <strong>18 passing tests at 93.29% line coverage in CI</strong>, architecture docs, and decision records — so a reviewer can inspect the kind of work without the proprietary internals.</li>
       </ul>
     </section>
