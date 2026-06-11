@@ -3,132 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interactive Systems Lab — Tim Sullivan</title>
-  <meta name="description" content="A small browser demo showing SquadBrain ranking/matchmaking logic and Lasting Ground source-lane validation patterns." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta http-equiv="refresh" content="0; url=/" />
+  <link rel="canonical" href="https://sulmusic2-star.github.io/" />
+  <meta name="robots" content="noindex" />
+  <title>Redirecting — Tim Sullivan</title>
+  <style>
+    html { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: #0b0d10; color: #9aa1ab;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      font-size: 14px; letter-spacing: 0.02em; text-align: center; padding: 1.5rem;
+    }
+    a { color: #34d399; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <main class="wrap">
-    <nav class="topnav"><a href="../">Portfolio</a><a href="../proof/">Selected work</a><a href="../signal/">Signal room</a><a href="../outcomes/">Outcome board</a><a href="../review/">Evaluator console</a><a href="../architecture/">Systems atlas</a><a href="../operating-model/">Operating model</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a><a href="../contact/">Contact</a></nav>
-    <header class="hero lab-hero">
-      <div>
-        <p class="eyebrow">Interactive systems lab</p>
-        <h1><span>Run the logic.</span><span>Inspect the decision.</span></h1>
-        <p class="lead">A browser-based proof surface for the public examples: roster cleanup, adaptive practice, competitive validation, source-lane scoring, support-depth decisions, and readable outputs.</p>
-        <div class="lab-proof"><span>Runs locally in browser</span><span>Mirrors public examples</span><span>Shows decision trail</span></div>
-        <div class="actions">
-          <a class="btn primary" href="#runner">Open runner</a>
-          <a class="btn" href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/examples">SquadBrain code</a>
-          <a class="btn" href="https://github.com/sulmusic2-star/lasting-ground-showcase/tree/main/examples">Lasting Ground code</a>
-        </div>
-      </div>
-      <aside class="lab-hero-console" aria-label="Systems lab proof console">
-        <div class="console-top"><i></i><i></i><i></i><span>proof runner</span></div>
-        <div class="console-metric"><strong>43</strong><span>public tests across showcase repos</span></div>
-        <div class="console-metric"><strong>2</strong><span>systems with runnable proof paths</span></div>
-        <div class="console-route"><span>Input</span><span>Rules</span><span>Guardrail</span><span>Output</span></div>
-      </aside>
-    </header>
-
-    <section class="lab-runner" id="runner" data-lab-runner aria-label="Interactive lab runner">
-      <div class="runner-copy">
-        <p class="eyebrow">Scenario runner</p>
-        <h2><span>Choose the proof.</span><span>Watch the state change.</span></h2>
-        <p>This is the part a reviewer can actually use: each scenario updates the evidence card, the decision trail, and the exact proof links.</p>
-        <div class="runner-tabs" role="tablist" aria-label="Systems lab scenarios">
-          <button class="active" type="button" data-lab-scenario="squad">SquadBrain validation</button>
-          <button type="button" data-lab-scenario="ground">Lasting Ground evidence</button>
-          <button type="button" data-lab-scenario="compare">Combined review path</button>
-        </div>
-      </div>
-      <div class="runner-console">
-        <div class="console-top"><i></i><i></i><i></i><span data-lab-label>SquadBrain validation</span></div>
-        <div class="runner-main">
-          <span data-lab-kicker>Validation boundary</span>
-          <h3 data-lab-title>Competitive results are recomputed before rank movement.</h3>
-          <p data-lab-summary>Questionable quick-match submissions are checked against timing, prompt count, answer order, and correctness before they can affect competitive state.</p>
-        </div>
-        <div class="runner-stats">
-          <div><b data-lab-stat-a>high</b><small>risk level</small></div>
-          <div><b data-lab-stat-b>answer-speed-review</b><small>flag surfaced</small></div>
-          <div><b data-lab-stat-c>25 tests</b><small>public TS checks</small></div>
-        </div>
-        <ol class="runner-steps" data-lab-steps>
-          <li><span>01</span>Normalize the roster input.</li>
-          <li><span>02</span>Prioritize practice and rank match candidates.</li>
-          <li><span>03</span>Validate the match result before accepting rank movement.</li>
-        </ol>
-        <div class="runner-actions"><a data-lab-primary href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">Open proof file</a><a data-lab-secondary href="https://sulmusic2-star.github.io/squadbrain-showcase/">Open demo</a></div>
-      </div>
-    </section>
-
-
-    <section class="live-summary" data-live-summary aria-label="Live output summary">
-      <div class="summary-copy">
-        <p class="eyebrow">Live output summary</p>
-        <h2><span>Readable scorecards generated</span><span>from the actual run.</span></h2>
-        <p>The runner keeps the raw JSON below, but this layer turns the computed output into quick product-grade evidence: risk, support, priority, validation, and delivery proof.</p>
-      </div>
-      <div class="summary-stage">
-        <div class="summary-top"><i></i><i></i><i></i><span data-summary-mode>SquadBrain validation</span></div>
-        <div class="summary-cards" data-summary-cards></div>
-        <div class="summary-pipeline" data-summary-pipeline></div>
-      </div>
-    </section>
-
-    <section class="grid logic-grid">
-      <article class="panel">
-        <div class="panel-head">
-          <div>
-            <p class="eyebrow">SquadBrain</p>
-            <h2>Roster cleanup + adaptive play logic</h2>
-          </div>
-          <button id="runSquad" class="pill">Run logic</button>
-        </div>
-        <p class="muted">The sample data includes realistic inconsistencies: duplicate names, uneven casing, invalid jersey values, multiple match candidates, and a questionable quick-match result. The demo normalizes the roster, builds prompt candidates, prioritizes practice, ranks fair opponents, and flags result risk before rankings move.</p>
-        <div class="columns">
-          <div>
-            <h3>Input</h3>
-            <pre id="squadInput"></pre>
-          </div>
-          <div>
-            <h3>Output</h3>
-            <pre id="squadOutput"></pre>
-          </div>
-        </div>
-      </article>
-
-      <article class="panel">
-        <div class="panel-head">
-          <div>
-            <p class="eyebrow">Lasting Ground</p>
-            <h2>Source-lane scoring + packet summary</h2>
-          </div>
-          <button id="runGround" class="pill">Validate lanes</button>
-        </div>
-        <p class="muted">The sample packet uses sample address data. The point is the system behavior: source authority, freshness, missing lanes, and warnings shape what the packet is allowed to say.</p>
-        <div class="columns">
-          <div>
-            <h3>Input</h3>
-            <pre id="groundInput"></pre>
-          </div>
-          <div>
-            <h3>Output</h3>
-            <pre id="groundOutput"></pre>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="panel proof lab-proof-panel">
-      <p class="eyebrow">What this demonstrates</p>
-      <div class="proof-grid">
-        <div><b>Typed product thinking</b><span>Core behavior is split into small rules a reviewer can run and test.</span></div>
-        <div><b>Evidence discipline</b><span>Outputs change when source support is incomplete instead of pretending certainty.</span></div>
-        <div><b>Portfolio clarity</b><span>The page connects screenshots and case studies to executable logic.</span></div>
-      </div>
-    </section>
-  </main>
-  <script src="app.js"></script>
+  <p>This page has moved. Redirecting to the <a href="/">portfolio home</a>&hellip;</p>
 </body>
 </html>

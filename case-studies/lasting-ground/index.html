@@ -3,37 +3,190 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lasting Ground Case Study — Tim Sullivan</title>
-  <meta name="description" content="Case study for Lasting Ground: source-backed property review packets with evidence scoring, validation gates, and cautious packet language." />
-  <link rel="stylesheet" href="../../site.css" />
+  <title>Lasting Ground — Case Study · Tim Sullivan</title>
+  <meta name="description" content="Lasting Ground: a live, paid, source-backed property-review product for Massachusetts. One address becomes source-cited answers from a deterministic Python engine — built and operated solo." />
+  <link rel="canonical" href="https://sulmusic2-star.github.io/case-studies/lasting-ground/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Lasting Ground — Case Study · Tim Sullivan" />
+  <meta property="og:description" content="A live, paid, source-backed property-review product for Massachusetts. One address becomes source-cited answers from a deterministic engine." />
+  <meta property="og:url" content="https://sulmusic2-star.github.io/case-studies/lasting-ground/" />
+  <meta property="og:image" content="https://sulmusic2-star.github.io/assets/live-answers.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,460;9..144,0,500;9..144,1,400&family=Inter:wght@400;450;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <nav class="topnav"><a href="../../">Portfolio</a><a href="../../proof/">Selected work</a><a href="../../signal/">Signal room</a><a href="../../outcomes/">Outcome board</a><a href="../../review/">Evaluator console</a><a href="../../architecture/">Systems atlas</a><a href="../../operating-model/">Operating model</a><a href="../../lab/">Systems lab</a><a href="../../contact/">Contact</a></nav>
-    <section class="hero compact">
-      <div><p class="eyebrow">Case study</p><h1>Lasting Ground: turning fragmented public context into a readable packet.</h1><p class="lead">A source-backed property review system built around validation gates, evidence scoring, review queues, support-depth rules, and printable artifacts.</p><div class="actions"><a class="btn primary" href="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf">Open sample PDF</a><a class="btn" href="https://github.com/sulmusic2-star/lasting-ground-showcase">GitHub repo</a></div></div>
-      <img class="hero-img" src="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet-cover.png" alt="Lasting Ground packet preview" />
-    </section>
-    <section class="section artifact-rail"><div><span>Surface</span><b>Readable packet</b></div><div><span>Logic</span><b>Evidence scoring</b></div><div><span>Guardrail</span><b>Support-depth rules</b></div><div><span>Proof</span><b>18 tests + sample PDF</b></div></section>
-    <section class="section case-workbench" aria-label="Lasting Ground evidence console">
-      <div class="case-console">
-        <div class="case-console-top"><i></i><b>Evidence pipeline</b></div>
-        <h2>A packet system with source checks before language.</h2>
-        <p>Lasting Ground is presented as a review system: source lanes, support-depth scoring, cautious claim language, and a generated sample packet.</p>
-        <div class="case-flow"><div><span>01</span><b>Source lanes: official, local, regional, and missing signals.</b></div><div><span>02</span><b>Evidence scoring: authority, freshness, support, blockers.</b></div><div><span>03</span><b>Packet output: readable sections with visible boundaries.</b></div></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <nav class="shell nav__inner" aria-label="Primary">
+      <a class="nav__brand" href="../../">Tim Sullivan<span class="dot">.</span></a>
+      <div class="nav__links">
+        <a href="../lasting-ground/" aria-current="page">Lasting Ground</a>
+        <a href="../squadbrain/">SquadBrain</a>
+        <a class="ext nav-hide-sm" href="https://github.com/sulmusic2-star/agentic-engineering" target="_blank" rel="noopener">How I work</a>
+        <a class="ext nav-hide-sm" href="https://github.com/sulmusic2-star" target="_blank" rel="noopener">GitHub</a>
+        <a href="../../contact/">Contact</a>
       </div>
-      <div class="case-proof-panel">
-        <a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/source_lane_validation.py"><span>Code path</span><b>Source-lane validation</b><small>Lane status becomes a visible product state.</small></a>
-        <a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py"><span>Logic</span><b>Evidence scoring</b><small>Support is scored before packet language is composed.</small></a>
-        <a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/coverage-summary.md"><span>Proof</span><b>93.29% coverage</b><small>Coverage summary for the public validation examples.</small></a>
-        <a href="https://sulmusic2-star.github.io/lasting-ground-showcase/assets/lasting-ground-sample-packet.pdf"><span>Output</span><b>Sample packet</b><small>Printable artifact with review gate and source-bounded language.</small></a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="cs-hero shell">
+      <a class="cs-back" href="../../"><span aria-hidden="true">←</span> Back to home</a>
+      <p class="eyebrow">Case study · Live, paid product</p>
+      <h1 class="cs-hero__title">Lasting Ground</h1>
+      <p class="cs-hero__tag">A live answer engine for public records. One Massachusetts address in, source-cited flood, zoning, and insurance answers out in seconds, each stamped with its official source and the date it was checked.</p>
+
+      <div class="cs-meta">
+        <div class="cs-meta__item">
+          <span class="cs-meta__k">Role</span>
+          <span class="cs-meta__v">Sole engineer &amp; operator</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__k">Stack</span>
+          <span class="cs-meta__v">Python · FastAPI · serverless edge · Stripe</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__k">Status</span>
+          <span class="cs-meta__v">In production · <a href="https://lastingground.com" target="_blank" rel="noopener">lastingground.com</a></span>
+        </div>
+      </div>
+
+      <div class="cs-actions">
+        <a class="btn btn--primary" href="https://lastingground.com" target="_blank" rel="noopener">Visit the live site <span class="arrow">↗</span></a>
+        <a class="btn btn--ghost" href="https://github.com/sulmusic2-star/lasting-ground-showcase" target="_blank" rel="noopener">Showcase repo <span class="arrow">↗</span></a>
       </div>
     </section>
-    <section class="section card"><h2>The problem</h2><p class="muted">Property context can be scattered across public layers, local boards, source registers, town pages, maps, and records. The product challenge is to make that context readable without overstating what the sources support.</p></section>
-    <section class="section"><h2>System decisions</h2><div class="proof wide"><div class="card"><h3>Evidence before language</h3><p class="muted">The packet language is downstream of source-lane validation and evidence scoring.</p></div><div class="card"><h3>Uncertainty as a product state</h3><p class="muted">Missing or stale lanes become visible warnings and review actions instead of hidden gaps.</p></div><div class="card"><h3>Artifacts people can inspect</h3><p class="muted">The system outputs a sample PDF, source register, validation gate, and coverage-backed examples.</p></div></div></section>
-    <section class="section card"><h2>Code worth inspecting</h2><ul class="link-list"><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py">evidence_scoring.py</a> — scores source lanes by authority, freshness, support, and blockers.</li><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/packet_composer.py">packet_composer.py</a> — composes packet sections from validation output.</li><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/source_lane_validation.py">source_lane_validation.py</a> — validates lane status and support depth.</li><li><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/actions/workflows/ci.yml">CI workflow</a> — runs tests and coverage.</li></ul></section>
-    <section class="section card"><p class="eyebrow">Capabilities demonstrated</p><h2>Evidence architecture plus readable delivery.</h2><p class="muted">Full-stack workflow design, cautious claim handling, source-backed product architecture, validation gates, generated artifacts, and technical communication for complex domains.</p></section>
+
+    <!-- COVER FIGURE -->
+    <section class="shell">
+      <figure class="cs-figure">
+        <img src="../../assets/live-answers.png"
+             loading="lazy" width="2880" height="1800"
+             alt="The Lasting Ground live answer engine for a Massachusetts address: 11 source-cited answers found, grouped by source category, each stamped with its official source and the date it was checked." />
+        <figcaption>The live engine returning source-cited answers for an address. Informational only; not legal, engineering, inspection, or permitting advice.</figcaption>
+      </figure>
+    </section>
+
+    <!-- SCOPE NOTE -->
+    <div class="prose shell">
+      <div class="note">
+        <p><strong>A note on scope.</strong> This case study describes <em>what</em> the system does, <em>how</em> it's architected, and <em>how</em> I built and operate it. The source-acquisition pipeline (how specific records are discovered, accessed, and normalized) is the product's competitive moat and is kept proprietary. Everything below is verifiable from the live site and the public showcase repo; the parts that aren't here are omitted on purpose, not missing.</p>
+      </div>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <section class="prose shell section">
+      <h2>The problem</h2>
+      <p>Before someone buys, renovates, or lends against a Massachusetts property, the same questions come up every time. Is it in a FEMA flood zone, and what will insurance cost? Has it been officially mapped out of the floodplain? What's the base flood elevation versus the ground? Are there wetlands, a conservation restriction, contamination nearby, or zoning limits on what you can build?</p>
+      <p>Today the answers are scattered across dozens of disconnected government systems: federal flood maps, state GIS layers, and a different permit portal for nearly every one of Massachusetts' 351 cities and towns. Getting a real answer means hours of manual lookups, and most people either skip it or pay for a slow, generic report.</p>
+      <p><strong>Lasting Ground turns one address into a source-cited answer set in seconds</strong>, and tells you, for every line, exactly which official source it came from and when.</p>
+    </section>
+
+    <!-- WHAT IT IS -->
+    <section class="prose shell section">
+      <h2>What it is</h2>
+      <p>A live product with a real funnel: type an address, get a free snapshot of the strongest signals, then buy the full property-check packet of four pages plus a sources-and-confidence appendix. It runs on a serverless edge front end backed by a large Python engine that does the actual source work.</p>
+      <p>Two examples that run today:</p>
+      <ul>
+        <li>A Quincy waterfront address returns its FEMA zone <strong>with the governing FIRM panel and effective date</strong>, a found <strong>Letter of Map Amendment</strong> (the official document that can remove a mandatory-insurance requirement), and the town's <strong>Community Rating System class and the NFIP premium discount</strong> that comes with it.</li>
+        <li>A Nantucket address returns a base-flood-elevation answer that <strong>surfaces its own source disagreement</strong> — the approved packet value versus a live map re-query — instead of quietly picking one. Knowing what you <em>don't</em> know is the whole point in a regulated domain.</li>
+      </ul>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="prose shell section">
+      <h2>Architecture, at altitude</h2>
+      <p>An address is verified and resolved to a parcel, then the engine fans out to official sources in parallel. Each returned answer carries its source name, the date it was checked, and its scope. Support-depth and routing rules shape the result, and an audit gate decides what becomes a free snapshot versus a paid packet — with the paywall enforced server-side.</p>
+      <ul>
+        <li><strong>~200 backend services</strong> in a Python and FastAPI engine (thousands of modules), with source registries, schedulers, and nightly refresh runners.</li>
+        <li>Each address triggers <strong>a dozen-plus live queries</strong> against official federal, state, and regional sources; every returned answer is stamped with its source and the date it was checked.</li>
+        <li><strong>Source families</strong> span FEMA flood data (zones, FIRM panels, map amendments), the NFIP program data, state and regional GIS layers, state environmental and historic inventories, and municipal public records where a town publishes them. <em>Which municipal systems, and how they're accessed and normalized, is the proprietary part.</em></li>
+        <li><strong>Per-town and per-region support-depth tiers.</strong> A coastal town, an island town, and an inland city expose different things, so local context is modeled as a product feature with explicit freshness dates, not hardcoded.</li>
+      </ul>
+    </section>
+
+    <!-- DECISIONS -->
+    <section class="prose shell section">
+      <h2>The engineering decisions that matter</h2>
+      <p>The UI is the easy 20%. These are the choices that made it a product instead of a demo.</p>
+      <ol>
+        <li><strong>Verify-first, never a determination.</strong> The system separates source-backed local detail, regional defaults, named gaps, and out-of-scope questions. If a source doesn't support a claim, the product doesn't make it. In a domain adjacent to insurance, lending, and permitting, the careful sentence is the product.</li>
+        <li><strong>An audit gate between computed and customer-visible.</strong> Capability is built behind a gate and only reaches a customer after it passes review — so the live packet never silently degrades when an upstream source changes.</li>
+        <li><strong>A server-enforced trust boundary.</strong> Locked answers are genuinely absent from the API payload, not hidden in the browser. The paywall is a real boundary, not CSS.</li>
+        <li><strong>Edge caching with honest status.</strong> A cold address resolves in a few seconds across many live source queries; a repeat is sub-second, with the cache state reported explicitly rather than hidden.</li>
+        <li><strong>Source-conflict honesty.</strong> When two official sources disagree, the answer says so. Most systems hide this; surfacing it is what a careful buyer or attorney actually needs.</li>
+      </ol>
+    </section>
+
+    <!-- HOW I BUILT IT -->
+    <section class="prose shell section">
+      <h2>How I built and operate it</h2>
+      <p>I built and run this solo, by orchestrating AI coding agents (primarily Claude Code and OpenAI Codex) as a small engineering team with a defined operating model.</p>
+      <ul>
+        <li><strong>A division of labor with review gates.</strong> One agent does data and engine work in the canonical repo; another acts as the review, promotion, and deploy gate. Nothing reaches customers without passing that gate.</li>
+        <li><strong>Verification over trust.</strong> Every build is checked against live sources and a test suite before it ships. I treat agent output as a draft to be proven, not accepted.</li>
+        <li><strong>Incident recovery as a first-class skill.</strong> I've recovered the system from real failures, including a repository-corruption event and a destructive data regression, without losing the product.</li>
+      </ul>
+      <p>The judgment is mine: architecture, what to trust, what to keep proprietary, what's safe to tell a customer. The agents are a force multiplier that lets one person ship and operate something that normally takes a team.</p>
+      <p>There's a second, quieter judgment in the product. I use AI agents to <em>build</em> it, but the engine itself is deterministic. <strong>The compliance-critical answers (flood zone, insurance, zoning) never pass through a language model.</strong> In a domain next to insurance and lending, an answer has to be reproducible and traceable to an official source every time, so the model stays out of the hot path and the sources speak for themselves. Knowing where AI belongs, and where it doesn't, is what the whole product rests on.</p>
+      <p>I've written this operating model up, with runnable, synthetic-data examples including an eval gate, an Agent Skill, and an MCP server, in <a href="https://github.com/sulmusic2-star/agentic-engineering" target="_blank" rel="noopener">agentic-engineering</a>.</p>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="prose shell section">
+      <h2>Results</h2>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <p class="cs-stat__n">23<span class="unit"> towns</span></p>
+          <p class="cs-stat__l">Parcel-level zoning, including the entire Cape</p>
+        </div>
+        <div class="cs-stat">
+          <p class="cs-stat__n">~200</p>
+          <p class="cs-stat__l">Backend services in the Python engine</p>
+        </div>
+        <div class="cs-stat">
+          <p class="cs-stat__n">93.29<span class="unit">%</span></p>
+          <p class="cs-stat__l">Line coverage · 18 tests in CI (showcase repo)</p>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Live and paid.</strong> Real product, real checkout, in production at lastingground.com.</li>
+        <li><strong>Live coverage.</strong> Parcel-zoning runs for 23 Massachusetts towns including the entire Cape; the flood-insurance answers run statewide.</li>
+        <li><strong>Verifiable engineering.</strong> The public showcase repo ships runnable example logic with <strong>18 passing tests at 93.29% line coverage in CI</strong>, architecture docs, and decision records — so a reviewer can inspect the kind of work without the proprietary internals.</li>
+      </ul>
+    </section>
+
+    <!-- NEXT -->
+    <section class="contact-cta shell section--tight reveal">
+      <p class="eyebrow">Next</p>
+      <h2>See the other product, or get in touch.</h2>
+      <div class="btn-row">
+        <a class="btn btn--ghost" href="../squadbrain/">SquadBrain case study <span class="arrow">→</span></a>
+        <a class="btn btn--primary" href="mailto:hello@lastingground.com">Email me <span class="arrow">→</span></a>
+      </div>
+    </section>
+
   </main>
-  <footer class="wrap">Lasting Ground case study · Evidence scoring · Review queues · Packet artifacts</footer>
+
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <span>Lasting Ground — built solo, operated solo.</span>
+      <div class="footer__links">
+        <a href="https://lastingground.com" target="_blank" rel="noopener">lastingground.com</a>
+        <a href="mailto:hello@lastingground.com">hello@lastingground.com</a>
+        <a href="../../">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../main.js" defer></script>
 </body>
 </html>

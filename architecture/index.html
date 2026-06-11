@@ -3,110 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Systems Atlas — Tim Sullivan</title>
-  <meta name="description" content="Systems atlas for Tim Sullivan's public work: architecture decisions, tradeoffs, constraints, data flow, validation gates, and delivery proof." />
-  <link rel="stylesheet" href="../site.css" />
+  <meta http-equiv="refresh" content="0; url=/" />
+  <link rel="canonical" href="https://sulmusic2-star.github.io/" />
+  <meta name="robots" content="noindex" />
+  <title>Redirecting — Tim Sullivan</title>
+  <style>
+    html { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: #0b0d10; color: #9aa1ab;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      font-size: 14px; letter-spacing: 0.02em; text-align: center; padding: 1.5rem;
+    }
+    a { color: #34d399; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <main class="wrap">
-    <nav class="topnav"><a href="../">Portfolio</a><a href="../review/">Evaluator console</a><a href="../proof/">Selected work</a><a href="../signal/">Signal room</a><a href="../outcomes/">Outcome board</a><a href="../operating-model/">Operating model</a><a href="../lab/">Systems lab</a><a href="../case-studies/squadbrain/">SquadBrain</a><a href="../case-studies/lasting-ground/">Lasting Ground</a><a href="../contact/">Contact</a></nav>
-
-    <section class="hero compact hero-showcase">
-      <div>
-        <p class="eyebrow">Systems atlas</p>
-        <h1><span>Architecture is where</span><span>the product promise</span><span>becomes enforceable.</span></h1>
-        <p class="lead">A public map of how the showcase systems handle constraints, tradeoffs, validation, review states, and proof artifacts.</p>
-        <div class="actions"><a class="btn primary" href="#tradeoffs">Explore tradeoffs</a><a class="btn" href="#diagrams">View system maps</a></div>
-      </div>
-      <aside class="atlas-blueprint" aria-label="Architecture atlas blueprint">
-        <div class="blueprint-top"><span>Systems blueprint</span><b>public proof layer</b></div>
-        <div class="blueprint-core"><span>control point</span><strong>Product promise becomes rules</strong></div>
-        <div class="blueprint-grid">
-          <div class="blueprint-node"><span>01</span><b>Constraints</b><small>what the system must respect</small></div>
-          <div class="blueprint-node"><span>02</span><b>Tradeoffs</b><small>what gets chosen and why</small></div>
-          <div class="blueprint-node"><span>03</span><b>Validation</b><small>where weak input is stopped</small></div>
-          <div class="blueprint-node"><span>04</span><b>Artifacts</b><small>proof someone can inspect</small></div>
-        </div>
-      </aside>
-    </section>
-
-
-
-    <section class="section atlas-trace" data-atlas-trace aria-label="Architecture trace explorer">
-      <div class="atlas-trace-copy">
-        <p class="eyebrow">Trace explorer</p>
-        <h2><span>Architecture shown as</span><span>an inspectable path.</span></h2>
-        <p>Choose a system and follow how input becomes a decision, how weak input is guarded, and where the public proof lives.</p>
-        <div class="atlas-trace-tabs" role="tablist" aria-label="Architecture traces">
-          <button class="active" type="button" data-trace-key="squad">SquadBrain trace</button>
-          <button type="button" data-trace-key="lasting">Lasting Ground trace</button>
-          <button type="button" data-trace-key="review">Review system trace</button>
-        </div>
-      </div>
-      <div class="atlas-trace-console">
-        <div class="atlas-trace-top"><i></i><i></i><i></i><span data-trace-label>SquadBrain trace</span></div>
-        <h3 data-trace-title>Competitive practice flow with validation boundary.</h3>
-        <p data-trace-summary>Roster input becomes normalized practice state, adaptive priority, match result, recomputed score, and reviewable rank movement.</p>
-        <div class="trace-flow" data-trace-flow>
-          <div><span>01</span><b>Input</b><small>Roster + session state</small></div>
-          <div><span>02</span><b>Rules</b><small>Priority + match constraints</small></div>
-          <div><span>03</span><b>Guardrail</b><small>Recompute results</small></div>
-          <div><span>04</span><b>Output</b><small>Progress + proof</small></div>
-        </div>
-        <div class="trace-receipt"><b data-trace-risk>Risk handled: untrusted competitive submissions.</b><span data-trace-proof>Proof: result-validation.ts + ADR-01</span></div>
-        <div class="trace-actions"><a data-trace-primary href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">Open proof file</a><a data-trace-secondary href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/docs/adr">Open decision records</a></div>
-      </div>
-    </section>
-
-    <section class="section architecture-lenses" id="diagrams">
-      <div class="section-head"><p class="eyebrow">Architecture lenses</p><h2><span>Same projects,</span><span>different engineering questions.</span></h2></div>
-      <div class="lens-tabs" role="tablist"><button class="lens-tab active" data-lens="surface">Surface</button><button class="lens-tab" data-lens="logic">Logic</button><button class="lens-tab" data-lens="validation">Validation</button><button class="lens-tab" data-lens="delivery">Delivery</button></div>
-      <div class="lens-output card" id="lensOutput"></div>
-    </section>
-
-    <section class="section" id="tradeoffs">
-      <div class="section-head"><p class="eyebrow">Decision records</p><h2>Tradeoffs made visible instead of hidden inside the build.</h2></div>
-      <div class="adr-grid">
-        <article class="adr-card"><span>ADR-01</span><h3>Keep competitive scoring recomputable</h3><p class="muted">SquadBrain does not treat client-reported score as the source of truth for competitive movement.</p><dl><dt>Tradeoff</dt><dd>More validation logic, less trust in the UI layer.</dd><dt>Benefit</dt><dd>Rank movement can be defended and suspicious results can be held for review.</dd></dl><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/docs/adr/001-recompute-competitive-results.md">Inspect example</a></article>
-        <article class="adr-card"><span>ADR-02</span><h3>Practice priority beats random recall</h3><p class="muted">The practice queue uses due state, misses, stability, exposure, and prompt mix.</p><dl><dt>Tradeoff</dt><dd>More state modeling, less simple randomization.</dd><dt>Benefit</dt><dd>The product can explain why a card appears next.</dd></dl><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/docs/adr/002-explainable-practice-priority.md">Inspect example</a></article>
-        <article class="adr-card"><span>ADR-03</span><h3>Evidence before packet language</h3><p class="muted">Lasting Ground output language is downstream of source-lane validation and evidence scoring.</p><dl><dt>Tradeoff</dt><dd>More cautious output, fewer unsupported conclusions.</dd><dt>Benefit</dt><dd>The artifact stays reviewable and source-bounded.</dd></dl><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/adr/001-evidence-scoring-before-language.md">Inspect example</a></article>
-        <article class="adr-card"><span>ADR-04</span><h3>Uncertainty is a product state</h3><p class="muted">Missing or weak source lanes are shown as caution/missing states, not hidden.</p><dl><dt>Tradeoff</dt><dd>The output is less magically complete.</dd><dt>Benefit</dt><dd>Reviewers can see source coverage honestly.</dd></dl><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/docs/adr/002-uncertainty-as-product-state.md">Inspect example</a></article>
-      </div>
-    </section>
-
-
-    <section class="section distinctive-signals">
-      <div class="section-head"><p class="eyebrow">Distinctive signals</p><h2>Specific capability signals, not generic portfolio claims.</h2></div>
-      <div class="matrix-grid">
-        <div class="matrix-card"><span>Validation boundary</span><b>Does not trust the prettiest UI state</b><p>Competitive results are recomputed before rank movement.</p></div>
-        <div class="matrix-card"><span>Explainable operations</span><b>Every priority has a reason</b><p>Practice queues and source lanes expose the factors behind decisions.</p></div>
-        <div class="matrix-card"><span>Honest output</span><b>Uncertainty is shown directly</b><p>Missing or weak evidence becomes a visible product state.</p></div>
-        <div class="matrix-card"><span>Reviewable delivery</span><b>Public proof paths are first-class</b><p>Demos, tests, CI, coverage, ADRs, and sample artifacts are connected.</p></div>
-      </div>
-    </section>
-
-    <section class="section card">
-      <p class="eyebrow">Risk / guardrail map</p>
-      <h2>Advanced work is often about knowing what not to automate blindly.</h2>
-      <div class="risk-table">
-        <div><b>Risk</b><b>Guardrail</b><b>Public proof</b></div>
-        <div><span>Untrusted competitive submissions</span><span>Server-style recomputation and risk flags</span><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">result-validation.ts</a></div>
-        <div><span>Practice loop becomes random trivia</span><span>Priority scoring and explainable reasons</span><a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts">adaptive-practice.ts</a></div>
-        <div><span>Source context becomes overconfident language</span><span>Evidence score and support-depth gate</span><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/evidence_scoring.py">evidence_scoring.py</a></div>
-        <div><span>Incomplete lane looks complete</span><span>Visible caution and missing states</span><a href="https://github.com/sulmusic2-star/lasting-ground-showcase/blob/main/examples/packet_composer.py">packet_composer.py</a></div>
-      </div>
-    </section>
-  </main>
-  <footer class="wrap">Systems atlas · Architecture decisions · Tradeoffs · Validation gates · Proof artifacts</footer>
-  <script>
-    const lenses={
-      surface:{title:'Surface lens',summary:'How the system becomes usable and understandable.',left:['Mobile practice rounds','Quick-match result surfaces','Sample packet preview','Evaluator routing'],right:['SquadBrain demo','Lasting Ground demo','Case studies','Systems lab']},
-      logic:{title:'Logic lens',summary:'Where product behavior becomes rules and state.',left:['Practice priority score','Matchmaking constraints','Evidence lane scoring','Support-depth decisions'],right:['adaptive-practice.ts','matchmaking.ts','evidence_scoring.py','source_lane_validation.py']},
-      validation:{title:'Validation lens',summary:'Where the system prevents weak or untrusted output.',left:['Recompute competitive score','Flag impossible sessions','Disclose weak source lanes','Cautious packet language'],right:['result-validation.ts','packet_language.py','packet_composer.py','validation tests']},
-      delivery:{title:'Delivery lens',summary:'How the work becomes reviewable outside the private production system.',left:['Live pages','Public examples','Coverage summaries','Evaluator guides'],right:['GitHub Pages','CI workflows','Sample PDF','Documentation']}
-    };
-    function renderLens(key){const data=lenses[key];lensOutput.innerHTML=`<p class="eyebrow">${data.title}</p><h2><span>${data.summary}</span></h2><div class="atlas-map"><div><h3>System concerns</h3>${data.left.map(x=>`<p>${x}</p>`).join('')}</div><div><h3>Inspectable artifacts</h3>${data.right.map(x=>`<p>${x}</p>`).join('')}</div></div>`;}
-    document.querySelectorAll('.lens-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.lens-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderLens(btn.dataset.lens);}));renderLens('surface');
-  </script>
+  <p>This page has moved. Redirecting to the <a href="/">portfolio home</a>&hellip;</p>
 </body>
 </html>
