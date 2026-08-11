@@ -1,6 +1,6 @@
 # Skills Snapshot
 
-I design, build, and operate production software by orchestrating AI coding agents (Claude Code, OpenAI Codex) — with the architecture, verification, and review-gate discipline that makes agent output trustworthy. I currently run a **live, paid property-data product** end to end as the sole engineer.
+I design, build, and operate production software by orchestrating AI coding agents (Claude Code, OpenAI Codex) — with the architecture, verification, and review-gate discipline that makes agent output trustworthy. I currently run a **live property-data product with server-enforced checkout** end to end as the sole operator.
 
 ## Strongest skills
 
@@ -13,7 +13,7 @@ I design, build, and operate production software by orchestrating AI coding agen
 
 ## Selected work
 
-- **Lasting Ground** — a live, paid, source-backed property-review engine for Massachusetts. One address → source-cited answers (FEMA flood/insurance, wetlands, zoning, contamination), each line stamped with its official source and date. Built and operated solo: serverless front end + Stripe over a ~200-service Python engine. → [lastingground.com](https://lastingground.com)
+- **Lasting Ground** — a live, source-backed property-review engine. One address → source-cited answers (FEMA flood/insurance, wetlands, zoning, contamination), each line stamped with its official source and date. Designed and operated independently: serverless front end + Stripe over a large Python engine. → [lastingground.com](https://lastingground.com)
 - **SquadBrain** — a React Native / Expo / TypeScript / Firebase mobile game, **live on the iOS App Store**; product logic extracted into 7 typed modules with 25 tests at 98.3% line coverage in CI. → [App Store](https://apps.apple.com/us/app/squadbrain/id6756122317) · [showcase](https://sulmusic2-star.github.io/case-studies/squadbrain/)
 - Public proof of work — tested code examples, coverage summaries, CI, decision records, and sample artifacts so the work can be reviewed directly. → [Selected work](https://sulmusic2-star.github.io/proof/) · [Systems lab](https://sulmusic2-star.github.io/lab/)
 
