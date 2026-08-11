@@ -443,6 +443,7 @@
   .workflow-rail > div:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: calc(var(--space-4) * -1); transform: translateX(50%); }
   .control-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pilot-grid { grid-template-columns: 1fr; }
+  .proof-links { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
