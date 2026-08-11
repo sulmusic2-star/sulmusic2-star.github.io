@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI workflow design sample — Tim Sullivan</title>
+  <meta name="description" content="A governed AI workflow design for public-record review: process analysis, use-case priorities, agent and integration architecture, guardrails, pilot plan, and proof." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,460;9..144,500&family=Inter:wght@400;450;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <nav class="shell nav__inner" aria-label="Primary">
+      <a class="nav__brand" href="../">Tim Sullivan<span class="dot">.</span></a>
+      <div class="nav__links">
+        <a href="#workflow">Workflow</a>
+        <a href="#controls">Controls</a>
+        <a href="#proof">Proof</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <article class="case-shell">
+      <header class="case-hero">
+        <p class="case-kicker">AI solution design sample · August 2026</p>
+        <h1>A governed AI workflow for public-record review.</h1>
+        <p class="case-deck">One process, carried from discovery through use-case selection, agent and integration design, controls, pilot stages, and measurement.</p>
+        <div class="case-actions" aria-label="Downloads and evidence">
+          <a class="btn btn--primary" href="../assets/Tim_Sullivan_Creatio_AI_Workflow_Case_Study.pdf">Open case study <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="../assets/Tim_Sullivan_Creatio_AI_Consultant_Resume.pdf">Open résumé <span aria-hidden="true">→</span></a>
+        </div>
+      </header>
+
+      <dl class="brief-strip" aria-label="Case study scope">
+        <div><dt>Prepared by</dt><dd>Tim Sullivan</dd></div>
+        <div><dt>Working system</dt><dd>Lasting Ground</dd></div>
+        <div><dt>Role fit</dt><dd>AI solution consulting</dd></div>
+        <div><dt>Boundary</dt><dd>No Creatio deployment claimed</dd></div>
+      </dl>
+
+      <section class="case-section problem-section" aria-labelledby="problem-title">
+        <div class="section-number" aria-hidden="true">01</div>
+        <div class="section-copy">
+          <p class="case-kicker">Current process</p>
+          <h2 id="problem-title">The work begins across disconnected systems.</h2>
+          <p>A property or community review can require separate federal, state, county, regional, and municipal searches. Sources use different address formats, update schedules, query interfaces, and evidentiary limits.</p>
+          <p>An unavailable record cannot safely become “none exists.” A screening result cannot become a legal, engineering, environmental, insurance, lending, or regulatory determination.</p>
+        </div>
+        <aside class="decision-note" aria-label="Workflow objective">
+          <span>Objective</span>
+          <p>Reduce manual assembly time while retaining exact sources, unresolved fields, and human control over consequential output.</p>
+        </aside>
+      </section>
+
+      <section class="case-section priorities" aria-labelledby="priority-title">
+        <div class="section-number" aria-hidden="true">02</div>
+        <div class="section-copy section-copy--wide">
+          <p class="case-kicker">Use-case priority</p>
+          <h2 id="priority-title">Automate the evidence-bounded work first.</h2>
+          <ol class="priority-list">
+            <li>
+              <div><strong>One-address review</strong><span>Implemented broadly</span></div>
+              <p>High value and technically bounded when each result retains its official source, date, and scope.</p>
+            </li>
+            <li>
+              <div><strong>Unresolved-item queue</strong><span>Implemented as a state</span></div>
+              <p>Prevents silent gaps and gives each follow-up an owner, reason, and stopping condition.</p>
+            </li>
+            <li>
+              <div><strong>Community address filtering</strong><span>Bounded implementations</span></div>
+              <p>Useful where a defensible denominator and official layer are available.</p>
+            </li>
+            <li>
+              <div><strong>Multi-town coalition view</strong><span>Roadmap</span></div>
+              <p>High buyer value; requires a generalized jurisdiction, source-depth, and denominator model.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case-section workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-number" aria-hidden="true">03</div>
+        <div class="section-copy section-copy--wide">
+          <p class="case-kicker">Architecture</p>
+          <h2 id="workflow-title">Agents assist the workflow. Evidence controls the answer.</h2>
+          <div class="workflow-rail" role="list" aria-label="Five workflow stages">
+            <div role="listitem"><span>1</span><strong>Request</strong><small>Address or bounded area</small></div>
+            <div role="listitem"><span>2</span><strong>Connect</strong><small>REST · ArcGIS · documents · MCP</small></div>
+            <div role="listitem"><span>3</span><strong>Resolve</strong><small>Normalize, match, flag conflicts</small></div>
+            <div role="listitem"><span>4</span><strong>Answer</strong><small>Result · source · date · unresolved state</small></div>
+            <div role="listitem"><span>5</span><strong>Review</strong><small>Approval, release, follow-up</small></div>
+          </div>
+          <div class="agent-lane">
+            <span>Agent assistance outside the deterministic answer path</span>
+            <p>Source discovery · parser drafting · test generation · regression triage · follow-up preparation</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section implementation" aria-labelledby="implementation-title">
+        <div class="section-number" aria-hidden="true">04</div>
+        <div class="section-copy section-copy--wide">
+          <p class="case-kicker">Implementation mapping</p>
+          <h2 id="implementation-title">A working system and a proposed Creatio design.</h2>
+          <div class="implementation-grid">
+            <section aria-labelledby="existing-title">
+              <span class="state-label">Built and operating</span>
+              <h3 id="existing-title">Lasting Ground</h3>
+              <ul>
+                <li>Source and address workflows</li>
+                <li>Deterministic result fields</li>
+                <li>Source-support and wording rules</li>
+                <li>Validation and promotion gates</li>
+                <li>Public tests and evaluation examples</li>
+              </ul>
+            </section>
+            <section aria-labelledby="proposed-title">
+              <span class="state-label">Proposed for Creatio</span>
+              <h3 id="proposed-title">Enterprise delivery model</h3>
+              <ul>
+                <li>Case or property record for workflow state</li>
+                <li>Business Studio orchestration</li>
+                <li>AI Studio triage and follow-up agents</li>
+                <li>REST and MCP retrieval/verification tools</li>
+                <li>Approvals, exception routing, and dashboards</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section controls" id="controls" aria-labelledby="controls-title">
+        <div class="section-number" aria-hidden="true">05</div>
+        <div class="section-copy section-copy--wide">
+          <p class="case-kicker">Control contract</p>
+          <h2 id="controls-title">Failure behavior is part of the design.</h2>
+          <div class="control-list">
+            <article><h3>Evidence</h3><p>Require an official source, URL, checked date, scope, and version. Hold or mark unresolved when missing.</p></article>
+            <article><h3>Entity resolution</h3><p>Use normalized addresses and known-record controls. No match is not treated as no record.</p></article>
+            <article><h3>Language</h3><p>Derive allowed statements from the source contract. Use <code>Not confirmed</code> instead of inventing a negative.</p></article>
+            <article><h3>Permissions</h3><p>Keep secrets outside model context. Denied access creates a review task instead of a guessed answer.</p></article>
+            <article><h3>Release</h3><p>Keep computed, reviewed, customer-visible, and public states separate.</p></article>
+            <article><h3>Monitoring</h3><p>Use golden-set checks and exception sampling. Quarantine a source lane when it regresses.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section pilot" aria-labelledby="pilot-title">
+        <div class="section-number" aria-hidden="true">06</div>
+        <div class="section-copy section-copy--wide">
+          <p class="case-kicker">Pilot and measurement</p>
+          <h2 id="pilot-title">One jurisdiction. One source family. One review owner.</h2>
+          <div class="pilot-grid">
+            <ol>
+              <li><strong>Discovery</strong><span>Map steps, systems, decisions, owners, baseline time, volume, and failure modes.</span></li>
+              <li><strong>Prototype</strong><span>Configure one workflow, one connector, the agent tools, approval policy, and golden test set.</span></li>
+              <li><strong>Controlled pilot</strong><span>Run live work with human review; record exceptions, unresolved reasons, and review time.</span></li>
+              <li><strong>Scale decision</strong><span>Expand only if accuracy, adoption, cycle time, and exception handling meet agreed thresholds.</span></li>
+            </ol>
+            <dl class="scorecard">
+              <div><dt>Cycle time</dt><dd>Baseline before target</dd></div>
+              <div><dt>Exact-source coverage</dt><dd>By source family</dd></div>
+              <div><dt>Golden-set accuracy</dt><dd>Correct result or abstention</dd></div>
+              <div><dt>Unresolved aging</dt><dd>Owner-defined service level</dd></div>
+              <div><dt>Review rate</dt><dd>Declines only without accuracy loss</dd></div>
+              <div><dt>Cost per completed review</dt><dd>Compared with manual baseline</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section proof" id="proof" aria-labelledby="proof-title">
+        <div class="section-number" aria-hidden="true">07</div>
+        <div class="section-copy section-copy--wide">
+          <p class="case-kicker">Working evidence</p>
+          <h2 id="proof-title">The public route is runnable.</h2>
+          <div class="proof-links">
+            <a href="https://github.com/sulmusic2-star/lasting-ground-showcase" target="_blank" rel="noopener"><strong>Lasting Ground examples</strong><span>18 tests · 93% line coverage</span></a>
+            <a href="https://github.com/sulmusic2-star/agentic-engineering" target="_blank" rel="noopener"><strong>Agentic Engineering</strong><span>Evals · drift · Skill · MCP</span></a>
+            <a href="https://github.com/sulmusic2-star/groundtruth-geo" target="_blank" rel="noopener"><strong>GroundTruth-Geo</strong><span>33 items · 7 states · grader · MCP</span></a>
+            <a href="https://apps.apple.com/us/app/squadbrain/id6756122317" target="_blank" rel="noopener"><strong>SquadBrain</strong><span>Shipped iOS product · 25 tests</span></a>
+          </div>
+          <div class="limitations">
+            <h3>Limits stated before review</h3>
+            <p>Multi-town filtering is not generalized. State and country depth is uneven. Some results identify an indexed official source rather than a record-level link. Lasting Ground has not yet had customers or received payments; this is a product-and-systems example, not a customer case study.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="case-footer">
+        <div>
+          <p class="case-kicker">Tim Sullivan</p>
+          <p>AI workflow and product systems</p>
+        </div>
+        <div class="case-actions">
+          <a class="btn btn--primary" href="mailto:hello@lastingground.com">Email Tim <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="../">Portfolio <span aria-hidden="true">→</span></a>
+        </div>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
