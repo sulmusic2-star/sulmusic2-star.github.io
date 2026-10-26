@@ -1,30 +1,17 @@
-# Skills Snapshot
+# Selected skills and examples
 
-I design, build, and operate production software by orchestrating AI coding agents (Claude Code, OpenAI Codex) — with the architecture, verification, and review-gate discipline that makes agent output trustworthy. I currently run a **live property-data product with server-enforced checkout** end to end as the sole operator.
+## Property-record workflows
 
-## Strongest skills
+[Lasting Ground public examples](https://github.com/sulmusic2-star/lasting-ground-showcase) cover source-lane validation, evidence scoring, uncertainty states and report assembly on synthetic input. The application source is private.
 
-- **AI-agent orchestration** — directing Claude Code + Codex as a small engineering team: multi-agent workflows, review/promotion gates, verification against real sources, prompt and tool design. Senior-team throughput as one person.
-- **Backend & data engineering** — Python / FastAPI, REST API design, data ingestion/ETL at scale, GIS / geospatial queries (ArcGIS REST, point-in-polygon, projections), source-provenance and validation systems.
-- **Full-stack web product** — Cloudflare Pages/Functions (serverless edge), Stripe payments, security headers/CSP, edge caching, vanilla HTML/CSS/JS.
-- **Mobile product** — React Native, Expo, TypeScript, Firebase (Auth/Firestore/Cloud Functions), game loops, progression systems.
-- **Evidence-first / compliance-grade systems** — source registries, validation gates, support-depth rules, careful claim handling for trust-sensitive domains.
-- **Ship-readiness** — tests (pytest + Vitest), GitHub Actions CI, coverage, ADRs, sample artifacts, demos that make the work easy to evaluate.
+## Mobile application logic
 
-## Selected work
+[SquadBrain public examples](https://github.com/sulmusic2-star/squadbrain-showcase) cover session state, ranking, practice selection, matchmaking and submitted-result checks. SquadBrain is listed on the App Store under Timothy Sullivan. The public examples are a selected portion of the application.
 
-- **Lasting Ground** — a live, source-backed property-review engine. One address → source-cited answers (FEMA flood/insurance, wetlands, zoning, contamination), each line stamped with its official source and date. Designed and operated independently: serverless front end + Stripe over a large Python engine. → [lastingground.com](https://lastingground.com)
-- **SquadBrain** — a React Native / Expo / TypeScript / Firebase mobile game, **live on the iOS App Store**; product logic extracted into 7 typed modules with 25 tests at 98.3% line coverage in CI. → [App Store](https://apps.apple.com/us/app/squadbrain/id6756122317) · [showcase](https://sulmusic2-star.github.io/case-studies/squadbrain/)
-- Public proof of work — tested code examples, coverage summaries, CI, decision records, and sample artifacts so the work can be reviewed directly. → [Selected work](https://sulmusic2-star.github.io/proof/) · [Systems lab](https://sulmusic2-star.github.io/lab/)
+## Data verification
 
-## Roles this fits
+[GroundTruth-Geo](https://github.com/sulmusic2-star/groundtruth-geo) contains a small property-record test set, dated official-source receipts, geometry checks and an answer grader. The selected cases are not a representative accuracy study.
 
-- Forward-Deployed Engineer
-- Applied AI / Solutions Engineer
-- Founding Engineer
-- AI Implementation / Automation Engineer
-- Technical Solutions — proptech / insurtech / climate-risk
+## Developer tools
 
-## Short summary
-
-I take ambiguous, data-heavy problems and ship working, customer-facing systems fast — with the judgment to keep the architecture sound, the claims honest, and the moat proprietary.
+[Agent Vigil](https://github.com/sulmusic2-star/agent-vigil) contains pull-request verification tooling. [Patch Lab](https://github.com/sulmusic2-star/patch-lab) is a public alpha for repository evidence and migration checks.

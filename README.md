@@ -1,14 +1,11 @@
-# Tim Sullivan Portfolio Site
+# Tim Sullivan
 
-Public portfolio for product systems work, case studies, and proof artifacts.
+Selected software projects, with public code and technical notes.
 
-Live site: https://sulmusic2-star.github.io/
+[Portfolio](https://sulmusic2-star.github.io/) · [GitHub](https://github.com/sulmusic2-star)
 
-Featured projects:
+- [Lasting Ground](https://github.com/sulmusic2-star/lasting-ground-showcase): synthetic Python examples of source validation and report assembly.
+- [SquadBrain](https://github.com/sulmusic2-star/squadbrain-showcase): selected TypeScript examples of mobile application logic.
+- [GroundTruth-Geo](https://github.com/sulmusic2-star/groundtruth-geo): a small property-record test set with dated receipts and geometry checks.
 
-- GroundTruth-Geo — deterministic, government-cited benchmark of parcel-precise property facts (+ MCP server): https://github.com/sulmusic2-star/groundtruth-geo
-- Lasting Ground — live answer engine for public records: https://sulmusic2-star.github.io/lasting-ground-showcase/ ([live](https://lastingground.com))
-- SquadBrain — sports roster memorization game, live on iOS: https://sulmusic2-star.github.io/squadbrain-showcase/ ([App Store](https://apps.apple.com/us/app/squadbrain/id6756122317))
-- Agentic Engineering — operating model + eval harness + Agent Skill + MCP server: https://github.com/sulmusic2-star/agentic-engineering
-
-Contact: https://sulmusic2-star.github.io/contact/
+Product imagery is identified in its captions. Example code and tests have a stated scope; they do not establish commercial outcomes or production readiness.

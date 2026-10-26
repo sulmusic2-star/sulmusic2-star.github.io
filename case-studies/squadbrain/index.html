@@ -1,159 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SquadBrain — Case Study · Tim Sullivan</title>
-  <meta name="description" content="SquadBrain: a mobile sports-learning game built around roster memory, live on the iOS App Store. React Native, Expo, TypeScript, and Firebase — with extracted, independently tested product logic." />
-  <link rel="canonical" href="https://sulmusic2-star.github.io/case-studies/squadbrain/" />
-  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
-
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="SquadBrain — Case Study · Tim Sullivan" />
-  <meta property="og:description" content="A mobile sports-learning game built around roster memory, live on the iOS App Store. React Native · Expo · TypeScript · Firebase." />
-  <meta property="og:url" content="https://sulmusic2-star.github.io/case-studies/squadbrain/" />
-  <meta property="og:image" content="https://sulmusic2-star.github.io/squadbrain-showcase/assets/squadbrain-demo.gif" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,460;9..144,0,500;9..144,1,400&family=Inter:wght@400;450;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="../../styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SquadBrain — Tim Sullivan</title>
+<meta name="description" content="Mobile application logic: selected TypeScript examples for practice, ranking and result checks.">
+<meta name="theme-color" content="#111313">
+<link rel="canonical" href="https://sulmusic2-star.github.io/case-studies/squadbrain/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/presentation.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="nav">
-    <nav class="shell nav__inner" aria-label="Primary">
-      <a class="nav__brand" href="../../">Tim Sullivan<span class="dot">.</span></a>
-      <div class="nav__links">
-        <a href="../lasting-ground/">Lasting Ground</a>
-        <a href="../squadbrain/" aria-current="page">SquadBrain</a>
-        <a class="ext nav-hide-sm" href="https://github.com/sulmusic2-star/agentic-engineering" target="_blank" rel="noopener">How I work</a>
-        <a class="ext nav-hide-sm" href="https://github.com/sulmusic2-star" target="_blank" rel="noopener">GitHub</a>
-        <a href="../../contact/">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main">
-
-    <!-- HERO -->
-    <section class="cs-hero shell">
-      <a class="cs-back" href="../../"><span aria-hidden="true">←</span> Back to home</a>
-      <p class="eyebrow">Case study · Live on the App Store</p>
-      <h1 class="cs-hero__title">SquadBrain</h1>
-      <p class="cs-hero__tag">A mobile sports-learning game built around roster memory. The thing you learn is the roster, and the game loop turns that into repeatable recall.</p>
-
-      <div class="cs-meta">
-        <div class="cs-meta__item">
-          <span class="cs-meta__k">Role</span>
-          <span class="cs-meta__v">Sole engineer</span>
-        </div>
-        <div class="cs-meta__item">
-          <span class="cs-meta__k">Stack</span>
-          <span class="cs-meta__v">React Native · Expo · TypeScript · Firebase</span>
-        </div>
-        <div class="cs-meta__item">
-          <span class="cs-meta__k">Status</span>
-          <span class="cs-meta__v">Live · <a href="https://apps.apple.com/us/app/squadbrain/id6756122317" target="_blank" rel="noopener">iOS App Store</a></span>
-        </div>
-      </div>
-
-      <div class="cs-actions">
-        <a class="btn btn--primary" href="https://apps.apple.com/us/app/squadbrain/id6756122317" target="_blank" rel="noopener">View on the App Store <span class="arrow">↗</span></a>
-        <a class="btn btn--ghost" href="https://sulmusic2-star.github.io/squadbrain-showcase/" target="_blank" rel="noopener">Live demo <span class="arrow">↗</span></a>
-      </div>
-    </section>
-
-    <!-- DEMO FIGURE -->
-    <section class="shell">
-      <figure class="cs-figure cs-figure--phone">
-        <img src="../../assets/squadbrain-demo.gif"
-             loading="lazy" width="720" height="920"
-             alt="Animated walkthrough of SquadBrain on iOS: choosing a sport and team, memorizing the roster, playing a quick recall round, and seeing results with rank movement." />
-        <figcaption>SquadBrain on iOS — pick a team, learn the roster, play quick recall rounds.</figcaption>
-      </figure>
-    </section>
-
-    <!-- SCOPE NOTE -->
-    <div class="prose shell">
-      <div class="note">
-        <p><strong>A note on scope.</strong> SquadBrain is live on the iOS App Store; its app source is private. The public showcase repo is the extracted, independently tested product logic — gameplay, ranking, matchmaking, and validation modules — enough to evaluate the engineering.</p>
-      </div>
-    </div>
-
-    <!-- THE IDEA -->
-    <section class="prose shell section">
-      <h2>The idea</h2>
-      <p>Most sports games quiz you on facts after the fact. SquadBrain flips that: the thing you learn <em>is</em> the roster (players, numbers, positions, patterns), and the game loop turns that into repeatable recall. Pick a sport and team, memorize the roster, play quick rounds, and come back through streaks, achievements, rank movement, and friend challenges.</p>
-    </section>
-
-    <!-- WHAT IT DEMONSTRATES -->
-    <section class="prose shell section">
-      <h2>What it demonstrates</h2>
-      <ul>
-        <li><strong>A complete mobile product,</strong> not a screen: onboarding, sport and team selection, practice, quick-match, results with ELO movement, leaderboards, achievements, friend flows, store, and legal and privacy screens.</li>
-        <li><strong>Expo, React Native, and TypeScript</strong> with Zustand stores and persisted local state, so gameplay stays fast instead of waiting on the network.</li>
-        <li><strong>Firebase Auth, Firestore, and Cloud Functions</strong> for profiles, leaderboards, and validation-sensitive actions, with server-side patterns that protect competitive results.</li>
-        <li><strong>Real competitive systems:</strong> ELO-style ranking, same-team matchmaking for fair comparisons, and adaptive practice queues that target weak spots.</li>
-        <li><strong>Shipped.</strong> SquadBrain is live on the iOS App Store — metadata, screenshot pack, published legal, privacy, and terms pages, and the full submission and review pipeline. The unglamorous work that separates a real app from a prototype.</li>
-      </ul>
-    </section>
-
-    <!-- ENGINEERING DECISIONS -->
-    <section class="prose shell section">
-      <h2>The engineering decisions</h2>
-      <ul>
-        <li>Local-first state keeps every tap instant; cloud-backed records give continuity across devices.</li>
-        <li>Competitive results are validated server-side, not trusted from the client.</li>
-        <li>Progression — streaks, achievements, rank — is designed to make memorization feel like a game instead of homework.</li>
-      </ul>
-    </section>
-
-    <!-- RESULTS -->
-    <section class="prose shell section">
-      <h2>Results</h2>
-      <div class="cs-stats">
-        <div class="cs-stat">
-          <p class="cs-stat__n">7</p>
-          <p class="cs-stat__l">Typed modules with the core product logic</p>
-        </div>
-        <div class="cs-stat">
-          <p class="cs-stat__n">98.3<span class="unit">%</span></p>
-          <p class="cs-stat__l">Line coverage · 25 tests in CI</p>
-        </div>
-        <div class="cs-stat">
-          <p class="cs-stat__n">81.44<span class="unit">%</span></p>
-          <p class="cs-stat__l">Branch coverage in CI</p>
-        </div>
-      </div>
-      <p>The product logic is extracted into seven typed modules with <strong>25 passing tests at 98.3% line and 81.44% branch coverage in CI</strong>: ranking, achievements, session state, roster normalization, matchmaking, adaptive practice, and result validation. A reviewer can run and inspect the core logic directly.</p>
-    </section>
-
-    <!-- NEXT -->
-    <section class="contact-cta shell section--tight reveal">
-      <p class="eyebrow">Next</p>
-      <h2>See the other product, or get in touch.</h2>
-      <div class="btn-row">
-        <a class="btn btn--ghost" href="../lasting-ground/">Lasting Ground case study <span class="arrow">→</span></a>
-        <a class="btn btn--primary" href="mailto:hello@lastingground.com">Email me <span class="arrow">→</span></a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="shell footer__inner">
-      <span>SquadBrain — built solo, live on iOS.</span>
-      <div class="footer__links">
-        <a href="https://apps.apple.com/us/app/squadbrain/id6756122317" target="_blank" rel="noopener">App Store</a>
-        <a href="mailto:hello@lastingground.com">hello@lastingground.com</a>
-        <a href="../../">Portfolio</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../../main.js" defer></script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header><a class="identity" href="/">Tim Sullivan</a><nav aria-label="Main navigation"><a href="/#work">Work</a><a class="github-link" href="https://github.com/sulmusic2-star">GitHub</a><a href="/contact/">Contact</a></nav></header>
+<main id="main"><article class="article"><h1>SquadBrain</h1><p class="lede">A sports roster learning app for iPhone and iPad.</p><div class="links"><a href="https://apps.apple.com/us/app/squadbrain/id6756122317">App Store</a><a href="https://github.com/sulmusic2-star/squadbrain-showcase">Public code</a></div>
+<figure class="media"><div class="mobile-stage"><img src="/assets/squadbrain-home.png" width="1284" height="2778" alt="SquadBrain app home screen"><img src="/assets/squadbrain-quiz.png" width="1284" height="2778" alt="SquadBrain roster quiz"></div><figcaption>Published product presentation images. The App Store identifies Timothy Sullivan as the developer.</figcaption></figure>
+<h2>What the public examples show</h2><p>The full application source is private. The repository contains selected TypeScript examples of session state, ranking, practice selection, matchmaking and submitted-result checks.</p>
+<h3>Check submitted results</h3><p>The <a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/result-validation.ts">result validator</a> recomputes correctness from player identifiers and reports inconsistent answer counts, repeated prompts and suspicious timing.</p>
+<h3>Make selection rules explicit</h3><p>The <a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/adaptive-practice.ts">practice module</a> calculates practice priority. The <a href="https://github.com/sulmusic2-star/squadbrain-showcase/blob/main/examples/matchmaking.ts">matching module</a> uses explicit criteria to select opponents.</p>
+<h3>Separate rules from screens</h3><p>The public modules can be run and tested separately. The <a href="https://github.com/sulmusic2-star/squadbrain-showcase/tree/main/docs/adr">decision records</a> explain the choices behind result checks, practice and same-team matching.</p>
+<p class="scope">The application stack described in the repository is React Native, Expo, TypeScript and Firebase. The public examples cover particular rules; their tests do not establish the quality of the entire app, its live services or user outcomes.</p></article></main>
+<footer><span>Tim Sullivan</span><div class="links"><a href="mailto:hello@lastingground.com">Email</a><a href="https://github.com/sulmusic2-star">GitHub</a></div></footer>
+</div>
 </body>
 </html>
