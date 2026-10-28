@@ -1,0 +1,448 @@
+{
+  "scope": "Synthetic public-code demonstration. No real property or retrieved record.",
+  "as_of": "2026-10-28",
+  "source_hashes": {
+    "sample_packet_input.json": "af59698f10050dd73e40875326e3c4eeb9a9064e907286f0c1a7f0e6e1d2fbac",
+    "source_lane_validation.py": "aac4d58fc25c98bb839625bd3310cc5c9ad1dae18442c004ce1fcdd432d8cc13",
+    "evidence_scoring.py": "764893ff4f055c24420329eadb4767758b702b15bf833e177ab42173eb3a5216",
+    "packet_composer.py": "a4331afe354214aa00b1beb625a505c3d401f093f04ea1994da8a250bec1939a"
+  },
+  "cases": {
+    "original": {
+      "input": {
+        "packet_id": "demo-packet-001",
+        "address_label": "42 Harbor View Road",
+        "jurisdiction": "Sample Town, MA",
+        "purpose": "homeowner_context",
+        "source_lanes": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "source_type": "official_public_layer",
+            "status": "validated",
+            "reviewed_on": "2026-04-28",
+            "supports": [
+              "regional screening context",
+              "source appendix citation"
+            ],
+            "does_not_support": [
+              "parcel-specific legal conclusion",
+              "engineering conclusion"
+            ]
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "source_type": "local_public_reference",
+            "status": "validated",
+            "reviewed_on": "2026-04-28",
+            "supports": [
+              "local routing context",
+              "source appendix citation"
+            ],
+            "does_not_support": [
+              "permit approval prediction"
+            ]
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "source_type": "local_public_records",
+            "status": "caution",
+            "reviewed_on": "2026-04-28",
+            "supports": [
+              "possible review-history direction"
+            ],
+            "does_not_support": [
+              "complete property history",
+              "approval requirement"
+            ]
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "source_type": "local_public_records",
+            "status": "missing",
+            "reviewed_on": null,
+            "supports": [],
+            "does_not_support": [
+              "permit-history conclusion"
+            ]
+          }
+        ]
+      },
+      "validation": {
+        "packet_id": "demo-packet-001",
+        "address_label": "42 Harbor View Road",
+        "jurisdiction": "Sample Town, MA",
+        "lane_count": 4,
+        "validated_count": 2,
+        "caution_or_missing_count": 2,
+        "support_depth": "standard_support_with_caution",
+        "warnings": [
+          "lane is incomplete; packet language should stay cautious",
+          "lane is missing and must be disclosed in the packet"
+        ],
+        "packet_language_rule": "Describe source context, disclose incomplete lanes, and avoid property-specific legal, permit, inspection, or engineering conclusions.",
+        "lane_checks": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "status": "validated",
+            "source_type": "official_public_layer",
+            "reviewed_on": "2026-04-28",
+            "supports_count": 2,
+            "warning": null
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "status": "validated",
+            "source_type": "local_public_reference",
+            "reviewed_on": "2026-04-28",
+            "supports_count": 2,
+            "warning": null
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "status": "caution",
+            "source_type": "local_public_records",
+            "reviewed_on": "2026-04-28",
+            "supports_count": 1,
+            "warning": "lane is incomplete; packet language should stay cautious"
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "status": "missing",
+            "source_type": "local_public_records",
+            "reviewed_on": null,
+            "supports_count": 0,
+            "warning": "lane is missing and must be disclosed in the packet"
+          }
+        ]
+      },
+      "matrix": {
+        "packet_id": "demo-packet-001",
+        "address_label": "42 Harbor View Road",
+        "as_of": "2026-10-28",
+        "average_score": 51.5,
+        "strong_lane_count": 0,
+        "missing_lane_count": 1,
+        "readiness": "review_ready",
+        "scores": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "score": 81,
+            "confidence": "usable_with_caution",
+            "reviewed_age_days": 183,
+            "review_actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "score": 78,
+            "confidence": "usable_with_caution",
+            "reviewed_age_days": 183,
+            "review_actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "score": 47,
+            "confidence": "usable_with_caution",
+            "reviewed_age_days": 183,
+            "review_actions": [
+              "keep caveat visible in packet",
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "score": 0,
+            "confidence": "weak_or_missing",
+            "reviewed_age_days": null,
+            "review_actions": [
+              "find official or public source lane",
+              "add reviewed date"
+            ]
+          }
+        ],
+        "review_queue": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "actions": [
+              "keep caveat visible in packet",
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "actions": [
+              "find official or public source lane",
+              "add reviewed date"
+            ]
+          }
+        ]
+      },
+      "sections": [
+        {
+          "title": "Source lane snapshot",
+          "priority": 1,
+          "body": "2 of 4 source lanes are validated; readiness is review ready."
+        },
+        {
+          "title": "What the packet can say",
+          "priority": 2,
+          "body": "Describe source context, reviewed dates, and which lanes support the summary."
+        },
+        {
+          "title": "What stays uncertain",
+          "priority": 3,
+          "body": "Keep 2 warning(s) visible instead of turning incomplete lanes into conclusions."
+        },
+        {
+          "title": "Review focus",
+          "priority": 4,
+          "body": "Next review pass should focus on: State GIS Context, Town Zoning Reference, Conservation Record Lane."
+        }
+      ]
+    },
+    "supplied": {
+      "input": {
+        "packet_id": "demo-packet-001",
+        "address_label": "42 Harbor View Road",
+        "jurisdiction": "Sample Town, MA",
+        "purpose": "homeowner_context",
+        "source_lanes": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "source_type": "official_public_layer",
+            "status": "validated",
+            "reviewed_on": "2026-04-28",
+            "supports": [
+              "regional screening context",
+              "source appendix citation"
+            ],
+            "does_not_support": [
+              "parcel-specific legal conclusion",
+              "engineering conclusion"
+            ]
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "source_type": "local_public_reference",
+            "status": "validated",
+            "reviewed_on": "2026-04-28",
+            "supports": [
+              "local routing context",
+              "source appendix citation"
+            ],
+            "does_not_support": [
+              "permit approval prediction"
+            ]
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "source_type": "local_public_records",
+            "status": "caution",
+            "reviewed_on": "2026-04-28",
+            "supports": [
+              "possible review-history direction"
+            ],
+            "does_not_support": [
+              "complete property history",
+              "approval requirement"
+            ]
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "source_type": "local_public_records",
+            "status": "validated",
+            "reviewed_on": "2026-10-28",
+            "supports": [
+              "illustrative permit-history context"
+            ],
+            "does_not_support": [
+              "permit-history conclusion"
+            ]
+          }
+        ]
+      },
+      "validation": {
+        "packet_id": "demo-packet-001",
+        "address_label": "42 Harbor View Road",
+        "jurisdiction": "Sample Town, MA",
+        "lane_count": 4,
+        "validated_count": 3,
+        "caution_or_missing_count": 1,
+        "support_depth": "higher_support",
+        "warnings": [
+          "lane is incomplete; packet language should stay cautious"
+        ],
+        "packet_language_rule": "Describe source context, disclose incomplete lanes, and avoid property-specific legal, permit, inspection, or engineering conclusions.",
+        "lane_checks": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "status": "validated",
+            "source_type": "official_public_layer",
+            "reviewed_on": "2026-04-28",
+            "supports_count": 2,
+            "warning": null
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "status": "validated",
+            "source_type": "local_public_reference",
+            "reviewed_on": "2026-04-28",
+            "supports_count": 2,
+            "warning": null
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "status": "caution",
+            "source_type": "local_public_records",
+            "reviewed_on": "2026-04-28",
+            "supports_count": 1,
+            "warning": "lane is incomplete; packet language should stay cautious"
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "status": "validated",
+            "source_type": "local_public_records",
+            "reviewed_on": "2026-10-28",
+            "supports_count": 1,
+            "warning": null
+          }
+        ]
+      },
+      "matrix": {
+        "packet_id": "demo-packet-001",
+        "address_label": "42 Harbor View Road",
+        "as_of": "2026-10-28",
+        "average_score": 72.8,
+        "strong_lane_count": 1,
+        "missing_lane_count": 0,
+        "readiness": "review_ready",
+        "scores": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "score": 81,
+            "confidence": "usable_with_caution",
+            "reviewed_age_days": 183,
+            "review_actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "score": 78,
+            "confidence": "usable_with_caution",
+            "reviewed_age_days": 183,
+            "review_actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "score": 47,
+            "confidence": "usable_with_caution",
+            "reviewed_age_days": 183,
+            "review_actions": [
+              "keep caveat visible in packet",
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "permit_history",
+            "label": "Permit History Packet",
+            "score": 85,
+            "confidence": "strong",
+            "reviewed_age_days": 0,
+            "review_actions": []
+          }
+        ],
+        "review_queue": [
+          {
+            "lane_id": "state_gis_context",
+            "label": "State GIS Context",
+            "actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "town_zoning_reference",
+            "label": "Town Zoning Reference",
+            "actions": [
+              "refresh stale source lane"
+            ]
+          },
+          {
+            "lane_id": "conservation_records",
+            "label": "Conservation Record Lane",
+            "actions": [
+              "keep caveat visible in packet",
+              "refresh stale source lane"
+            ]
+          }
+        ]
+      },
+      "sections": [
+        {
+          "title": "Source lane snapshot",
+          "priority": 1,
+          "body": "3 of 4 source lanes are validated; readiness is review ready."
+        },
+        {
+          "title": "What the packet can say",
+          "priority": 2,
+          "body": "Describe source context, reviewed dates, and which lanes support the summary."
+        },
+        {
+          "title": "What stays uncertain",
+          "priority": 3,
+          "body": "Keep 1 warning(s) visible instead of turning incomplete lanes into conclusions."
+        },
+        {
+          "title": "Review focus",
+          "priority": 4,
+          "body": "Next review pass should focus on: State GIS Context, Town Zoning Reference, Conservation Record Lane."
+        }
+      ]
+    }
+  }
+}
