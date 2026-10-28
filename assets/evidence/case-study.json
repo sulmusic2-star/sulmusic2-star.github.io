@@ -1,0 +1,909 @@
+{
+  "address": "1600 Pennsylvania Ave NW, Washington, DC",
+  "retrieved": "August 20, 2026",
+  "point": [
+    -77.03518753691,
+    38.89869893252
+  ],
+  "anchor": [
+    -77.03654697068303,
+    38.89767510729849
+  ],
+  "separation_m": 163.787,
+  "receipts": {
+    "gtg-906449faa09a": {
+      "schema_version": "2.0",
+      "item_id": "gtg-906449faa09a",
+      "task": "fema_sfha",
+      "retrieved_at": "2026-08-20T20:14:12Z",
+      "status": "verified",
+      "property_identity": {
+        "status": "verified_census_match",
+        "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+        "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500",
+        "longitude": -77.03518753691,
+        "latitude": 38.89869893252,
+        "geocoder": "United States Census Geocoder",
+        "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1600+Pennsylvania+Ave+NW%2C+Washington%2C+DC&benchmark=Public_AR_Current&format=json",
+        "response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+        "reviewed_exception": null,
+        "raw_response": {
+          "result": {
+            "input": {
+              "address": {
+                "address": "1600 Pennsylvania Ave NW, Washington, DC"
+              },
+              "benchmark": {
+                "isDefault": true,
+                "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+                "id": "4",
+                "benchmarkName": "Public_AR_Current"
+              }
+            },
+            "addressMatches": [
+              {
+                "tigerLine": {
+                  "side": "L",
+                  "tigerLineId": "76225813"
+                },
+                "coordinates": {
+                  "x": -77.03518753691,
+                  "y": 38.89869893252
+                },
+                "addressComponents": {
+                  "zip": "20500",
+                  "streetName": "PENNSYLVANIA",
+                  "preType": "",
+                  "city": "WASHINGTON",
+                  "preDirection": "",
+                  "suffixDirection": "NW",
+                  "fromAddress": "1600",
+                  "state": "DC",
+                  "suffixType": "AVE",
+                  "toAddress": "1648",
+                  "suffixQualifier": "",
+                  "preQualifier": ""
+                },
+                "matchedAddress": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+              }
+            ]
+          }
+        }
+      },
+      "official_queries": [
+        {
+          "source": "FEMA National Flood Hazard Layer",
+          "record_url": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?f=json&geometry=-77.03518753691%2C38.89869893252&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CDFIRM_ID%2CFLD_AR_ID%2CFLD_ZONE%2CZONE_SUBTY%2CSFHA_TF%2CSOURCE_CIT%2CGFID%2CGlobalID&returnGeometry=false",
+          "response_sha256": "7647c43018a4f98ccb05caaf1f62796b34ee1444fd385eb3566b3ad280049214",
+          "returned_record_count": 1,
+          "qualifying_record_count": 1,
+          "qualifying_records": [
+            {
+              "OBJECTID": 17579832,
+              "DFIRM_ID": "110001",
+              "FLD_AR_ID": "110001_321",
+              "FLD_ZONE": "X",
+              "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+              "SFHA_TF": "F",
+              "SOURCE_CIT": "110001_STUDY1",
+              "GFID": "b3fec236-3d93-402a-8f6e-9650ed92ae89",
+              "GlobalID": "{E4032AF4-7D2D-4AAC-AF8D-C21FED379FA5}"
+            }
+          ],
+          "raw_response": {
+            "displayFieldName": "FLD_AR_ID",
+            "fieldAliases": {
+              "OBJECTID": "OBJECTID",
+              "DFIRM_ID": "DFIRM_ID",
+              "FLD_AR_ID": "FLD_AR_ID",
+              "FLD_ZONE": "FLD_ZONE",
+              "ZONE_SUBTY": "ZONE_SUBTY",
+              "SFHA_TF": "SFHA_TF",
+              "SOURCE_CIT": "SOURCE_CIT",
+              "GFID": "GFID",
+              "GlobalID": "GlobalID"
+            },
+            "fields": [
+              {
+                "name": "OBJECTID",
+                "type": "esriFieldTypeOID",
+                "alias": "OBJECTID"
+              },
+              {
+                "name": "DFIRM_ID",
+                "type": "esriFieldTypeString",
+                "alias": "DFIRM_ID",
+                "length": 6
+              },
+              {
+                "name": "FLD_AR_ID",
+                "type": "esriFieldTypeString",
+                "alias": "FLD_AR_ID",
+                "length": 32
+              },
+              {
+                "name": "FLD_ZONE",
+                "type": "esriFieldTypeString",
+                "alias": "FLD_ZONE",
+                "length": 17
+              },
+              {
+                "name": "ZONE_SUBTY",
+                "type": "esriFieldTypeString",
+                "alias": "ZONE_SUBTY",
+                "length": 76
+              },
+              {
+                "name": "SFHA_TF",
+                "type": "esriFieldTypeString",
+                "alias": "SFHA_TF",
+                "length": 1
+              },
+              {
+                "name": "SOURCE_CIT",
+                "type": "esriFieldTypeString",
+                "alias": "SOURCE_CIT",
+                "length": 21
+              },
+              {
+                "name": "GFID",
+                "type": "esriFieldTypeString",
+                "alias": "GFID",
+                "length": 36
+              },
+              {
+                "name": "GlobalID",
+                "type": "esriFieldTypeGlobalID",
+                "alias": "GlobalID",
+                "length": 38
+              }
+            ],
+            "features": [
+              {
+                "attributes": {
+                  "OBJECTID": 17579832,
+                  "DFIRM_ID": "110001",
+                  "FLD_AR_ID": "110001_321",
+                  "FLD_ZONE": "X",
+                  "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+                  "SFHA_TF": "F",
+                  "SOURCE_CIT": "110001_STUDY1",
+                  "GFID": "b3fec236-3d93-402a-8f6e-9650ed92ae89",
+                  "GlobalID": "{E4032AF4-7D2D-4AAC-AF8D-C21FED379FA5}"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "derivation_rule": {
+        "id": "fema-nfhl-point-sfha-v2",
+        "plain_language": "The point must intersect one FEMA flood-zone polygon. SFHA_TF=T means yes; SFHA_TF=F means no.",
+        "predicate": "feature_count == 1 and SFHA_TF in {'T','F'}"
+      },
+      "gold_answer": {
+        "in_sfha": false,
+        "zone": "X"
+      },
+      "review": {
+        "automated_official_source_check": true,
+        "independent_human_review": false,
+        "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+      }
+    },
+    "gtg-d5f5fad520ca": {
+      "schema_version": "2.0",
+      "item_id": "gtg-d5f5fad520ca",
+      "task": "historic_district",
+      "retrieved_at": "2026-08-20T20:14:12Z",
+      "status": "verified",
+      "property_identity": {
+        "status": "verified_census_match",
+        "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+        "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500",
+        "longitude": -77.03518753691,
+        "latitude": 38.89869893252,
+        "geocoder": "United States Census Geocoder",
+        "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1600+Pennsylvania+Ave+NW%2C+Washington%2C+DC&benchmark=Public_AR_Current&format=json",
+        "response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+        "reviewed_exception": null,
+        "raw_response": {
+          "result": {
+            "input": {
+              "address": {
+                "address": "1600 Pennsylvania Ave NW, Washington, DC"
+              },
+              "benchmark": {
+                "isDefault": true,
+                "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+                "id": "4",
+                "benchmarkName": "Public_AR_Current"
+              }
+            },
+            "addressMatches": [
+              {
+                "tigerLine": {
+                  "side": "L",
+                  "tigerLineId": "76225813"
+                },
+                "coordinates": {
+                  "x": -77.03518753691,
+                  "y": 38.89869893252
+                },
+                "addressComponents": {
+                  "zip": "20500",
+                  "streetName": "PENNSYLVANIA",
+                  "preType": "",
+                  "city": "WASHINGTON",
+                  "preDirection": "",
+                  "suffixDirection": "NW",
+                  "fromAddress": "1600",
+                  "state": "DC",
+                  "suffixType": "AVE",
+                  "toAddress": "1648",
+                  "suffixQualifier": "",
+                  "preQualifier": ""
+                },
+                "matchedAddress": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+              }
+            ]
+          }
+        }
+      },
+      "official_queries": [
+        {
+          "source": "National Park Service National Register polygons",
+          "record_url": "https://mapservices.nps.gov/arcgis/rest/services/cultural_resources/nrhp_locations/MapServer/1/query?f=json&geometry=-77.03518753691%2C38.89869893252&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CNRIS_Refnum%2CRESNAME%2CResType%2CAddress%2CCity%2CState%2CCertDate%2CCR_ID%2CPROPERTY_ID%2CSTATUS%2CNARA_URL%2CEDIT_DATE%2CSOURCE%2CSRC_DATE&returnGeometry=false",
+          "response_sha256": "c50b881d5b1c53735c1f105dcff328f3e22d182c5e1ef5bd06bf2a055123fb20",
+          "returned_record_count": 4,
+          "qualifying_record_count": 2,
+          "qualifying_records": [
+            {
+              "OBJECTID": 443649,
+              "NRIS_Refnum": "74000274",
+              "RESNAME": "Civil War Fort Sites",
+              "ResType": "district",
+              "Address": "Civil War Forts from Battery Kemble, NW to Fort Gremble, SW",
+              "City": "Washington",
+              "State": "DISTRICT OF COLUMBIA",
+              "CertDate": "07/15/74",
+              "CR_ID": "{69B84BF8-3547-4758-A8BE-550985FD5D08}",
+              "PROPERTY_ID": "74000274",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/117692043",
+              "EDIT_DATE": 1345161600000,
+              "SOURCE": "National Register of Historic Places -- National Park Service",
+              "SRC_DATE": 143078400000
+            },
+            {
+              "OBJECTID": 447558,
+              "NRIS_Refnum": "70000833",
+              "RESNAME": "Lafayette Square Historic District",
+              "ResType": "district",
+              "Address": "Roughly between 15th and 17th Sts. and H St. and State and Treasury Places, exclusive of the White House and its grounds",
+              "City": "Washington",
+              "State": "DISTRICT OF COLUMBIA",
+              "CertDate": "08/29/70",
+              "CR_ID": "{DF80CB8B-49B2-4479-B6E8-4D2C65D45AD2}",
+              "PROPERTY_ID": "70000833",
+              "STATUS": "Listed",
+              "NARA_URL": "https://catalog.archives.gov/id/117691835",
+              "EDIT_DATE": 1642636800000,
+              "SOURCE": "Google Earth",
+              "SRC_DATE": 1642636800000
+            }
+          ],
+          "raw_response": {
+            "displayFieldName": "RESNAME",
+            "fieldAliases": {
+              "OBJECTID": "OBJECTID",
+              "NRIS_Refnum": "NRIS_Refnum",
+              "RESNAME": "Resource Name",
+              "ResType": "Resource Type",
+              "Address": "Address",
+              "City": "City",
+              "State": "State",
+              "CertDate": "Certification Date",
+              "CR_ID": "Cultural Resource GUID",
+              "PROPERTY_ID": "PROPERTY ID",
+              "STATUS": "STATUS",
+              "NARA_URL": "NARA_URL",
+              "EDIT_DATE": "Last Edit Date",
+              "SOURCE": "Source",
+              "SRC_DATE": "Source Date"
+            },
+            "fields": [
+              {
+                "name": "OBJECTID",
+                "type": "esriFieldTypeOID",
+                "alias": "OBJECTID"
+              },
+              {
+                "name": "NRIS_Refnum",
+                "type": "esriFieldTypeString",
+                "alias": "NRIS_Refnum",
+                "length": 11
+              },
+              {
+                "name": "RESNAME",
+                "type": "esriFieldTypeString",
+                "alias": "Resource Name",
+                "length": 255
+              },
+              {
+                "name": "ResType",
+                "type": "esriFieldTypeString",
+                "alias": "Resource Type",
+                "length": 10
+              },
+              {
+                "name": "Address",
+                "type": "esriFieldTypeString",
+                "alias": "Address",
+                "length": 255
+              },
+              {
+                "name": "City",
+                "type": "esriFieldTypeString",
+                "alias": "City",
+                "length": 255
+              },
+              {
+                "name": "State",
+                "type": "esriFieldTypeString",
+                "alias": "State",
+                "length": 255
+              },
+              {
+                "name": "CertDate",
+                "type": "esriFieldTypeString",
+                "alias": "Certification Date",
+                "length": 11
+              },
+              {
+                "name": "CR_ID",
+                "type": "esriFieldTypeString",
+                "alias": "Cultural Resource GUID",
+                "length": 50
+              },
+              {
+                "name": "PROPERTY_ID",
+                "type": "esriFieldTypeString",
+                "alias": "PROPERTY ID",
+                "length": 11
+              },
+              {
+                "name": "STATUS",
+                "type": "esriFieldTypeString",
+                "alias": "STATUS",
+                "length": 10
+              },
+              {
+                "name": "NARA_URL",
+                "type": "esriFieldTypeString",
+                "alias": "NARA_URL",
+                "length": 255
+              },
+              {
+                "name": "EDIT_DATE",
+                "type": "esriFieldTypeDate",
+                "alias": "Last Edit Date",
+                "length": 8
+              },
+              {
+                "name": "SOURCE",
+                "type": "esriFieldTypeString",
+                "alias": "Source",
+                "length": 250
+              },
+              {
+                "name": "SRC_DATE",
+                "type": "esriFieldTypeDate",
+                "alias": "Source Date",
+                "length": 8
+              }
+            ],
+            "features": [
+              {
+                "attributes": {
+                  "OBJECTID": 429847,
+                  "NRIS_Refnum": "78000256",
+                  "RESNAME": "American Revolution Statuary",
+                  "ResType": "object",
+                  "Address": "Public buildings and various parks within DC",
+                  "City": "Washington",
+                  "State": "DISTRICT OF COLUMBIA",
+                  "CertDate": "07/14/78",
+                  "CR_ID": "{99ADDFB0-4DE2-4A35-A0F2-E3430E579065}",
+                  "PROPERTY_ID": "78000256",
+                  "STATUS": "Listed",
+                  "NARA_URL": "https://catalog.archives.gov/id/117691933",
+                  "EDIT_DATE": 1345161600000,
+                  "SOURCE": "National Register of Historic Places -- National Park Service",
+                  "SRC_DATE": 269222400000
+                }
+              },
+              {
+                "attributes": {
+                  "OBJECTID": 443649,
+                  "NRIS_Refnum": "74000274",
+                  "RESNAME": "Civil War Fort Sites",
+                  "ResType": "district",
+                  "Address": "Civil War Forts from Battery Kemble, NW to Fort Gremble, SW",
+                  "City": "Washington",
+                  "State": "DISTRICT OF COLUMBIA",
+                  "CertDate": "07/15/74",
+                  "CR_ID": "{69B84BF8-3547-4758-A8BE-550985FD5D08}",
+                  "PROPERTY_ID": "74000274",
+                  "STATUS": "Listed",
+                  "NARA_URL": "https://catalog.archives.gov/id/117692043",
+                  "EDIT_DATE": 1345161600000,
+                  "SOURCE": "National Register of Historic Places -- National Park Service",
+                  "SRC_DATE": 143078400000
+                }
+              },
+              {
+                "attributes": {
+                  "OBJECTID": 447558,
+                  "NRIS_Refnum": "70000833",
+                  "RESNAME": "Lafayette Square Historic District",
+                  "ResType": "district",
+                  "Address": "Roughly between 15th and 17th Sts. and H St. and State and Treasury Places, exclusive of the White House and its grounds",
+                  "City": "Washington",
+                  "State": "DISTRICT OF COLUMBIA",
+                  "CertDate": "08/29/70",
+                  "CR_ID": "{DF80CB8B-49B2-4479-B6E8-4D2C65D45AD2}",
+                  "PROPERTY_ID": "70000833",
+                  "STATUS": "Listed",
+                  "NARA_URL": "https://catalog.archives.gov/id/117691835",
+                  "EDIT_DATE": 1642636800000,
+                  "SOURCE": "Google Earth",
+                  "SRC_DATE": 1642636800000
+                }
+              },
+              {
+                "attributes": {
+                  "OBJECTID": 449220,
+                  "NRIS_Refnum": "97000332",
+                  "RESNAME": "L'Enfant Plan of the City of Washington, District of Columbia",
+                  "ResType": "structure",
+                  "Address": "Roughly bounded by Florida Ave. from Rock Cr., NW. to 15th St., NE., S to C St., and E to the Anacostia River",
+                  "City": "Washington",
+                  "State": "DISTRICT OF COLUMBIA",
+                  "CertDate": "04/24/97",
+                  "CR_ID": "{E0A1B1C4-1F92-40E9-AC8C-5711A8FE645A}",
+                  "PROPERTY_ID": "97000332",
+                  "STATUS": "Listed",
+                  "NARA_URL": "https://catalog.archives.gov/id/117692263",
+                  "EDIT_DATE": 1345161600000,
+                  "SOURCE": "National Register of Historic Places -- National Park Service",
+                  "SRC_DATE": 861840000000
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "derivation_rule": {
+        "id": "nps-nrhp-listed-district-point-v2",
+        "plain_language": "Only intersecting National Register polygons labeled as a listed district count. Buildings, objects, sites and structures do not.",
+        "predicate": "lower(ResType) == 'district' and lower(STATUS) == 'listed'",
+        "excluded_intersections": [
+          {
+            "OBJECTID": 429847,
+            "NRIS_Refnum": "78000256",
+            "RESNAME": "American Revolution Statuary",
+            "ResType": "object",
+            "Address": "Public buildings and various parks within DC",
+            "City": "Washington",
+            "State": "DISTRICT OF COLUMBIA",
+            "CertDate": "07/14/78",
+            "CR_ID": "{99ADDFB0-4DE2-4A35-A0F2-E3430E579065}",
+            "PROPERTY_ID": "78000256",
+            "STATUS": "Listed",
+            "NARA_URL": "https://catalog.archives.gov/id/117691933",
+            "EDIT_DATE": 1345161600000,
+            "SOURCE": "National Register of Historic Places -- National Park Service",
+            "SRC_DATE": 269222400000
+          },
+          {
+            "OBJECTID": 449220,
+            "NRIS_Refnum": "97000332",
+            "RESNAME": "L'Enfant Plan of the City of Washington, District of Columbia",
+            "ResType": "structure",
+            "Address": "Roughly bounded by Florida Ave. from Rock Cr., NW. to 15th St., NE., S to C St., and E to the Anacostia River",
+            "City": "Washington",
+            "State": "DISTRICT OF COLUMBIA",
+            "CertDate": "04/24/97",
+            "CR_ID": "{E0A1B1C4-1F92-40E9-AC8C-5711A8FE645A}",
+            "PROPERTY_ID": "97000332",
+            "STATUS": "Listed",
+            "NARA_URL": "https://catalog.archives.gov/id/117692263",
+            "EDIT_DATE": 1345161600000,
+            "SOURCE": "National Register of Historic Places -- National Park Service",
+            "SRC_DATE": 861840000000
+          }
+        ]
+      },
+      "gold_answer": {
+        "in_historic_district": true,
+        "district": "Civil War Fort Sites; Lafayette Square Historic District",
+        "districts": [
+          "Civil War Fort Sites",
+          "Lafayette Square Historic District"
+        ]
+      },
+      "review": {
+        "automated_official_source_check": true,
+        "independent_human_review": false,
+        "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+      }
+    },
+    "gtg-99f0dbb84162": {
+      "schema_version": "2.0",
+      "item_id": "gtg-99f0dbb84162",
+      "task": "contamination_nearby",
+      "retrieved_at": "2026-08-20T20:14:12Z",
+      "status": "verified",
+      "property_identity": {
+        "status": "verified_census_match",
+        "requested_address": "1600 Pennsylvania Ave NW, Washington, DC",
+        "matched_address": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500",
+        "longitude": -77.03518753691,
+        "latitude": 38.89869893252,
+        "geocoder": "United States Census Geocoder",
+        "record_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1600+Pennsylvania+Ave+NW%2C+Washington%2C+DC&benchmark=Public_AR_Current&format=json",
+        "response_sha256": "3fa3ccf440891ee483b6fd84a91cc126e60a8f7d8ea5c2c3d3a11d5533d4457a",
+        "reviewed_exception": null,
+        "raw_response": {
+          "result": {
+            "input": {
+              "address": {
+                "address": "1600 Pennsylvania Ave NW, Washington, DC"
+              },
+              "benchmark": {
+                "isDefault": true,
+                "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+                "id": "4",
+                "benchmarkName": "Public_AR_Current"
+              }
+            },
+            "addressMatches": [
+              {
+                "tigerLine": {
+                  "side": "L",
+                  "tigerLineId": "76225813"
+                },
+                "coordinates": {
+                  "x": -77.03518753691,
+                  "y": 38.89869893252
+                },
+                "addressComponents": {
+                  "zip": "20500",
+                  "streetName": "PENNSYLVANIA",
+                  "preType": "",
+                  "city": "WASHINGTON",
+                  "preDirection": "",
+                  "suffixDirection": "NW",
+                  "fromAddress": "1600",
+                  "state": "DC",
+                  "suffixType": "AVE",
+                  "toAddress": "1648",
+                  "suffixQualifier": "",
+                  "preQualifier": ""
+                },
+                "matchedAddress": "1600 PENNSYLVANIA AVE NW, WASHINGTON, DC, 20500"
+              }
+            ]
+          }
+        }
+      },
+      "official_queries": [
+        {
+          "source": "EPA Envirofacts Superfund",
+          "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/0/query?f=json&geometry=-77.03518753691%2C38.89869893252&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+          "response_sha256": "d096520e80be33fd55ee5815dab7e5955adaf97b4f28745d5edb1a48e0044825",
+          "returned_record_count": 0,
+          "qualifying_record_count": 0,
+          "qualifying_records": [],
+          "raw_response": {
+            "displayFieldName": "PRIMARY_NAME",
+            "fieldAliases": {
+              "OBJECTID": "OBJECTID",
+              "registry_id": "Registry ID",
+              "site_id": "Site ID",
+              "primary_name": "Primary Name",
+              "location_address": "Address",
+              "city_name": "City",
+              "county_name": "County",
+              "state_code": "State",
+              "epa_region": "EPA Region",
+              "postal_code": "ZIP Code",
+              "latitude": "Latitude",
+              "longitude": "Longitude",
+              "pgm_sys_acrnm": "Program_System Acronym",
+              "pgm_sys_id": "Program System ID",
+              "fips_code": "FIPS Code",
+              "huc_code": "HUC Code",
+              "facility_url": "Facility URL",
+              "profile_url": "Profile URL"
+            },
+            "geometryType": "esriGeometryPoint",
+            "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+            },
+            "fields": [
+              {
+                "name": "OBJECTID",
+                "type": "esriFieldTypeOID",
+                "alias": "OBJECTID"
+              },
+              {
+                "name": "registry_id",
+                "type": "esriFieldTypeString",
+                "alias": "Registry ID",
+                "length": 12
+              },
+              {
+                "name": "site_id",
+                "type": "esriFieldTypeString",
+                "alias": "Site ID",
+                "length": 7
+              },
+              {
+                "name": "primary_name",
+                "type": "esriFieldTypeString",
+                "alias": "Primary Name",
+                "length": 73
+              },
+              {
+                "name": "location_address",
+                "type": "esriFieldTypeString",
+                "alias": "Address",
+                "length": 50
+              },
+              {
+                "name": "city_name",
+                "type": "esriFieldTypeString",
+                "alias": "City",
+                "length": 57
+              },
+              {
+                "name": "county_name",
+                "type": "esriFieldTypeString",
+                "alias": "County",
+                "length": 20
+              },
+              {
+                "name": "state_code",
+                "type": "esriFieldTypeString",
+                "alias": "State",
+                "length": 2
+              },
+              {
+                "name": "epa_region",
+                "type": "esriFieldTypeString",
+                "alias": "EPA Region",
+                "length": 9
+              },
+              {
+                "name": "postal_code",
+                "type": "esriFieldTypeString",
+                "alias": "ZIP Code",
+                "length": 10
+              },
+              {
+                "name": "latitude",
+                "type": "esriFieldTypeDouble",
+                "alias": "Latitude"
+              },
+              {
+                "name": "longitude",
+                "type": "esriFieldTypeDouble",
+                "alias": "Longitude"
+              },
+              {
+                "name": "pgm_sys_acrnm",
+                "type": "esriFieldTypeString",
+                "alias": "Program_System Acronym",
+                "length": 4
+              },
+              {
+                "name": "pgm_sys_id",
+                "type": "esriFieldTypeString",
+                "alias": "Program System ID",
+                "length": 12
+              },
+              {
+                "name": "fips_code",
+                "type": "esriFieldTypeString",
+                "alias": "FIPS Code",
+                "length": 2
+              },
+              {
+                "name": "huc_code",
+                "type": "esriFieldTypeString",
+                "alias": "HUC Code",
+                "length": 2
+              },
+              {
+                "name": "facility_url",
+                "type": "esriFieldTypeString",
+                "alias": "Facility URL",
+                "length": 67
+              },
+              {
+                "name": "profile_url",
+                "type": "esriFieldTypeString",
+                "alias": "Profile URL",
+                "length": 66
+              }
+            ],
+            "features": []
+          }
+        },
+        {
+          "source": "EPA Envirofacts Brownfields",
+          "record_url": "https://geopub.epa.gov/ArcGIS/rest/services/EMEF/efpoints/MapServer/5/query?f=json&geometry=-77.03518753691%2C38.89869893252&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&distance=0.25&units=esriSRUnit_StatuteMile&outSR=4326",
+          "response_sha256": "fec416444ad8996804cb297c8cbd5c03f08772ef72bb127179d6cf032f5f0f73",
+          "returned_record_count": 0,
+          "qualifying_record_count": 0,
+          "qualifying_records": [],
+          "raw_response": {
+            "displayFieldName": "PRIMARY_NAME",
+            "fieldAliases": {
+              "OBJECTID": "OBJECTID",
+              "registry_id": "Registry ID",
+              "primary_name": "Primary Name",
+              "location_address": "Address",
+              "city_name": "City",
+              "county_name": "County",
+              "state_code": "State",
+              "epa_region": "EPA Region",
+              "postal_code": "ZIP Code",
+              "latitude": "Latitude",
+              "longitude": "Longitude",
+              "pgm_sys_acrnm": "Program_System Acronym",
+              "pgm_sys_id": "Program System ID",
+              "fips_code": "FIPS Code",
+              "huc_code": "HUC Code",
+              "facility_url": "Facility URL"
+            },
+            "geometryType": "esriGeometryPoint",
+            "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+            },
+            "fields": [
+              {
+                "name": "OBJECTID",
+                "type": "esriFieldTypeOID",
+                "alias": "OBJECTID"
+              },
+              {
+                "name": "registry_id",
+                "type": "esriFieldTypeString",
+                "alias": "Registry ID",
+                "length": 12
+              },
+              {
+                "name": "primary_name",
+                "type": "esriFieldTypeString",
+                "alias": "Primary Name",
+                "length": 79
+              },
+              {
+                "name": "location_address",
+                "type": "esriFieldTypeString",
+                "alias": "Address",
+                "length": 80
+              },
+              {
+                "name": "city_name",
+                "type": "esriFieldTypeString",
+                "alias": "City",
+                "length": 39
+              },
+              {
+                "name": "county_name",
+                "type": "esriFieldTypeString",
+                "alias": "County",
+                "length": 35
+              },
+              {
+                "name": "state_code",
+                "type": "esriFieldTypeString",
+                "alias": "State",
+                "length": 2
+              },
+              {
+                "name": "epa_region",
+                "type": "esriFieldTypeString",
+                "alias": "EPA Region",
+                "length": 9
+              },
+              {
+                "name": "postal_code",
+                "type": "esriFieldTypeString",
+                "alias": "ZIP Code",
+                "length": 10
+              },
+              {
+                "name": "latitude",
+                "type": "esriFieldTypeDouble",
+                "alias": "Latitude"
+              },
+              {
+                "name": "longitude",
+                "type": "esriFieldTypeDouble",
+                "alias": "Longitude"
+              },
+              {
+                "name": "pgm_sys_acrnm",
+                "type": "esriFieldTypeString",
+                "alias": "Program_System Acronym",
+                "length": 5
+              },
+              {
+                "name": "pgm_sys_id",
+                "type": "esriFieldTypeString",
+                "alias": "Program System ID",
+                "length": 6
+              },
+              {
+                "name": "fips_code",
+                "type": "esriFieldTypeString",
+                "alias": "FIPS Code",
+                "length": 2
+              },
+              {
+                "name": "huc_code",
+                "type": "esriFieldTypeString",
+                "alias": "HUC Code",
+                "length": 2
+              },
+              {
+                "name": "facility_url",
+                "type": "esriFieldTypeString",
+                "alias": "Facility URL",
+                "length": 68
+              }
+            ],
+            "features": []
+          }
+        }
+      ],
+      "derivation_rule": {
+        "id": "epa-superfund-brownfields-quarter-mile-v2",
+        "plain_language": "Count unique EPA Superfund and Brownfields program records within 0.25 statute mile of the geocoded point.",
+        "predicate": "distance_miles <= 0.25 and program_layer in {'Superfund','Brownfields'}",
+        "deduplication_key": [
+          "program_layer",
+          "registry_id",
+          "pgm_sys_id_or_site_id"
+        ]
+      },
+      "gold_answer": {
+        "has_nearby_site": false,
+        "count": 0,
+        "radius_miles": 0.25,
+        "programs": [
+          "Brownfields",
+          "Superfund"
+        ]
+      },
+      "review": {
+        "automated_official_source_check": true,
+        "independent_human_review": false,
+        "note": "Official records were refreshed and derived deterministically; independent review is still pending."
+      }
+    }
+  },
+  "scope": "Archived point queries, not a building or parcel determination.",
+  "source_urls": {
+    "gtg-906449faa09a": "https://github.com/sulmusic2-star/groundtruth-geo/blob/main/evidence/records/gtg-906449faa09a.json",
+    "gtg-d5f5fad520ca": "https://github.com/sulmusic2-star/groundtruth-geo/blob/main/evidence/records/gtg-d5f5fad520ca.json",
+    "gtg-99f0dbb84162": "https://github.com/sulmusic2-star/groundtruth-geo/blob/main/evidence/records/gtg-99f0dbb84162.json"
+  }
+}
