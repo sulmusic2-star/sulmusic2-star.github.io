@@ -25,7 +25,7 @@ for (const example of document.querySelectorAll('[data-source-example]')) {
         example.querySelector('[data-permit-state]').textContent = button.dataset.scenario === 'original' ? 'Missing' : 'Validated';
         example.querySelector('[data-warning-output]').textContent = sample.sections.find(x => x.title === 'What stays uncertain').body;
         const list = example.querySelector('[data-warning-list]'); list.replaceChildren();
-        for (const warning of sample.validation.warnings) { const li = document.createElement('li'); li.textContent = warning; list.append(li); }
+        for (const lane of sample.validation.lane_checks.filter(x => x.warning)) { const li = document.createElement('li'); li.textContent = lane.label + ': ' + lane.warning; list.append(li); }
         for (const item of example.querySelectorAll('[data-scenario]')) item.setAttribute('aria-pressed', String(item === button));
       });
     }
