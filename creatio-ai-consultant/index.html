@@ -32,8 +32,8 @@
     <article class="case-shell">
       <header class="case-hero">
         <p class="case-kicker">AI solution design sample · August 2026</p>
-        <h1>A governed AI workflow for public-record review.</h1>
-        <p class="case-deck">One process, carried from discovery through use-case selection, agent and integration design, controls, pilot stages, and measurement.</p>
+        <h1>A workflow for reviewing public records.</h1>
+        <p class="case-deck">A proposed workflow for gathering property records, checking their limits and routing unresolved questions for review.</p>
         <div class="case-actions" aria-label="Downloads and evidence">
           <a class="btn btn--primary" href="../assets/Tim_Sullivan_Creatio_AI_Workflow_Case_Study.pdf">Open case study <span aria-hidden="true">→</span></a>
           <a class="btn btn--ghost" href="../contact/">Contact Tim <span aria-hidden="true">→</span></a>
@@ -65,11 +65,11 @@
         <div class="section-number" aria-hidden="true">02</div>
         <div class="section-copy section-copy--wide">
           <p class="case-kicker">Use-case priority</p>
-          <h2 id="priority-title">Automate the evidence-bounded work first.</h2>
+          <h2 id="priority-title">Start with record gathering and unresolved questions.</h2>
           <ol class="priority-list">
             <li>
-              <div><strong>One-address review</strong><span>Implemented broadly</span></div>
-              <p>High value and technically bounded when each result retains its official source, date, and scope.</p>
+              <div><strong>One-address review</strong><span>Implementation varies by location</span></div>
+              <p>Each result needs its official record, date and scope.</p>
             </li>
             <li>
               <div><strong>Unresolved-item queue</strong><span>Implemented as a state</span></div>
@@ -81,7 +81,7 @@
             </li>
             <li>
               <div><strong>Multi-town coalition view</strong><span>Roadmap</span></div>
-              <p>High buyer value; requires a generalized jurisdiction, source-depth, and denominator model.</p>
+              <p>Requires a shared model for jurisdictions, record coverage and the population being compared.</p>
             </li>
           </ol>
         </div>
@@ -91,7 +91,7 @@
         <div class="section-number" aria-hidden="true">03</div>
         <div class="section-copy section-copy--wide">
           <p class="case-kicker">Architecture</p>
-          <h2 id="workflow-title">Agents assist the workflow. Evidence controls the answer.</h2>
+          <h2 id="workflow-title">Keep record checks separate from agent assistance.</h2>
           <div class="workflow-rail" role="list" aria-label="Five workflow stages">
             <div role="listitem"><span>1</span><strong>Request</strong><small>Address or bounded area</small></div>
             <div role="listitem"><span>2</span><strong>Connect</strong><small>REST · ArcGIS · documents · MCP</small></div>
@@ -113,7 +113,7 @@
           <h2 id="implementation-title">A working system and a proposed Creatio design.</h2>
           <div class="implementation-grid">
             <section aria-labelledby="existing-title">
-              <span class="state-label">Built and operating</span>
+              <span class="state-label">Existing Lasting Ground work</span>
               <h3 id="existing-title">Lasting Ground</h3>
               <ul>
                 <li>Source and address workflows</li>
@@ -158,7 +158,7 @@
         <div class="section-number" aria-hidden="true">06</div>
         <div class="section-copy section-copy--wide">
           <p class="case-kicker">Pilot and measurement</p>
-          <h2 id="pilot-title">One jurisdiction. One source family. One review owner.</h2>
+          <h2 id="pilot-title">Start with one jurisdiction, one record type and a named reviewer.</h2>
           <div class="pilot-grid">
             <ol>
               <li><strong>Discovery</strong><span>Map steps, systems, decisions, owners, baseline time, volume, and failure modes.</span></li>
@@ -182,12 +182,12 @@
         <div class="section-number" aria-hidden="true">07</div>
         <div class="section-copy section-copy--wide">
           <p class="case-kicker">Working evidence</p>
-          <h2 id="proof-title">The public route is runnable.</h2>
+          <h2 id="proof-title">Code and evaluation examples.</h2>
           <div class="proof-links">
-            <a href="https://github.com/sulmusic2-star/lasting-ground-showcase" target="_blank" rel="noopener"><strong>Lasting Ground examples</strong><span>18 tests · 93% line coverage</span></a>
-            <a href="https://github.com/sulmusic2-star/agentic-engineering" target="_blank" rel="noopener"><strong>Agentic Engineering</strong><span>Evals · drift · Skill · MCP</span></a>
-            <a href="https://github.com/sulmusic2-star/groundtruth-geo" target="_blank" rel="noopener"><strong>GroundTruth-Geo</strong><span>33 items · 7 states · grader · MCP</span></a>
-            <a href="https://apps.apple.com/us/app/squadbrain/id6756122317" target="_blank" rel="noopener"><strong>SquadBrain</strong><span>Shipped iOS product · 25 tests</span></a>
+            <a href="https://github.com/sulmusic2-star/lasting-ground-showcase" target="_blank" rel="noopener"><strong>Lasting Ground examples</strong><span>Python examples and tests</span></a>
+            <a href="https://github.com/sulmusic2-star/groundtruth-geo" target="_blank" rel="noopener"><strong>Evaluation examples</strong><span>GroundTruth-Geo tests and record checks</span></a>
+            <a href="https://github.com/sulmusic2-star/groundtruth-geo" target="_blank" rel="noopener"><strong>GroundTruth-Geo</strong><span>33 selected questions, a grader and MCP server</span></a>
+            <a href="https://apps.apple.com/us/app/squadbrain/id6756122317" target="_blank" rel="noopener"><strong>SquadBrain</strong><span>iOS app and TypeScript examples</span></a>
           </div>
           <div class="limitations">
             <h3>Limits stated before review</h3>

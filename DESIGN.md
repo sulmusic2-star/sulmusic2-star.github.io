@@ -24,7 +24,7 @@ typography:
 # Design System: Product folio
 
 ## Overview
-Product folio: readable product captures, concrete source decisions and a paper report. This records the implemented replacement following the owner's rejection of the terrain-led presentation. It is not a record of owner acceptance.
+The portfolio combines a Boston building study, product screenshots, fictional report examples and public code. Lasting Ground is the main project.
 
 ## Colors
 Paper and ink carry the page. Forest frames product captures; pale source and output surfaces separate supplied input from generated text. The rust accent is reserved for small punctuation and focus.
@@ -35,13 +35,13 @@ Self-hosted Instrument Sans is used throughout the portfolio. Headings use mediu
 ## Layout
 The opening desktop composition places the title beside a dimensional product scene. At 720px the scene follows the heading; at 400px the heading becomes a single column. The existing evidence and report grids retain their 680px and 1000px breakpoints. Side space is clamp(22px,4vw,72px). The maximum main width is 1600px.
 
-## Elevation & Depth
-The opening scene uses local Three.js geometry: a beveled interface frame, source card and separate report sheets. The screen dominates the overview. Each focused view brings one artifact forward; desktop drag rotates the group. Actual desktop and mobile product captures are used at their respective sizes. The source card is drawn from the exact fictional input; the report uses the existing PDF page renders. Soft procedural contact shadows and restrained metal reflections provide depth without decorative terrain.
+## Product scene
+The opening scene uses local Three.js geometry: a beveled interface frame, source card and separate report sheets. The screen dominates the overview. Each focused view brings one artifact forward; desktop drag rotates the group. Actual desktop and mobile product captures are used at their respective sizes. The source card is drawn from the exact fictional input; the report uses the existing PDF page renders. Soft procedural contact shadows and restrained metal reflections provide depth.
 
 Native buttons, canvas arrow keys and desktop object selection operate the same four views. Reduced motion applies the target pose immediately. Touch scrolling is retained. Rendering occurs on interaction, short focus transitions, resize and visibility return; no idle animation. A settled frame is cached as an exact renderer image so the composition stays stable through browser compositing changes. Graphics failure exposes the original artifact image and direct links. A persisted pagehide preserves the scene for browser Back navigation; ordinary unload releases its resources.
 
 ## Shapes
-Product images have gently rounded corners. Layout divisions use single rules. The report and example output read as paper rather than ornamental cards.
+Product images have gently rounded corners. Layout divisions use single rules. The report and example output use a paper treatment.
 
 ## Components
 The capture selector changes actual product images and their context captions. The source example changes between two precomputed fictional cases; it does not retrieve records. Preserve visible states, keyboard focus, useful defaults without JavaScript and error text. Supporting engineering notes share the type and surface treatment.
@@ -49,5 +49,5 @@ The capture selector changes actual product images and their context captions. T
 ## Do's and Don'ts
 Show actual work and label fictional examples. Keep source dates and access limits attached to captures. Keep Lasting Ground as the flagship and GroundTruth-Geo as supporting evaluation. Do not replace truthful evidence with decorative terrain or invent production outcomes.
 
-## Latest owner correction
-The owner rejected the prior flat framed presentation on 28 October 2026. This material-depth refinement replaces that opening and its shared GitHub cover. It records implementation and review, not owner acceptance or exceptional-design certification.
+## Building study
+The homepage opens with a separate model of 540 City of Boston building records. Visitors can switch between volume and plan, select a building and follow its city-record link. The model uses simplified building shapes and is not a survey.
