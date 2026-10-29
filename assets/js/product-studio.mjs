@@ -2,9 +2,9 @@ import * as THREE from '../vendor/three.module.min.js';
 
 // These are presentation objects, not a simulation of the production application.
 export const views = {
-  overview: {title:'Interface, sources and report.',copy:'Choose a view of the public interface or the fictional source-check and report examples.',href:'/case-studies/lasting-ground/',link:'Explore the project',image:'/assets/product/lasting-ground-search.png'},
-  interface: {title:'Property Search',copy:'Actual public interface, captured 28 October 2026. Answers and source details require access.',href:'https://lastingground.com',link:'Open Property Search',image:'/assets/product/lasting-ground-search.png'},
-  source: {title:'The source-check example',copy:'Fictional input: two validated lanes, one caution and one missing record. These are supplied states, not independently verified records.',href:'/assets/product/source-example.json',link:'View the input and output',image:'/assets/product/source-check-page-1.png'},
+  overview: {title:'Search, records and report.',copy:'Explore the public interface, a fictional record check and its report.',href:'/case-studies/lasting-ground/',link:'Explore the project',image:'/assets/product/lasting-ground-search.png'},
+  interface: {title:'Property Search',copy:'Actual public interface, captured 28 October 2026. Answers and supporting records require access.',href:'https://lastingground.com',link:'Open Property Search',image:'/assets/product/lasting-ground-search.png'},
+  source: {title:'The record-check example',copy:'Fictional input: two validated records, one caution and one missing record. These are supplied states, not independently verified records.',href:'/assets/product/source-example.json',link:'View the input and output',image:'/assets/product/source-check-page-1.png'},
   report: {title:'The sample report',copy:'Two-page fictional example. Its outline is generated from the public validator and packet composer.',href:'/assets/product/source-check-example.pdf',link:'Open the two-page report',image:'/assets/product/source-check-page-2.png'}
 };
 
@@ -27,7 +27,7 @@ function solid(w,h,d,r,mat){
 function labelTexture(data){
  const canvas=document.createElement('canvas');canvas.width=900;canvas.height=1200;const c=canvas.getContext('2d');
  c.fillStyle='#e8eddf';c.fillRect(0,0,900,1200);c.fillStyle='#173d33';c.fillRect(0,0,900,19);
- c.fillStyle='#26392e';c.font='500 58px "Instrument Sans",sans-serif';c.fillText('Source check',65,130);
+ c.fillStyle='#26392e';c.font='500 58px "Instrument Sans",sans-serif';c.fillText('Record check',65,130);
  c.font='27px "Instrument Sans",sans-serif';c.fillStyle='#53614f';c.fillText('Fictional public-code example',65,183);
  let y=300;
  for(const lane of data.cases.original.input.source_lanes){

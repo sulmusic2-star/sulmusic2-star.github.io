@@ -90,7 +90,7 @@ async function mount(host) {
   canvas.addEventListener('pointerup',e=>{if(!drag)return;if(!drag.moved){const rect=canvas.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(pointer,camera);const hit=ray.intersectObjects(meshes,false)[0];if(hit){const f=hit.object.userData.feature;showRecord(f);highlight(f.attributes.OBJECTID);}}drag=null;if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);});
   canvas.addEventListener('pointercancel',()=>drag=null);
   canvas.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();yaw+=(e.key==='ArrowLeft'?-.12:.12);schedule();}else if(e.key==='Home'){e.preventDefault();yaw=-.28;schedule();}});
-  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();disposed=true;cancelAnimationFrame(raf);fallback('3D view unavailable. The source selector and project links remain available.');});
+  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();disposed=true;cancelAnimationFrame(raf);fallback('3D view unavailable. The building selector and project links remain available.');});
   window.addEventListener('pagehide',()=>{cancelAnimationFrame(raf);raf=0;});window.addEventListener('pageshow',()=>schedule());
   reduce.addEventListener('change',()=>schedule());
   host.dataset.state='ready';canvas.hidden=false;highlight(initial.attributes.OBJECTID);resize();
