@@ -2,10 +2,10 @@ import * as THREE from '../vendor/three.module.min.js';
 
 // These are presentation objects, not a simulation of the production application.
 export const views = {
-  overview: {title:'Three parts of the work.',copy:'The public interface, a fictional source-check example and its report. Select a view to inspect it.',href:'/case-studies/lasting-ground/',link:'Explore the project',image:'/assets/product/lasting-ground-search.png'},
-  interface: {title:'Start with an address.',copy:'Actual public interface, captured 28 October 2026. Answers and source details require access.',href:'https://lastingground.com',link:'Open Property Search',image:'/assets/product/lasting-ground-search.png'},
-  source: {title:'Keep missing evidence visible.',copy:'Fictional input: two validated lanes, one caution and one missing record. These are supplied states, not independently verified records.',href:'/assets/product/source-example.json',link:'Inspect the exact input and output',image:'/assets/product/source-check-page-1.png'},
-  report: {title:'Carry the caveat into the report.',copy:'Two-page fictional example. Its outline is generated from the public validator and packet composer.',href:'/assets/product/source-check-example.pdf',link:'Open the two-page report',image:'/assets/product/source-check-page-2.png'}
+  overview: {title:'Interface, sources and report.',copy:'Choose a view of the public interface or the fictional source-check and report examples.',href:'/case-studies/lasting-ground/',link:'Explore the project',image:'/assets/product/lasting-ground-search.png'},
+  interface: {title:'Property Search',copy:'Actual public interface, captured 28 October 2026. Answers and source details require access.',href:'https://lastingground.com',link:'Open Property Search',image:'/assets/product/lasting-ground-search.png'},
+  source: {title:'The source-check example',copy:'Fictional input: two validated lanes, one caution and one missing record. These are supplied states, not independently verified records.',href:'/assets/product/source-example.json',link:'View the input and output',image:'/assets/product/source-check-page-1.png'},
+  report: {title:'The sample report',copy:'Two-page fictional example. Its outline is generated from the public validator and packet composer.',href:'/assets/product/source-check-example.pdf',link:'Open the two-page report',image:'/assets/product/source-check-page-2.png'}
 };
 
 export const poses = {
